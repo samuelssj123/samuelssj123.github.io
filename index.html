@@ -77,6 +77,35 @@
     <script type="text/javascript" src="static/js/scripts.js"></script>
     <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 监听所有链接的点击事件
+            document.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    // 检查链接是否指向 Markdown 文件
+                    if (this.href.endsWith('.md')) {
+                        event.preventDefault(); // 阻止默认跳转行为
+                        const mdUrl = this.href;
+                        // 使用 fetch API 读取 Markdown 文件内容
+                        fetch(mdUrl)
+                           .then(response => response.text())
+                           .then(text => {
+                                // 使用 marked 库将 Markdown 文本转换为 HTML
+                                const html = marked(text);
+                                // 将转换后的 HTML 内容插入到页面的指定位置
+                                const targetDiv = document.getElementById('awards-md');
+                                targetDiv.innerHTML = html;
+                                // 滚动到显示区域
+                                targetDiv.scrollIntoView({ behavior: 'smooth' });
+                            })
+                           .catch(error => {
+                                console.error('Error loading Markdown file:', error);
+                            });
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body id="page-top">
@@ -98,7 +127,7 @@
                     <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#awards">AWARDS</a>
                     </li>
-            <!--        <li class="nav-item">
+                    <!--        <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#experience">EXPERIENCE</a>
                     </li>
                     <li class="nav-item">
@@ -153,7 +182,7 @@
 
 
     <!-- Experience -->
-<!--    <section class="bg-gradient-primary-to-secondary-dark mt5 md5" id="experience">
+    <!--    <section class="bg-gradient-primary-to-secondary-dark mt5 md5" id="experience">
         <div class="container px-5">
             <header>
                 <h2 id="experience-subtitle"><i class="bi bi-briefcase-fill"></i> EXPERIENCE </h2>
@@ -164,7 +193,7 @@
     <!-- Experience --> 
 
     <!-- Publications -->
-<!--    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="publications">
+    <!--    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="publications">
         <div class="container px-5">
             <header>
                 <h2 id="publications-subtitle"><i class="bi bi-file-text-fill"></i>&nbsp;PUBLICATIONS</h2>
@@ -181,7 +210,7 @@
             <div class="text-white-50 small">
                 <div id="copyright-text" class="mb-2"></div>
                 <a id="github-link" href="https://samuelssj123.github.io/shengjie.github.io/">Github</a>
-          <!--      <span class="mx-1">&middot;</span>
+                <!--      <span class="mx-1">&middot;</span>
                 <a id="license-link"
                     href="https://github.com/senli1073/senli1073.github.io/blob/main/LICENSE">License</a>  -->
             </div>
