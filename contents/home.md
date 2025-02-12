@@ -1,4 +1,4 @@
-[![XX](https://img.shields.io/badge/XX-github-blue?logo=github)](https://github.com/XX)
+[![XX](https://img.shields.io/badge/XX-github-blue?logo=github)](https://samuelssj123.github.io/shengjie.github.io/)
 
 #### Email  
 <code>sjs@mail.bnu.edu.cn</code>  
