@@ -98,7 +98,7 @@
                     <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#awards">AWARDS</a>
                     </li>
-                    <!--        <li class="nav-item">
+            <!--        <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#experience">EXPERIENCE</a>
                     </li>
                     <li class="nav-item">
@@ -151,91 +151,9 @@
     </section>
     <!-- Awards -->
 
-    <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Rendering</title>
-    <!-- 引入 marked 库 -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
-        <div class="container px-5">
-            <a id="page-top-title" class="navbar-brand fw-bold" href="#page-top"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                MENU
-                <i class="bi-list"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#home">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#awards">AWARDS</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Awards -->
-    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
-        <div class="container px-5">
-            <header>
-                <h2 id="awards-subtitle"><i class="bi bi-award-fill"></i>AWARDS </h2>
-            </header>
-            <div class="main-body" id="awards-md"></div>
-        </div>
-    </section>
-    <!-- Awards -->
-
-    <script>
-        // 监听页面加载完成事件
-        document.addEventListener('DOMContentLoaded', function () {
-            // 获取所有导航链接
-            const navLinks = document.querySelectorAll('.nav-link');
-            // 遍历导航链接
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    if (targetId === 'awards') {
-                        const mdUrl = 'samuelssj123.github.io/contents/awards.md';
-                        // 使用 fetch API 读取 Markdown 文件内容
-                        fetch(mdUrl)
-                           .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok');
-                                }
-                                return response.text();
-                            })
-                           .then(text => {
-                                // 使用 marked 库将 Markdown 文本转换为 HTML
-                                const html = marked.parse(text);
-                                // 将转换后的 HTML 内容插入到页面的指定位置
-                                const targetDiv = document.getElementById('awards-md');
-                                targetDiv.innerHTML = html;
-                                // 滚动到显示区域
-                                targetDiv.scrollIntoView({ behavior: 'smooth' });
-                            })
-                           .catch(error => {
-                                console.error('Error loading Markdown file:', error);
-                            });
-                    }
-                });
-            });
-        });
-    </script>
 
     <!-- Experience -->
-    <!--    <section class="bg-gradient-primary-to-secondary-dark mt5 md5" id="experience">
+<!--    <section class="bg-gradient-primary-to-secondary-dark mt5 md5" id="experience">
         <div class="container px-5">
             <header>
                 <h2 id="experience-subtitle"><i class="bi bi-briefcase-fill"></i> EXPERIENCE </h2>
@@ -246,7 +164,7 @@
     <!-- Experience --> 
 
     <!-- Publications -->
-    <!--    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="publications">
+<!--    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="publications">
         <div class="container px-5">
             <header>
                 <h2 id="publications-subtitle"><i class="bi bi-file-text-fill"></i>&nbsp;PUBLICATIONS</h2>
@@ -263,7 +181,7 @@
             <div class="text-white-50 small">
                 <div id="copyright-text" class="mb-2"></div>
                 <a id="github-link" href="https://samuelssj123.github.io/shengjie.github.io/">Github</a>
-                <!--      <span class="mx-1">&middot;</span>
+          <!--      <span class="mx-1">&middot;</span>
                 <a id="license-link"
                     href="https://github.com/senli1073/senli1073.github.io/blob/main/LICENSE">License</a>  -->
             </div>
