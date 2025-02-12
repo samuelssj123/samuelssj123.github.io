@@ -189,4 +189,36 @@
 
 </body>
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取 AlgorithmNotes-md 元素
+        const algorithmNotesDiv = document.getElementById('AlgorithmNotes-md');
+
+        // 添加点击事件监听器
+        algorithmNotesDiv.addEventListener('click', function(event) {
+            // 检查点击的是否是链接
+            if (event.target.tagName === 'A') {
+                event.preventDefault(); // 阻止默认的链接跳转行为
+
+                const mdUrl = event.target.href; // 获取链接的 href 属性
+
+                // 使用 fetch API 读取 Markdown 文件内容
+                fetch(mdUrl)
+                   .then(response => response.text())
+                   .then(text => {
+                        // 使用 marked 库将 Markdown 文本转换为 HTML
+                        const html = marked.parse(text);
+                        // 将转换后的 HTML 内容插入到页面的指定位置
+                        algorithmNotesDiv.innerHTML = html;
+                    })
+                   .catch(error => {
+                        console.error('Error loading Markdown file:', error);
+                    });
+            }
+        });
+    });
+</script>
+
+    
 </html>
