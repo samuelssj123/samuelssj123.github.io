@@ -1,20 +1,16 @@
 [![XX](https://img.shields.io/badge/XX-github-blue?logo=github)](https://github.com/XX)
 
-I'm currently pursuing a Master's degree in XX at the Department of XX, XX University, XX.
-
 #### Email  
-<code>XX@XX.XX</code>  
-<code>XX@XX.XX</code>
+<code>sjs@mail.bnu.edu.cn</code>  
+<code>shengjiesong6@gmail.com</code>
 
 #### Education  
-**XX University**, Master of XX (XX – XX)  
-• GPA: XX/XX  
+**Peking University**, Master of Software Engineering (2025 – 2028)  
 
-**XX University**, Exchange student <br>  
-• As a XX, represented my college as an outstanding student for a XX exchange program.  
+**Beijing Normal University**, Bachelor of Finance Technology (2021 – 2025)  
+• GPA: 3.9/4.0 (top 6%)  
 
-**XX University**, Honours Bachelor of XX (XX – XX)  
-• GPA: XX/XX (top XX%)  
+**The Hong Kong University of Science and Technology (Guangzhou)**, Research Assistant (2024 – 2025)  
 
 #### Research Interests  
-XX, XX, XX, XX.
+Financice Technology, Asset Pricing, NLP, ...
