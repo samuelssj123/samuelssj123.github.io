@@ -79,3 +79,18 @@ class Solution:
             matrix[startx][starty] = count
         return matrix
 ```
+
+# 区间和  
+[文章讲解](https://www.programmercarl.com/kamacoder/0058.%E5%8C%BA%E9%97%B4%E5%92%8C.html)  
+暴力解法：把这个区间的和都累加一遍
+**前缀和**：重复利用计算过的子数组之和，从而降低区间查询需要累加计算的次数。  
+新数组：先做累加，即$`p[i]`$表示下标$`0到i的vec[i]`$累加之和
+如果我们要求区间下标$`[2, 5]`$的区间和，那么应该是$`p[5] - p[1]`$，而不是$`p[5] - p[2]`$。
+
+ 
+# 开发商购买土地
+[文章讲解](https://www.programmercarl.com/kamacoder/0044.%E5%BC%80%E5%8F%91%E5%95%86%E8%B4%AD%E4%B9%B0%E5%9C%9F%E5%9C%B0.html)
+
+# 数组总结 
+
+[文章链接](https://programmercarl.com/%E6%95%B0%E7%BB%84%E6%80%BB%E7%BB%93%E7%AF%87.html)
