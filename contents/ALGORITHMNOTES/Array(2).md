@@ -51,11 +51,14 @@ class Solution:
 ```
 
 # 59.螺旋矩阵II  
+
 [题目链接](https://leetcode.cn/problems/spiral-matrix-ii/) [文章讲解](https://programmercarl.com/0059.%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5II.html) [视频讲解](https://www.bilibili.com/video/BV1SL4y1N7mV/)
 
 ![image](../images/59_spiral_matrix_II.png)
+
 循环不变量，左闭右开。
-```
+
+```Python
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
         matrix = [[0] * n for _ in range(n)]
@@ -87,12 +90,18 @@ class Solution:
 ```
 
 # 区间和  
+
 [文章讲解](https://www.programmercarl.com/kamacoder/0058.%E5%8C%BA%E9%97%B4%E5%92%8C.html)  
+
 暴力解法：把这个区间的和都累加一遍
+
 **前缀和**：重复利用计算过的子数组之和，从而降低区间查询需要累加计算的次数。  
+
 新数组：先做累加，即$`p[i]`$表示下标$`0到i的vec[i]`$累加之和
+
 如果我们要求区间下标$`[2, 5]`$的区间和，那么应该是$`p[5] - p[1]`$，而不是$`p[5] - p[2]`$。
-```
+
+```Python
 import sys
 input = sys.stdin.read
 
@@ -133,11 +142,16 @@ if __name__=="__main__":
 ```
  
 # 开发商购买土地
+
 [文章讲解](https://www.programmercarl.com/kamacoder/0044.%E5%BC%80%E5%8F%91%E5%95%86%E8%B4%AD%E4%B9%B0%E5%9C%9F%E5%9C%B0.html)  
-- 暴力解法：两遍区间和  
-  通过两层嵌套的 for 循环，将矩阵中每一行的元素累加到 horizontal 列表的对应位置。通过两层嵌套的 for 循环，将矩阵中每一列的元素累加到 vertical 列表的对应位置。    
-  通过 for 循环遍历每一行，将当前行的元素和累加到 horizontalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * horizontalCut)，并更新 result 为较小值。通过 for 循环遍历每一列，将当前列的元素和累加到 verticalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * verticalCut)，并更新 result 为较小值。  
-```
+
+- 暴力解法：两遍区间和
+  
+  通过两层嵌套的 for 循环，将矩阵中每一行的元素累加到 horizontal 列表的对应位置。通过两层嵌套的 for 循环，将矩阵中每一列的元素累加到 vertical 列表的对应位置。
+     
+  通过 for 循环遍历每一行，将当前行的元素和累加到 horizontalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * horizontalCut)，并更新 result 为较小值。通过 for 循环遍历每一列，将当前列的元素和累加到 verticalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * verticalCut)，并更新 result 为较小值。
+  
+```Python
 import sys
 input = sys.stdin.read 
 
@@ -189,8 +203,11 @@ if __name__=="__main__":
     main()
 ```
 
--优化暴力解法：当遍历到一行的末尾元素（即 j == m - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。当遍历到一列的末尾元素（即 i == n - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。
-```
+-优化暴力解法：
+
+当遍历到一行的末尾元素（即 j == m - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。当遍历到一列的末尾元素（即 i == n - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。
+
+```Python
 import sys
 input = sys.stdin.read 
 
@@ -236,8 +253,8 @@ if __name__=="__main__":
     main()
 ```
 
-
 # 数组总结 
+
 [文章链接](https://programmercarl.com/%E6%95%B0%E7%BB%84%E6%80%BB%E7%BB%93%E7%AF%87.html)
 
 01. 循环不变量：只有在循环中坚持对区间的定义，才能清楚的把握循环中的各种细节  
