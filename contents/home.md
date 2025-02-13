@@ -8,7 +8,7 @@
 **Peking University**, Master of Software Engineering (2025 – 2028)  
 
 **Beijing Normal University**, Bachelor of Finance Technology (2021 – 2025)  
-• GPA: 3.9/4.0 (top 6%)  
+• GPA: 3.9/4.0 
 
 **The Hong Kong University of Science and Technology (Guangzhou)**, Research Assistant (2024 – 2025)  
 
