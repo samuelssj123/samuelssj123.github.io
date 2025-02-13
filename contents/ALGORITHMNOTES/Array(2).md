@@ -44,3 +44,36 @@ class Solution:
         return result if result != float('inf') else 0  
 ```
 
+# 59.螺旋矩阵II  
+[题目链接](https://leetcode.cn/problems/spiral-matrix-ii/) [文章讲解](https://programmercarl.com/0059.%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5II.html) [视频讲解](https://www.bilibili.com/video/BV1SL4y1N7mV/)
+
+```
+class Solution:
+    def generateMatrix(self, n: int) -> List[List[int]]:
+        matrix = [[0] * n for _ in range(n)]
+        startx = 0
+        starty = 0
+        offset = 1
+        count = 1
+        loop = n // 2
+        while loop > 0 :
+            for j in range (starty, n - offset) :
+                matrix[startx][j] = count
+                count += 1
+            for i in range (startx, n - offset) :
+                matrix[i][n - offset] = count
+                count += 1
+            for j in range(n - offset, starty, -1):
+                matrix[n - offset][j] = count
+                count += 1
+            for i in range(n - offset, startx, -1):
+                matrix[i][starty] = count
+                count += 1
+            startx += 1
+            starty += 1
+            offset += 1
+            loop -= 1
+        if n % 2 == 1:
+            matrix[startx][starty] = count
+        return matrix
+```
