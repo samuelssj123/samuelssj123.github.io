@@ -1,5 +1,4 @@
 #### HomePage
-个人主页：[Shengjie SONG(宋圣洁)](https://samuelssj123.github.io/shengjie.github.io/)
 
 #### Email  
 <code>sjs@mail.bnu.edu.cn</code>  
