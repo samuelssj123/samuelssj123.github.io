@@ -150,7 +150,8 @@ if __name__=="__main__":
   通过两层嵌套的 for 循环，将矩阵中每一行的元素累加到 horizontal 列表的对应位置。通过两层嵌套的 for 循环，将矩阵中每一列的元素累加到 vertical 列表的对应位置。
      
   通过 for 循环遍历每一行，将当前行的元素和累加到 horizontalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * horizontalCut)，并更新 result 为较小值。通过 for 循环遍历每一列，将当前列的元素和累加到 verticalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * verticalCut)，并更新 result 为较小值。
-  
+
+
 ```Python
 import sys
 input = sys.stdin.read 
@@ -203,9 +204,11 @@ if __name__=="__main__":
     main()
 ```
 
+
 -优化暴力解法：
 
 当遍历到一行的末尾元素（即 j == m - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。当遍历到一列的末尾元素（即 i == n - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。
+
 
 ```Python
 import sys
@@ -252,6 +255,7 @@ def main():
 if __name__=="__main__":
     main()
 ```
+
 
 # 数组总结 
 
