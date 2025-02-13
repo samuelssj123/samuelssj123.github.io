@@ -2,7 +2,8 @@
 [题目链接](https://leetcode.cn/problems/minimum-size-subarray-sum/) [文章讲解](https://programmercarl.com/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.html) [视频讲解](https://www.bilibili.com/video/BV1tZ4y1q7XE)
 
 - 暴力解法：（超出时间限制）
-```
+
+```Python
 from typing import List
 
 class Solution:
@@ -21,11 +22,16 @@ class Solution:
 ```
 
 - 滑动窗口：
-**滑动窗口**：不断调节子序列的起始位置和终止位置。终止位置需要遍历到最后，因此关键点是如何确定起始位置，否则仍然是暴力解法。  
+  
+**滑动窗口**：不断调节子序列的起始位置和终止位置。终止位置需要遍历到最后，因此关键点是如何确定起始位置，否则仍然是暴力解法。
+  
 需要明确的问题：1.窗口内是什么？是求和的元素集合。2.如何移动窗口的起始位置？如果当前窗口的值大于等于s，窗口就要向前移动了，也就是窗口该缩小了。3.如何移动窗口的结束位置？窗口的结束位置就是遍历数组的指针，也就是for循环里的索引。
-为什么用while不用if？集合需要不断缩小。  
+
+为什么用while不用if？集合需要不断缩小。
+
 **时间复杂度**：每个元素在滑动窗后进来操作一次，出去操作一次，每个元素都是被操作两次，所以时间复杂度是 2 × n 也就是O(n)。  
-```
+
+```Python
 from typing import List
 
 class Solution:
