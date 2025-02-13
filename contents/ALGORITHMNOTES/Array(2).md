@@ -47,7 +47,7 @@ class Solution:
 # 59.螺旋矩阵II  
 [题目链接](https://leetcode.cn/problems/spiral-matrix-ii/) [文章讲解](https://programmercarl.com/0059.%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5II.html) [视频讲解](https://www.bilibili.com/video/BV1SL4y1N7mV/)
 
-![image](contents/images/59.螺旋矩阵II.png)
+![image](../images/59_spiral_matrix_II.png)
 循环不变量，左闭右开。
 ```
 class Solution:
