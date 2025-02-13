@@ -86,11 +86,155 @@ class Solution:
 **前缀和**：重复利用计算过的子数组之和，从而降低区间查询需要累加计算的次数。  
 新数组：先做累加，即$`p[i]`$表示下标$`0到i的vec[i]`$累加之和
 如果我们要求区间下标$`[2, 5]`$的区间和，那么应该是$`p[5] - p[1]`$，而不是$`p[5] - p[2]`$。
+```
+import sys
+input = sys.stdin.read
 
+def main():
+    data = input().split()
+    index = 0
+    n = int(data[index])
+    index += 1 
+    vec = []
+    for i in range(n):
+        vec.append(int(data[index + i]))
+    index += n 
+    
+    p = [0] * n 
+    presum = 0
+    for i in range(n):
+        presum += vec[i]
+        p[i] = presum
+        
+    results = []
+    while index < len(data):
+        a = int(data[index])
+        b = int(data[index+1])
+        index += 2
+        
+        if a == 0:
+            sum_value = p[b]
+        else:
+            sum_value = p[b] - p[a-1]
+        
+        results.append(sum_value)
+    
+    for result in results:
+        print(result)
+    
+if __name__=="__main__":
+    main()
+```
  
 # 开发商购买土地
-[文章讲解](https://www.programmercarl.com/kamacoder/0044.%E5%BC%80%E5%8F%91%E5%95%86%E8%B4%AD%E4%B9%B0%E5%9C%9F%E5%9C%B0.html)
+[文章讲解](https://www.programmercarl.com/kamacoder/0044.%E5%BC%80%E5%8F%91%E5%95%86%E8%B4%AD%E4%B9%B0%E5%9C%9F%E5%9C%B0.html)  
+- 暴力解法：两遍区间和  
+  通过两层嵌套的 for 循环，将矩阵中每一行的元素累加到 horizontal 列表的对应位置。通过两层嵌套的 for 循环，将矩阵中每一列的元素累加到 vertical 列表的对应位置。    
+  通过 for 循环遍历每一行，将当前行的元素和累加到 horizontalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * horizontalCut)，并更新 result 为较小值。通过 for 循环遍历每一列，将当前列的元素和累加到 verticalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * verticalCut)，并更新 result 为较小值。  
+```
+import sys
+input = sys.stdin.read 
+
+def main():
+    data = input().split() 
+    
+    index = 0
+    n = int(data[index])
+    index += 1 
+    m = int(data[index])
+    index += 1 
+    
+    sum = 0
+    vec=[]
+    for i in range(n):
+        row = []
+        for j in range(m):
+            num = int(data[index])
+            index += 1 
+            row.append(num)
+            sum += num
+        vec.append(row)
+        
+    horizontal = [0] * n 
+    for i in range(n):
+        for j in range(m):
+            horizontal[i] += vec[i][j]
+    
+    vertical = [0] * m 
+    for j in range(m):
+        for i in range(n):
+            vertical[j] += vec[i][j]
+    
+    result = float('inf')
+    
+    horizontalCut = 0
+    for i in range(n):
+        horizontalCut += horizontal[i]
+        result = min(result, abs(sum - 2 * horizontalCut))
+    
+    verticalCut = 0
+    for j in range(m):
+        verticalCut += vertical[j]
+        result = min(result, abs(sum - 2 * verticalCut))
+    
+    print(result)
+
+if __name__=="__main__":
+    main()
+```
+
+-优化暴力解法：当遍历到一行的末尾元素（即 j == m - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。当遍历到一列的末尾元素（即 i == n - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。
+```
+import sys
+input = sys.stdin.read 
+
+def main():
+    data = input().split() 
+    
+    index = 0
+    n = int(data[index])
+    index += 1 
+    m = int(data[index])
+    index += 1 
+    
+    sum = 0
+    vec=[]
+    for i in range(n):
+        row = []
+        for j in range(m):
+            num = int(data[index])
+            index += 1 
+            row.append(num)
+            sum += num
+        vec.append(row)
+    
+    result = float('inf')
+    
+    horizontal = 0 
+    for i in range(n):
+        for j in range(m):
+            horizontal += vec[i][j]
+            if j == m - 1:
+                result = min(result, abs(sum - 2 * horizontal))
+    
+    vertical = 0 
+    for j in range(m):
+        for i in range(n):
+            vertical += vec[i][j]
+            if i == n - 1:
+                result = min(result, abs(sum - 2 * vertical))
+
+    print(result)
+
+if __name__=="__main__":
+    main()
+```
+
 
 # 数组总结 
-
 [文章链接](https://programmercarl.com/%E6%95%B0%E7%BB%84%E6%80%BB%E7%BB%93%E7%AF%87.html)
+
+01. 循环不变量：只有在循环中坚持对区间的定义，才能清楚的把握循环中的各种细节  
+02. 双指针：通过一个快指针和慢指针在一个for循环下完成两个for循环的工作  
+03. 滑动窗口：根据当前子序列和大小的情况，不断调节子序列的起始位置  
+04. 前缀和：空间换时间，另起一个数组计算
