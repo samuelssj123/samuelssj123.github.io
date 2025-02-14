@@ -1,4 +1,4 @@
-[链表理论基础](#01)，[203.移除链表元素](#02)，707.设计链表，206.反转链表
+[链表理论基础](#01)，[203.移除链表元素](#02)，[707.设计链表](#03)，[206.反转链表](#04)
 
 # <span id="01">链表理论基础</span>
 
@@ -82,4 +82,25 @@ class Solution:
 
         return dummy_head.next #头节点可能被删掉，不能直接返回head
 ```
+
+# <span id="03">707.设计链表</span>
+
+[Related Explaination](https://programmercarl.com/0707.%E8%AE%BE%E8%AE%A1%E9%93%BE%E8%A1%A8.html)
+
+
+
+
+# <span id="04">206.反转链表</span>
+
+[Related Explaination](https://programmercarl.com/0206.%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8.html) 
+
+
+
+
+
+
+
+
+
+
 
