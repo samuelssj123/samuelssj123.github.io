@@ -54,3 +54,32 @@ class Solution:
                 current = current.next
         return head
 ```
+
+- 虚拟头节点：
+
+![images](../images/203.png)
+
+```Python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        if not head:
+            return None
+        
+        dummy_head = ListNode (next = head)
+
+        current = dummy_head
+
+        while current.next != None:
+            if current.next.val == val:
+                current.next = current.next.next
+            else:
+                current = current.next
+
+        return dummy_head.next #头节点可能被删掉，不能直接返回head
+```
+
