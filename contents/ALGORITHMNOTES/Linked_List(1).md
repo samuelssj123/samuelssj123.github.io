@@ -1,4 +1,4 @@
-[链表理论基础](#01)，203.移除链表元素，707.设计链表，206.反转链表
+[链表理论基础](#01)，[203.移除链表元素](#02)，707.设计链表，206.反转链表
 
 # <span id="01">链表理论基础</span>
 
@@ -26,4 +26,31 @@ class ListNode:
     def __init__(self, val, next=None):
         self.val = val
         self.next = next
+```
+
+# <span id="02">203.移除链表元素</span>
+
+[Related Explaination](https://programmercarl.com/0203.%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0.html)
+
+-直接删除：
+
+```Python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        if not head:
+            return None
+        while head != None and head.val == val :
+            head = head.next
+        current = head
+        while current != None and current.next != None:
+            if current.next.val == val:
+                current.next = current.next.next
+            else:
+                current = current.next
+        return head
 ```
