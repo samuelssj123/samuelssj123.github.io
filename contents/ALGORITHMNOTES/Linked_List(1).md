@@ -170,7 +170,7 @@ class MyLinkedList:
 
 - 双链表：
 
-```
+```Python
 class ListNode:
     def __init__(self, val=0, prev=None, next=None):
         self.val = val
@@ -283,9 +283,47 @@ class MyLinkedList:
 
 [Related Explaination](https://programmercarl.com/0206.%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8.html) 
 
+![image](../images/206_reverse_linked_list.png)
 
+- 双指针法：
 
+```Python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        cur = head
+        pre = None
+        while cur :
+            temp = cur.next
+            cur.next = pre
+            pre = cur
+            cur = temp
+        return pre
+```
 
+- 递归：
+
+```Python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        return self.reverse(head, None)
+    
+    def reverse (self, cur, pre): #实例方法时，第一个参数通常是 self，它代表类的实例对象
+        if cur == None :
+            return pre
+        temp = cur.next
+        cur.next = pre
+        return self.reverse(temp, cur)
+```
 
 
 
