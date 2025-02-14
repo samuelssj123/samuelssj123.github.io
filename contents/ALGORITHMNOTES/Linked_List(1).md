@@ -57,7 +57,7 @@ class Solution:
 
 - 虚拟头节点：
 
-![images](../images/203.png)
+![image](../images/203_Remove_linked_list_elements.png)
 
 ```Python
 # Definition for singly-linked list.
