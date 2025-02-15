@@ -8,6 +8,8 @@ To do list: 24. 两两交换链表中的节点，19.删除链表的倒数第N个
 
 **Hint**: temp can be used to save the temporary node.
 
+![image](../images/14_swap_nodes.png)
+
 ```Python
 # Definition for singly-linked list.
 # class ListNode:
@@ -34,6 +36,8 @@ class Solution:
 [题目链接/文章讲解/视频讲解](https://programmercarl.com/0019.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9.html)
 
 **关键点**：要删第几个，就要知道它的前一个；快慢指针，快的先走n步，然后再一起走，slow就是倒数第n个
+
+![image](../images/19_delete_nodes.png)
 
 ```Python
 # Definition for singly-linked list.
@@ -112,6 +116,7 @@ class Solution:
 
 关键点：是否有环、找入口的推导
 
+![image](../images/142_Ring_Linked_List.png)
 
 ```Python
 # Definition for singly-linked list.
