@@ -136,3 +136,41 @@ class Solution:
 
 
 # <span id="05">1. 两数之和</span>
+
+[Leetcode Problem](https://leetcode.cn/problems/two-sum/description/)
+
+[Related Interpretation](https://programmercarl.com/0001.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
+
+- 为什么要用哈希法：需要一个集合来存放我们遍历过的元素，然后在遍历数组的时候去询问这个集合，某元素是否遍历过，也就是是否出现在这个集合
+
+- 选用哪种数据结构：不仅要知道元素有没有遍历过，还要知道这个元素对应的下标，需要使用 key value结构来存放，key来存元素，value来存下标，那么使用map正合适。
+
+- map 目的：用来存放我们访问过的元素，因为遍历数组的时候，需要记录我们之前遍历过哪些元素和对应的下标，这样才能找到与当前元素相匹配的（也就是相加等于target）。
+
+- 所以 map中的存储结构为 {key：数据元素，value：数组元素对应的下标}。
+
+- 使用字典：
+
+```Python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        result = dict()
+        for index, value in enumerate(nums) :
+            if target - value in result:
+                return [result[target - value], index]
+            result[value] = index
+        return []
+```
+
+- 使用集合
+
+```Python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        result = set()
+        for index, num in enumerate(nums) :
+            if target - num in result:
+                return [nums.index(target - num), index]
+            result.add(num)
+        return []
+```
