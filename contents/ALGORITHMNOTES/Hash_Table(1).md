@@ -1,8 +1,8 @@
-To do list: 哈希表理论基础，242.有效的字母异位词，349. 两个数组的交集
+To do list: 哈希表理论基础，242.有效的字母异位词，349.两个数组的交集，202.快乐数，1. 两数之和
 
 **当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法。**
 
-[哈希表理论基础](#01)，[242.有效的字母异位词](#02)，[349. 两个数组的交集](#03)，[142.环形链表II](#04)，[总结](#05)
+[哈希表理论基础](#01)，[242.有效的字母异位词](#02)，[349. 两个数组的交集](#03)，[202.快乐数](#04)，[1. 两数之和](#05)
 
 # <span id="01">哈希表理论基础</span>
 
@@ -98,6 +98,39 @@ class Solution:
         return result
 ```
 
-# <span id="04">哈希表理论基础</span>
+# <span id="04">202.快乐数</span>
 
-# <span id="05">哈希表理论基础</span>
+[Leetcode Problem](https://leetcode.cn/problems/happy-number/description/)
+
+[Related Interpretation](https://programmercarl.com/0202.%E5%BF%AB%E4%B9%90%E6%95%B0.html#%E6%80%9D%E8%B7%AF)
+
+- 破题：
+
+无限循环：求和的过程中，sum会重复出现！→ 当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法了。如果sum重复了，要考虑哈希！
+
+- 使用集合：
+
+```Python
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        res = set()
+        while True:
+            n = self.getsum(n)
+            if n == 1:
+                return True
+            if n in res:
+                return False
+            res.add(n)
+
+    
+    def getsum(self, n):
+        sum = 0
+        while n:
+            sum += (n % 10) * (n % 10)
+            n = n // 10
+        return sum
+```
+
+
+
+# <span id="05">1. 两数之和</span>
