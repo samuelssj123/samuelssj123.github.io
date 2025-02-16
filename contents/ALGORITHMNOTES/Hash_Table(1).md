@@ -26,6 +26,10 @@ To do list: 哈希表理论基础，242.有效的字母异位词
 
 [Related Interpretation](https://programmercarl.com/0242.%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
+思路：1.哈希数组26个大小；2.每个空位记录字符串A对应字母出现次数；3.每个位置对冲字符串B对应字母出现次数；4.判断哈希表是否是空的
+
+
+
 # <span id="03">哈希表理论基础</span>
 
 # <span id="04">哈希表理论基础</span>
