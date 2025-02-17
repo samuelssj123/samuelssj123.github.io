@@ -8,6 +8,22 @@
   
 ![image](../images/hash_table_theory.png)
 
+```Python
+class Solution:
+    def fourSumCount(self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]) -> int:
+        table = dict()
+        for n1 in nums1:
+            for n2 in nums2:
+                table[n1 + n2] = table.get(n1 + n2, 0 ) + 1
+        count = 0
+        for n3 in nums3:
+            for n4 in nums4:
+                target = 0 - (n3 + n4)
+                if target in table:
+                    count += table[target]
+        return count
+```
+
 # <span id="02">383. 赎金信</span>
 
 [Related Interpretation](https://programmercarl.com/0383.%E8%B5%8E%E9%87%91%E4%BF%A1.html#%E6%80%9D%E8%B7%AF)
