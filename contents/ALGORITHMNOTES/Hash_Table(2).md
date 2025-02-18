@@ -6,7 +6,7 @@
 
 [Related Interpretation](https://programmercarl.com/0454.%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
   
-![image](../images/hash_table_theory.png)
+![image](../images/454_4sumii.png)
 
 ```Python
 class Solution:
@@ -53,6 +53,7 @@ class Solution:
 
 [Related Interpretation](https://programmercarl.com/0015.%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
+![image](../images/15_3sum.png)
 
 ```Python
 class Solution:
@@ -90,6 +91,7 @@ class Solution:
 
 [Related Interpretation](https://programmercarl.com/0018.%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
+![image](../images/18_4sum.png)
 
 
 ```Python
