@@ -4,6 +4,8 @@
 
 # <span id="01">454.四数相加II</span>
 
+**value为和，key记出现次数。**
+
 [Related Interpretation](https://programmercarl.com/0454.%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
   
 ![image](../images/454_4sumii.png)
@@ -55,6 +57,10 @@ class Solution:
 
 ![image](../images/15_3sum.png)
 
+**剪枝：排序首数就很大。
+去重a：后数前数不相同；
+去重b+c：反复看后数前数不相同。**
+
 ```Python
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -93,6 +99,10 @@ class Solution:
 
 ![image](../images/18_4sum.png)
 
+**剪枝：排序首数就很大。
+去重a：后数前数不相同；
+去重b+c：反复看后数前数不相同。
+两次去重，两次剪枝。**
 
 ```Python
 class Solution:
