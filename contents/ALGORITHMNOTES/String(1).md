@@ -65,3 +65,63 @@ class Solution:
 卡码网：54.替换数字 
 
 [Leetcode](https://kamacoder.com/problempage.php?pid=1064) [Learning Materials](https://programmercarl.com/kamacoder/0054.%E6%9B%BF%E6%8D%A2%E6%95%B0%E5%AD%97.html#%E6%80%9D%E8%B7%AF)
+
+- 思路：
+  
+首先扩充数组到每个数字字符替换成 "number" 之后的大小。
+
+然后**从后向前**替换数字字符，也就是双指针法，过程如下：i指向新长度的末尾，j指向旧长度的末尾。（从前向后填充就是O(n^2)的算法了，因为每次添加元素都要将添加元素之后的所有元素整体向后移动。）
+
+**数组填充类的问题，其做法都是先预先给数组扩容带填充后的大小，然后在从后向前进行操作。**
+
+**好处**：不用申请新数组。从后向前填充元素，避免了从前向后填充元素时，每次添加元素都要将添加元素之后的所有元素向后移动的问题。
+
+```C++
+#include <iostream>
+using namespace std;
+int main() {
+    string s;
+    while (cin >> s) {
+        int sOldIndex = s.size() - 1;
+        int count = 0; // 统计数字的个数
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] >= '0' && s[i] <= '9') {
+                count++;
+            }
+        }
+        // 扩充字符串s的大小，也就是将每个数字替换成"number"之后的大小
+        s.resize(s.size() + count * 5);
+        int sNewIndex = s.size() - 1;
+        // 从后往前将数字替换为"number"
+        while (sOldIndex >= 0) {
+            if (s[sOldIndex] >= '0' && s[sOldIndex] <= '9') {
+                s[sNewIndex--] = 'r';
+                s[sNewIndex--] = 'e';
+                s[sNewIndex--] = 'b';
+                s[sNewIndex--] = 'm';
+                s[sNewIndex--] = 'u';
+                s[sNewIndex--] = 'n';
+            } else {
+                s[sNewIndex--] = s[sOldIndex];
+            }
+            sOldIndex--;
+        }
+        cout << s << endl;       
+    }
+}
+```
+
+```Python
+def replace_digits_with_number(s: str) -> str:
+    result = []
+    for char in s:
+        if char.isdigit():
+            result.append("number")
+        else:
+            result.append(char)
+    return ''.join(result)
+
+s = input().strip() 
+
+print(replace_digits_with_number(s))
+```
