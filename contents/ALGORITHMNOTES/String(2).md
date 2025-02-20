@@ -4,6 +4,8 @@
 
 [Leetcode](https://leetcode.cn/problems/reverse-words-in-a-string/description/) [Learning Materials](https://programmercarl.com/0151.%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D.html)
 
+![image](../images/151-reverse-words-in-a-string.png)
+
 ```Python
 class Solution:
     def reverse(self, s, start, end):
@@ -49,6 +51,7 @@ class Solution:
 
 [Leetcode](https://kamacoder.com/problempage.php?pid=1065) [Learning Materials](https://programmercarl.com/kamacoder/0055.%E5%8F%B3%E6%97%8B%E5%AD%97%E7%AC%A6%E4%B8%B2.html#%E6%80%9D%E8%B7%AF)
 
+![image](../images/cama-reverse-right-string.png)
 
 ```Python
 k = int(input())
@@ -60,6 +63,9 @@ print(s[len(s) - k:]+s[:len(s) - k])
 # <span id="03">28. 实现 strStr()find-the-index-of-the-first-occurrence-in-a-string</span>
 
 [Leetcode](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/description/) [Learning Materials](https://programmercarl.com/0028.%E5%AE%9E%E7%8E%B0strStr.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
+
+![image](../images/28-find-the-index-of-the-first-occurrence-in-a-string.png)
+
 
 ```Python
 class Solution:
@@ -92,6 +98,8 @@ class Solution:
 # <span id="04">459.重复的子字符串repeated-substring-pattern</span>
 
 [Leetcode](https://leetcode.cn/problems/repeated-substring-pattern/description/) [Learning Materials](https://programmercarl.com/0459.%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
+
+![image](../images/459-repeated-substring-pattern.png)
 
 - 暴力法：
 
