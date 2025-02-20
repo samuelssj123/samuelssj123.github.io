@@ -1,5 +1,7 @@
+[344.反转字符串 reverse string](#01)，[541. 反转字符串II  reverse string ii](#02)，[卡码网：54.替换数字](#03)
 
-344.反转字符串 reverse string
+# <span id="01">344.反转字符串 reverse string</span>
+
 
 [Leetcode](https://leetcode.cn/problems/reverse-string/description/) [Learning Materials](https://programmercarl.com/0344.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.html)
 
@@ -25,7 +27,8 @@ for (int i = 0, j = s.size() - 1; i < s.size()/2; i++, j--)      #i < s.size()/2
             swap(s[i],s[j]);
 ```
 
-541. 反转字符串II  reverse string ii
+# <span id="02">541. 反转字符串II  reverse string ii</span>
+
      
 [Leetcode](https://leetcode.cn/problems/reverse-string-ii/description/) [Learning Materials](https://programmercarl.com/0541.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2II.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
@@ -62,7 +65,8 @@ class Solution:
         return ''.join(res)
 ```
 
-卡码网：54.替换数字 
+# <span id="03">卡码网：54.替换数字 </span>
+
 
 [Leetcode](https://kamacoder.com/problempage.php?pid=1064) [Learning Materials](https://programmercarl.com/kamacoder/0054.%E6%9B%BF%E6%8D%A2%E6%95%B0%E5%AD%97.html#%E6%80%9D%E8%B7%AF)
 
@@ -120,7 +124,7 @@ def replace_digits_with_number(s: str) -> str:
         else:
             result.append(char)
     return ''.join(result)
-
+```
 s = input().strip() 
 
 print(replace_digits_with_number(s))
