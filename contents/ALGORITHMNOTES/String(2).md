@@ -113,6 +113,39 @@ class Solution:
 - 移动匹配
 
 ```Python
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        n = len(s)
+        if n <= 1:
+            return False
+        
+        ss = s + s # 将字符串 s 自身拼接一次
+        ss = ss[1:-1] # 去掉首尾元素
+        return s in ss
+```
+
+- KMP法
+
+```Python
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        next = [0] * len(s)
+        self.getNext(next, s)
+        if next[-1] != 0 and len(s) % (len(s) - next[-1]) == 0:
+            return True
+        return False
+
+
+    def getNext(self, next, s):
+        j = 0
+        next[0] = 0
+        for i in range(1, len(s)):
+            while j > 0 and s[i] != s[j]:
+                j = next[j - 1]
+            if s[i] == s[j]:
+                j += 1
+            next[i] = j
+        return next
 ```
 
 # <span id="05">字符串总结</span>
