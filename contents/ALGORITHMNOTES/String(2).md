@@ -1,4 +1,4 @@
-[151.翻转字符串里的单词reverse-words-in-a-string](#01)，[卡码网：55.右旋转字符串](#02)，[28. 实现 strStr()find-the-index-of-the-first-occurrence-in-a-string](#03)
+[151.翻转字符串里的单词reverse-words-in-a-string](#01)，[卡码网：55.右旋转字符串](#02)，[28. 实现 strStr()find-the-index-of-the-first-occurrence-in-a-string](#03)，[459.重复的子字符串repeated-substring-pattern](#04)，[字符串总结](#05)，[双指针总结](#06)
 
 # <span id="01">151.翻转字符串里的单词reverse-words-in-a-string</span>
 
@@ -89,8 +89,32 @@ class Solution:
             next[i] = j
 ```
 
-# <span id="04">151.翻转字符串里的单词reverse-words-in-a-string</span>
+# <span id="04">459.重复的子字符串repeated-substring-pattern</span>
 
-# <span id="05">151.翻转字符串里的单词reverse-words-in-a-string</span>
+[Leetcode](https://leetcode.cn/problems/repeated-substring-pattern/description/) [Learning Materials](https://programmercarl.com/0459.%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
-# <span id="06">151.翻转字符串里的单词reverse-words-in-a-string</span>
+- 暴力法：
+
+```Python
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        n = len(s)
+        if n <= 1:
+            return False
+        substr = ""
+        for i in range(1, n // 2 + 1): // 查一半：因为如果子字符串长度超过原字符串长度的一半，那么它重复后长度必然会超过原字符串，所以只需要检查长度不超过原字符串一半的子字符串即可
+            if n % i == 0 : //查整除：如果 n 不能被 i 整除，说明原字符串不可能由长度为 i 的子字符串重复构成
+                substr = s[:i] //提取字符串 s 的前 i 个字符作为子字符串 substr
+                if substr * (n // i) == s:
+                    return True
+        return False
+```
+
+- 移动匹配
+
+```Python
+```
+
+# <span id="05">字符串总结</span>
+
+# <span id="06">双指针总结</span>
