@@ -12,3 +12,7 @@
 
 -  5.[哈希表理论基础，242.有效的字母异位词，349.两个数组的交集，202.快乐数，1. 两数之和](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Hash_Table(1).html)
 -  6.[454.四数相加II，383. 赎金信，15. 三数之和，18. 四数之和，总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Hash_Table(2).html)
+
+# 字符串 String
+
+- 7.[344.反转字符串，541. 反转字符串II，卡码网：54.替换数字](https://samuelssj123.github.io/contents/ALGORITHMNOTES/String(1).html)
