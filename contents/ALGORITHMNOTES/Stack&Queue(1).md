@@ -1,4 +1,4 @@
-[理论基础](#01)，[卡码网：55.右旋转字符串](#02)，[28. 实现 strStr()find-the-index-of-the-first-occurrence-in-a-string](#03)，[459.重复的子字符串repeated-substring-pattern](#04)，[字符串总结](#05)，[双指针总结](#06)
+[理论基础](#01)，[232. 用栈实现队列implement-queue-using-stacks](#02)，[28. 实现 strStr()find-the-index-of-the-first-occurrence-in-a-string](#03)，[459.重复的子字符串repeated-substring-pattern](#04)，[字符串总结](#05)，[双指针总结](#06)
 
 # <span id="01">理论基础</span>
 
@@ -23,8 +23,15 @@ SGI STL中 队列底层实现缺省情况下一样使用deque实现的。
 所以STL 队列也不被归类为容器，而被归类为container adapter（ 容器适配器）。
 
 
-# <span id="01">理论基础</span>
+# <span id="02">232. 用栈实现队列implement-queue-using-stacks</span>
  
-[Leetcode](https://leetcode.cn/problems/reverse-words-in-a-string/description/) [Learning Materials](https://programmercarl.com/0151.%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D.html)
+[Leetcode](https://leetcode.cn/problems/implement-queue-using-stacks/description/) [Learning Materials](https://programmercarl.com/0232.%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
+
+需要两个栈一个输入栈，一个输出栈
+
+push数据时，只要数据放进输入栈就好，但在pop的时候，输出栈如果为空，就把进栈数据全部导入进来，再从出栈弹出数据，如果输出栈不为空，则直接从出栈弹出数据。
+
+最后如何判断队列为空呢？如果进栈和出栈都为空的话，说明模拟的队列为空了。
+
 
 ![image](../images/151-reverse-words-in-a-string.png)
