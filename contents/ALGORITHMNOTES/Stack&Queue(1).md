@@ -74,7 +74,7 @@ class MyQueue:
 
 一个队列在模拟栈弹出元素的时候只要将队列头部的元素（除了最后一个元素外） 重新添加到队列尾部，此时再去弹出元素就是栈的顺序了。
 
-![image](../images/225-implement-stack-using-queues.png.png)
+![image](../images/225-implement-stack-using-queues.png)
 
 
 ```Python
