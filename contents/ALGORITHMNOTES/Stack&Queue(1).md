@@ -1,4 +1,4 @@
-[理论基础](#01)，[232. 用栈实现队列implement-queue-using-stacks](#02)，[28. 实现 strStr()find-the-index-of-the-first-occurrence-in-a-string](#03)，[459.重复的子字符串repeated-substring-pattern](#04)，[字符串总结](#05)，[双指针总结](#06)
+[理论基础](#01)，[232. 用栈实现队列implement-queue-using-stacks](#02)，[225. 用队列实现栈implement-stack-using-queues](#03)，[459.重复的子字符串repeated-substring-pattern](#04)，[字符串总结](#05)，[双指针总结](#06)
 
 # <span id="01">理论基础</span>
 
@@ -33,5 +33,71 @@ push数据时，只要数据放进输入栈就好，但在pop的时候，输出�
 
 最后如何判断队列为空呢？如果进栈和出栈都为空的话，说明模拟的队列为空了。
 
+```Python
+class MyQueue:
+
+    def __init__(self):
+        self.stack_in = [] #self实例化，在后面也可以用
+        self.stack_out = []  #in主要负责push，out主要负责pop
+
+    def push(self, x: int) -> None:
+        self.stack_in.append(x)
+
+    def pop(self) -> int:
+        if self.empty():
+            return None
+        if self.stack_out:
+            return self.stack_out.pop()
+        else:
+            for i in range(len(self.stack_in)):
+                self.stack_out.append(self.stack_in.pop())
+            return self.stack_out.pop()
+        
+
+    def peek(self) -> int:
+        res = self.pop()
+        self.stack_out.append(res)
+        return res
+```
+
+
+# <span id="02">225. 用队列实现栈implement-stack-using-queues</span>
+ 
+[Leetcode](https://leetcode.cn/problems/implement-stack-using-queues/description/) [Learning Materials](https://programmercarl.com/0225.用队列实现栈.html#算法公开课)
+
+
+一个队列在模拟栈弹出元素的时候只要将队列头部的元素（除了最后一个元素外） 重新添加到队列尾部，此时再去弹出元素就是栈的顺序了。
+
+```Python
+class MyStack:
+
+    def __init__(self):
+        self.que = deque()
+
+    def push(self, x: int) -> None:
+        self.que.append(x)
+
+    def pop(self) -> int:
+        if self.empty():
+            return None
+        
+        if self.que:
+            for i in range(len(self.que)-1):
+                self.que.append(self.que.popleft())
+            return self.que.popleft()
+
+    def top(self) -> int:
+        # 写法一：
+        # if self.empty():
+        #     return None
+        # return self.que[-1]
+        # 写法二：
+        res = self.pop()
+        self.que.append(res)
+        return res
+
+    def empty(self) -> bool:
+        return not self.que
+```
 
 ![image](../images/151-reverse-words-in-a-string.png)
