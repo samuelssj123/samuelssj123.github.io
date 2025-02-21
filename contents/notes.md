@@ -21,3 +21,7 @@
 - 7.[344.反转字符串，541. 反转字符串II，卡码网：54.替换数字](https://samuelssj123.github.io/contents/ALGORITHMNOTES/String(1).html)
 
 - 8.[151.翻转字符串里的单词，卡码网：55.右旋转字符串，28. 实现 strStr()，459.重复的子字符串，字符串总结，双指针回顾](https://samuelssj123.github.io/contents/ALGORITHMNOTES/String(2).html)
+
+# 栈和队列 Stack & Queue
+
+- 9.[栈和队列理论基础，232. 用栈实现队列，225. 用队列实现栈，20. 有效的括号，1047. 删除字符串中的所有相邻重复项](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Stack&Queue(1).html)
