@@ -1,4 +1,7 @@
-[理论基础](#01)，[232. 用栈实现队列implement-queue-using-stacks](#02)，[225. 用队列实现栈implement-stack-using-queues](#03)，[459.重复的子字符串repeated-substring-pattern](#04)，[字符串总结](#05)，[双指针总结](#06)
+List:理论基础，232. 用栈实现队列，225. 用队列实现栈，20. 有效的括号，1047. 删除字符串中的所有相邻重复项
+
+[理论基础](#01)，[232. 用栈实现队列implement-queue-using-stacks](#02)，[225. 用队列实现栈implement-stack-using-queues](#03)，[20. 有效的括号valid-parentheses](#04)，[1047. 删除字符串中的所有相邻重复项remove-all-adjacent-duplicates-in-string](#05)
+
 
 # <span id="01">理论基础</span>
 
@@ -27,11 +30,14 @@ SGI STL中 队列底层实现缺省情况下一样使用deque实现的。
  
 [Leetcode](https://leetcode.cn/problems/implement-queue-using-stacks/description/) [Learning Materials](https://programmercarl.com/0232.%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
+
 需要两个栈一个输入栈，一个输出栈
 
 push数据时，只要数据放进输入栈就好，但在pop的时候，输出栈如果为空，就把进栈数据全部导入进来，再从出栈弹出数据，如果输出栈不为空，则直接从出栈弹出数据。
 
 最后如何判断队列为空呢？如果进栈和出栈都为空的话，说明模拟的队列为空了。
+
+![image](../images/232-implement-queue-using-stacks.png)
 
 ```Python
 class MyQueue:
@@ -61,12 +67,15 @@ class MyQueue:
 ```
 
 
-# <span id="02">225. 用队列实现栈implement-stack-using-queues</span>
+# <span id="03">225. 用队列实现栈implement-stack-using-queues</span>
  
 [Leetcode](https://leetcode.cn/problems/implement-stack-using-queues/description/) [Learning Materials](https://programmercarl.com/0225.用队列实现栈.html#算法公开课)
 
 
 一个队列在模拟栈弹出元素的时候只要将队列头部的元素（除了最后一个元素外） 重新添加到队列尾部，此时再去弹出元素就是栈的顺序了。
+
+![image](../images/225-implement-stack-using-queues.png.png)
+
 
 ```Python
 class MyStack:
@@ -100,4 +109,67 @@ class MyStack:
         return not self.que
 ```
 
-![image](../images/151-reverse-words-in-a-string.png)
+
+# <span id="04">20. 有效的括号valid-parentheses</span>
+ 
+[Leetcode](https://leetcode.cn/problems/valid-parentheses/description/) [Learning Materials](https://programmercarl.com/0020.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
+
+![image](../images/20-valid-parentheses.png)
+
+
+```Python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        sl = []
+        if len(s) % 2 != 0:
+            return False
+        for i in s:
+            if i == '(' :
+                sl.append(')')
+            elif i == '[' :
+                sl.append(']')
+            elif i == '{' :
+                sl.append('}')
+            elif not sl or sl.pop() != i:  #注意已经执行过 sl.pop() 操作
+                return False
+        return not sl
+```
+
+# <span id="05">1047. 删除字符串中的所有相邻重复项remove-all-adjacent-duplicates-in-string</span>
+ 
+[Leetcode](https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string/description/) [Learning Materials](https://programmercarl.com/1047.删除字符串中的所有相邻重复项.html)
+
+![image](../images/1047-remove-all-adjacent-duplicates-in-string.png)
+
+- 法一：使用栈
+  
+```Python
+class Solution:
+    def removeDuplicates(self, s: str) -> str:
+        st = []
+        for char in s:
+            if not st or st[-1] != char:
+                st.append(char)
+            else:
+                st.pop()
+        return ''.join(st)
+```
+
+- 法二：使用双指针
+
+```Python
+class Solution:
+    def removeDuplicates(self, s: str) -> str:
+        fast = slow = 0
+        s = list(s)
+        for i in range(len(s)):
+            s[slow] = s[fast] # 如果一样直接换，不一样会把后面的填在slow的位置
+            if slow > 0 and s[slow] == s[slow - 1]:  #不能使用while,每次只关注当前字符和前一个字符的关系,每次循环只判断一次即可
+                slow -= 1
+            else: # 如果发现和前一个一样，就退一格指针
+                slow += 1
+            fast += 1
+        return ''.join(s[0:slow])
+```
+
+
