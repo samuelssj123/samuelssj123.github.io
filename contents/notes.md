@@ -25,3 +25,6 @@
 # 栈和队列 Stack & Queue
 
 - 9.[栈和队列理论基础，232. 用栈实现队列，225. 用队列实现栈，20. 有效的括号，1047. 删除字符串中的所有相邻重复项](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Stack&Queue(1).html)
+
+- 10.[150. 逆波兰表达式求值，239. 滑动窗口最大值，347.前 K 个高频元素，栈和队列总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Stack&Queue(2).html)
+
