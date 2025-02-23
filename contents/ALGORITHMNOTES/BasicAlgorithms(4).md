@@ -2,7 +2,7 @@
 
 [Leetcode](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
 
-```Python
+```python
 class Solution:
     # lower_bound 返回最小的满足 nums[i] >= target 的下标 i
     # 如果数组为空，或者所有数都 < target，则返回 len(nums)
