@@ -10,7 +10,7 @@ To do list: 24. 两两交换链表中的节点，19.删除链表的倒数第N个
 
 ![image](../images/14_swap_nodes.png)
 
-```Python
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -39,7 +39,7 @@ class Solution:
 
 ![image](../images/19_delete_nodes.png)
 
-```Python
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -69,7 +69,7 @@ class Solution:
 
 步骤：1.求两个链长度；2.求差值；3.长的那条走到等长的点；4.找交点
 
-```Python
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
@@ -118,7 +118,7 @@ class Solution:
 
 ![image](../images/142_Ring_Linked_List.png)
 
-```Python
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
