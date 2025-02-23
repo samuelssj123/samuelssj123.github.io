@@ -16,7 +16,7 @@
 
 - 写法一：
   
-```Python
+```python
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         n = len(nums)
@@ -37,7 +37,7 @@ class Solution:
 
 - 写法二：
 
-```Python
+```python
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         n = len(nums)
@@ -61,7 +61,7 @@ class Solution:
 
 本题的破题点在于如何高效地找出满足乘积小于 k 的所有连续子数组。由于数组中的元素都是正整数，当子数组的右边界向右扩展时，子数组的乘积会增大；当左边界向右收缩时，子数组的乘积会减小。利用这个特性，我们可以使用滑动窗口的方法来动态调整子数组的范围，从而统计满足条件的子数组的个数。
 
-```Python
+```python
 class Solution:
     def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
         if k < 1:
@@ -98,7 +98,7 @@ class Solution:
 
 空间复杂度：O(min(m, n))，其中 m 是字符集的大小（如 ASCII 字符集为 128），n 是字符串的长度。哈希表最多存储 m 个字符。
 
-```Python
+```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         ans = 0
