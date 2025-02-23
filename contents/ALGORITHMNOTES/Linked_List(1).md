@@ -10,7 +10,7 @@
 
 定义：
 
-```C++
+```c++
 // 单链表
 struct ListNode {
     int val;  // 节点上存储的元素
@@ -21,7 +21,7 @@ struct ListNode {
 
 操作：删除-换连接，释放内存（Python自动回收），O(n)需要找到删除节点的位置；添加-插入节点O(1)
 
-```Python
+```python
 class ListNode:
     def __init__(self, val, next=None):
         self.val = val
@@ -34,7 +34,7 @@ class ListNode:
 
 -直接删除：
 
-```Python
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -59,7 +59,7 @@ class Solution:
 
 ![image](../images/203_Remove_linked_list_elements.png)
 
-```Python
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -91,7 +91,7 @@ class Solution:
 
 - 单链表：
   
-```Python
+```python
 class MyLinkedList:
 
     class ListNode:
@@ -170,7 +170,7 @@ class MyLinkedList:
 
 - 双链表：
 
-```Python
+```python
 class ListNode:
     def __init__(self, val=0, prev=None, next=None):
         self.val = val
@@ -287,7 +287,7 @@ class MyLinkedList:
 
 - 双指针法：
 
-```Python
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -307,7 +307,7 @@ class Solution:
 
 - 递归：
 
-```Python
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -324,10 +324,4 @@ class Solution:
         cur.next = pre
         return self.reverse(temp, cur)
 ```
-
-
-
-
-
-
 
