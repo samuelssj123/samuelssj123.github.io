@@ -3,7 +3,7 @@
 
 - 暴力解法：（超出时间限制）
 
-```Python
+```python
 from typing import List
 
 class Solution:
@@ -31,7 +31,7 @@ class Solution:
 
 **时间复杂度**：每个元素在滑动窗后进来操作一次，出去操作一次，每个元素都是被操作两次，所以时间复杂度是 2 × n 也就是O(n)。  
 
-```Python
+```python
 from typing import List
 
 class Solution:
@@ -58,7 +58,7 @@ class Solution:
 
 循环不变量，左闭右开。
 
-```Python
+```python
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
         matrix = [[0] * n for _ in range(n)]
@@ -101,7 +101,7 @@ class Solution:
 
 如果我们要求区间下标$`[2, 5]`$的区间和，那么应该是$`p[5] - p[1]`$，而不是$`p[5] - p[2]`$。
 
-```Python
+```python
 import sys
 input = sys.stdin.read
 
@@ -152,7 +152,7 @@ if __name__=="__main__":
   通过 for 循环遍历每一行，将当前行的元素和累加到 horizontalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * horizontalCut)，并更新 result 为较小值。通过 for 循环遍历每一列，将当前列的元素和累加到 verticalCut 中，然后计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * verticalCut)，并更新 result 为较小值。
 
 
-```Python
+```python
 import sys
 input = sys.stdin.read 
 
@@ -210,7 +210,7 @@ if __name__=="__main__":
 当遍历到一行的末尾元素（即 j == m - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。当遍历到一列的末尾元素（即 i == n - 1）时，计算当前划分下两个子区域元素和的差值的绝对值 abs(sum - 2 * count)，并更新 result 为较小值。
 
 
-```Python
+```python
 import sys
 input = sys.stdin.read 
 
