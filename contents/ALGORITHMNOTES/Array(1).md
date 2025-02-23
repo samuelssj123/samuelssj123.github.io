@@ -20,7 +20,7 @@
 
 - 左闭右闭：rihgt最初是数组末位下标，应为**numsize-1**。从两个易错点看起，left<right? or left<=right?，考虑【2，2】这个区间，是合法区间，只包含2这个数字，所以应该选择**小于等于**；  right=middle? or right=middle-1? 循环第一次，right是末位数，循环第二次，right应该是中间的数的前一个，因为中间的数已经被判断，而区间是左闭右闭，是middle-1。
 
-```Python
+```python
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         left=0
@@ -38,7 +38,7 @@ class Solution:
 
 - 左闭右开：rihgt最初是数组末位下标，应为**numsize**。从两个易错点看起，left<right? or left<=right?，考虑【2，2）这个区间，不是合法区间，所以应该选择**小于**；  right=middle? or right=middle-1? 循环第一次，right是末位数，循环第二次，right应该是中间的数的前一个，因为中间的数已经被判断，而区间是左闭右开，是middle。
   
-```Python
+```python
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         left=0
@@ -62,7 +62,7 @@ class Solution:
 
 - 暴力解法：
 
-```Python
+```python
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         i = 0
@@ -80,7 +80,7 @@ class Solution:
 
 - 双指针法：
 
-```Python
+```python
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         slow, fast = 0, 0
@@ -102,7 +102,7 @@ class Solution:
 
 - 双指针法：
 
-```Python
+```python
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
         k = len(nums) - 1
