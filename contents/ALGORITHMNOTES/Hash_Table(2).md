@@ -10,7 +10,7 @@
   
 ![image](../images/454_4sumii.png)
 
-```Python
+```python
 class Solution:
     def fourSumCount(self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]) -> int:
         table = dict()
@@ -36,7 +36,7 @@ class Solution:
 
 在本题的情况下，使用map的空间消耗要比数组大一些的，因为map要维护红黑树或者哈希表，而且还要做哈希函数，是费时的。本题可以选用数组。
 
-```Python
+```python
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         record = [0 for _ in range(26)]
@@ -61,7 +61,7 @@ class Solution:
 去重a：后数前数不相同；
 去重b+c：反复看后数前数不相同。**
 
-```Python
+```python
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
@@ -104,7 +104,7 @@ class Solution:
 去重b+c：反复看后数前数不相同。
 两次去重，两次剪枝。**
 
-```Python
+```python
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums.sort()
