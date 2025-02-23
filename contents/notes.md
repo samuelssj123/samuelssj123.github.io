@@ -35,3 +35,7 @@
 - 相向双指针：[Basic Algorithms(1)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(1).html)
 
 - 相向双指针：[Basic Algorithms(2)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(2).html)
+
+- 滑动窗口：[Basic Algorithms(3)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(3).html)
+
+- 二分查找大全：[Basic Algorithms(4)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(4).html)
