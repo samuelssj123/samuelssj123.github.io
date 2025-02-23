@@ -96,3 +96,57 @@ class Solution:
             ans += min(pre,suf) - h
         return ans
 ```
+
+## 相向双指针
+
+**每个位置能接住的雨水量取决于该位置左侧最大高度和右侧最大高度中的较小值，再减去当前位置柱子的高度。** 如果我们能实时确定左右两侧的最大高度，并比较当前左右两侧最大高度的大小，就可以在遍历过程中计算出每个位置能接住的雨水量。双指针分别从数组的两端开始移动，同时记录左右两侧的最大高度，根据左右最大高度的大小关系来决定移动哪个指针，从而在一次遍历中完成接水量的计算。
+
+使用双指针法，初始化两个指针 left 和 right 分别指向数组的起始位置和结束位置，同时初始化两个变量 pre_max 和 suf_max 分别记录当前左侧和右侧的最大高度。在遍历过程中，比较 pre_max 和 suf_max 的大小，移动较小值对应的指针，并更新该侧的最大高度，同时计算当前位置能接住的雨水量并累加到结果中。
+
+- 复杂度分析：
+- 
+时间复杂度：O(n)
+
+空间复杂度：O(1)
+
+```Python
+from typing import List
+
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        # 获取数组的长度
+        n = len(height)
+        # 初始化总接水量为 0
+        ans = 0
+        # 左指针指向数组的起始位置
+        left = 0
+        # 右指针指向数组的结束位置
+        right = n - 1
+        # 初始化左侧最大高度为 0
+        pre_max = 0
+        # 初始化右侧最大高度为 0
+        suf_max = 0
+        # 当左指针小于等于右指针时，继续循环
+        while left <= right:
+            # 更新左侧最大高度
+            pre_max = max(pre_max, height[left])
+            # 更新右侧最大高度
+            suf_max = max(suf_max, height[right])
+            # 如果左侧最大高度小于右侧最大高度
+            if pre_max < suf_max:
+                # 计算当前左指针位置能接住的雨水量并累加到总接水量中
+                ans += pre_max - height[left]
+                # 左指针右移一位
+                left += 1
+            # 否则，即左侧最大高度大于等于右侧最大高度
+            else:
+                # 计算当前右指针位置能接住的雨水量并累加到总接水量中
+                ans += suf_max - height[right]
+                # 右指针左移一位
+                right -= 1
+        # 返回总接水量
+        return ans
+```
+
+
+
