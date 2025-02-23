@@ -28,3 +28,10 @@
 
 - 10.[150. 逆波兰表达式求值，239. 滑动窗口最大值，347.前 K 个高频元素，栈和队列总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Stack&Queue(2).html)
 
+
+
+# 基础算法 Basic Algorithms
+
+- 相向双指针：[Basic Algorithms(1)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(1).html)
+
+- 相向双指针：[Basic Algorithms(2)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(2).html)
