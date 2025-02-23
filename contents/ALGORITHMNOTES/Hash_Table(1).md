@@ -32,7 +32,7 @@ To do list: 哈希表理论基础，242.有效的字母异位词，349.两个数
 
 **口诀**：先记录出现的次数，再对冲出现的次数，全为0则符合。
 
-```Python
+```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         hash_table = [0 for i in range(26)]
@@ -63,7 +63,7 @@ class Solution:
 
 - 使用字典和集合：
   
-```Python
+```python
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         table = {} #创建字典
@@ -79,7 +79,7 @@ class Solution:
 
 - 使用集合：
 
-```Python
+```python
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         return list(set(nums1) & set(nums2))
@@ -87,7 +87,7 @@ class Solution:
 
 - 使用数组：
 
-```Python
+```python
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         table = [0 for i in range(1005)]
@@ -112,7 +112,7 @@ class Solution:
 
 - 使用集合：
 
-```Python
+```python
 class Solution:
     def isHappy(self, n: int) -> bool:
         res = set()
@@ -151,7 +151,7 @@ class Solution:
 
 - 使用字典：
 
-```Python
+```python
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         result = dict()
@@ -164,7 +164,7 @@ class Solution:
 
 - 使用集合
 
-```Python
+```python
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         result = set()
