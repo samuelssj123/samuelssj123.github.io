@@ -39,3 +39,7 @@
 - 滑动窗口：[Basic Algorithms(3)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(3).html)
 
 - 二分查找大全：[Basic Algorithms(4)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(4).html)
+
+# 力扣周赛 LeetCode Weekly Contest
+
+- [力扣双周赛 LeetCode Biweekly Contest No.150](https://samuelssj123.github.io/contents/ALGORITHMNOTES/LeetcodeContest(1).html)
