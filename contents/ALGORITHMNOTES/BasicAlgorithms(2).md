@@ -18,7 +18,7 @@
 更新最大面积：在每次计算面积后，更新最大面积 ans。
 
 - 关键点：
-- 
+  
 双指针法：通过移动指针来高效地找到最大面积。
 
 面积计算：面积由宽度和最小高度决定。
@@ -33,7 +33,7 @@
 
 空间复杂度：O(1)，仅使用常数空间。
 
-```Python
+```python
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         ans = 0
@@ -77,7 +77,7 @@ class Solution:
 
 空间复杂度：O(n)，需要两个辅助数组存储前缀最大值和后缀最大值。
 
-```Python
+```python
 class Solution:
     def trap(self, height: List[int]) -> int:
         n = len(height)
@@ -109,7 +109,7 @@ class Solution:
 
 空间复杂度：O(1)
 
-```Python
+```python
 from typing import List
 
 class Solution:
