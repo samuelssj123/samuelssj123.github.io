@@ -8,7 +8,7 @@ List:150. 逆波兰表达式求值，239. 滑动窗口最大值，347.前 K 个�
 
 ![image](../images/150-evaluate-reverse-polish-notation.png)
 
-```Python
+```python
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
@@ -35,7 +35,7 @@ class Solution:
 
 ![image](../images/239-sliding-window-maximum.png)
 
-```Python
+```python
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         self.res = deque() #使用双端队列，允许在队列的两端（队首和队尾）进行元素的插入和移除操作
@@ -69,7 +69,7 @@ class Solution:
 
 ![image](../images/347-top-k-frequent-elements.png)
 
-```Python
+```python
 import heapq
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
