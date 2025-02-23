@@ -52,7 +52,7 @@ class Solution:
 ### 合并两个子条件
 由于要同时满足关于 `i - k` 位置和 `i + k` 位置的要求，所以需要用逻辑与（`and`）将上述两个子条件连接起来，最终就得到了判断条件 `(i < k or nums[i] > nums[i - k]) and (i + k >= len(nums) or nums[i] > nums[i + k])`。逻辑与的特点是只有当两个子条件都为 `True` 时，整个判断条件才为 `True`，这与题目要求的同时满足两个位置的条件相契合。
 
-```Python
+```ppython
 class Solution:
     def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
         ans = 0
