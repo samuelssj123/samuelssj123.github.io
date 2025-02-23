@@ -148,16 +148,16 @@ class Solution:
 class Solution:
     def separateSquares(self, squares: List[List[int]]) -> float:
         S = 0
-        diff = defaultdict(int)
-        for xi, yi, l in squares:
+        diff = defaultdict(int) # 使用 defaultdict(int) 创建一个差分数组，用于记录每个高度上正方形边长的变化。
+        for xi, yi, l in squares: #遍历正方形并更新差分数组和总面积
             S += l * l 
-            diff[yi] += l 
-            diff[yi + l] -= l 
+            diff[yi] += l  #在差分数组中，将当前正方形底部的高度 yi 处的边长增加 l，表示从该高度开始有新的正方形出现。
+            diff[yi + l] -= l  #在差分数组中，将当前正方形顶部的高度 yi + l 处的边长减少 l，表示该正方形在该高度结束。
 
         area = sum_l = 0
-        for y, y2 in pairwise(sorted(diff)):
-            sum_l += diff[y]
-            area += sum_l * (y2 - y)
+        for y, y2 in pairwise(sorted(diff)): #pairwise(sorted(diff))：对差分数组的键进行排序，然后使用 pairwise 函数生成相邻元素对。
+            sum_l += diff[y] #更新当前高度上的总边长，加上差分数组中当前高度 y 处的边长变化。
+            area += sum_l * (y2 - y) #计算当前高度区间 [y, y2) 内新增的面积（总边长乘以高度差），并累加到总面积 area 中。
             if area * 2 >= S:
                 return y2 - (area * 2 - S) / (sum_l * 2) 
 ```
@@ -173,6 +173,46 @@ class Solution:
 **底部增加边长**：当在正方形的底部高度 `yi` 处执行 `diff[yi] += l` 时，这意味着在这个高度上开始有一个边长为 `l` 的正方形出现，记录下这个增加量，就可以知道在该高度有新的正方形覆盖进来，边长总和增加了 `l`。
 
 **顶部减少边长**：在正方形的顶部高度 `yi + l` 处执行 `diff[yi + l] -= l`，表示在这个高度上之前在 `yi` 开始的正方形结束了，所以要把对应的边长 `l` 减掉。这样，差分数组中每个键值对就清晰地反映了在对应高度上正方形边长的变化情况，即哪些高度有正方形开始，哪些高度有正方形结束，从而整体上能反映出所有正方形在不同高度的覆盖情况。
+
+
+# 3454. 分割正方形Ⅱ
+
+[Leetcode](https://leetcode.cn/problems/separate-squares-ii/solutions/3078402/lazy-xian-duan-shu-sao-miao-xian-pythonj-eeqk/)
+
+和上个题目不同的是：正方形 可能会 重叠。重叠区域只 统计一次 。
+
+首先用扫描线方法，求出所有正方形的面积并`totArea`。然后再次扫描，设扫描线下方的面积和为 `area`，那么扫描线上方的面积和为 `totArea - area`。
+
+```
+area = totArea - area
+```
+即
+```
+area * 2 = totArea
+```
+设当前扫描线的纵坐标为 `y`，下一个需要经过的正方形上/下边界的纵坐标为 `y'`，被至少一个正方形覆盖的底边长之和为 `sumLen`，那么新的面积和为
+```
+area + sumLen * (y' - y)
+```
+如果发现
+```
+(area + sumLen * (y' - y)) * 2 >= totArea
+```
+取等号，解得
+```
+y' = y + (totalArea / 2 - area) / sumL = y + (totalArea - area * 2) / (sumL * 2)
+```
+即为答案。
+
+- 编程技巧：把第一次扫描过程中的关键数据 `area` 和 `sumLen` 记录到一个数组中，然后遍历数组（或者二分），这样可以避免跑两遍线段树（空间换时间）。 
+
+
+
+
+
+
+
+
 
 
 题解参考：灵茶山艾府
