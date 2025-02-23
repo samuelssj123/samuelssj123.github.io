@@ -71,6 +71,8 @@ class Solution:
 
 ## 方法一：浮点二分
 
+![image](../images/3453-separate-squares-i-1.png)
+
 ```python
 class Solution:
     def separateSquares(self, squares: List[List[int]]) -> float:
@@ -96,6 +98,8 @@ class Solution:
 ```
 
 ## 方法二： 整数二分
+
+![image](../images/3453-separate-squares-i-2.png)
 
 ### 写法一：
 
