@@ -181,28 +181,11 @@ class Solution:
 
 和上个题目不同的是：正方形 可能会 重叠。重叠区域只 统计一次 。
 
-首先用扫描线方法，求出所有正方形的面积并`totArea`。然后再次扫描，设扫描线下方的面积和为 `area`，那么扫描线上方的面积和为 `totArea - area`。
+首先用扫描线方法，求出所有正方形的面积并`totArea`。然后再次扫描，设扫描线下方的面积和为 `area`，那么扫描线上方的面积和为 `totArea - area`。题目要求`area = totArea - area`， 即`area * 2 = totArea`。
 
-```
-area = totArea - area
-```
-即
-```
-area * 2 = totArea
-```
-设当前扫描线的纵坐标为 `y`，下一个需要经过的正方形上/下边界的纵坐标为 `y'`，被至少一个正方形覆盖的底边长之和为 `sumLen`，那么新的面积和为
-```
-area + sumLen * (y' - y)
-```
-如果发现
-```
-(area + sumLen * (y' - y)) * 2 >= totArea
-```
-取等号，解得
-```
-y' = y + (totalArea / 2 - area) / sumL = y + (totalArea - area * 2) / (sumL * 2)
-```
-即为答案。
+设当前扫描线的纵坐标为 `y`，下一个需要经过的正方形上/下边界的纵坐标为 `y'`，被至少一个正方形覆盖的底边长之和为 `sumLen`，那么新的面积和为`area + sumLen * (y' - y)`
+
+如果发现`(area + sumLen * (y' - y)) * 2 >= totArea`，取等号，解得`y' = y + (totalArea / 2 - area) / sumL = y + (totalArea - area * 2) / (sumL * 2)`即为答案。
 
 - 编程技巧：把第一次扫描过程中的关键数据 `area` 和 `sumLen` 记录到一个数组中，然后遍历数组（或者二分），这样可以避免跑两遍线段树（空间换时间）。 
 
