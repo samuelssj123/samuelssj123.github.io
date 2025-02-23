@@ -7,7 +7,7 @@
 
 如果题目关键的部分直接用库函数就可以解决，建议不要使用库函数。
 
-```Python
+```python
 class Solution:
     def reverseString(self, s: List[str]) -> None:
         """
@@ -22,7 +22,7 @@ class Solution:
 ```
 -边界条件：
 
-```C++
+```c++
 for (int i = 0, j = s.size() - 1; i < s.size()/2; i++, j--)      #i < s.size()/2,不需要加等号，因为i、j相等时，无需交换。
             swap(s[i],s[j]);
 ```
@@ -40,7 +40,7 @@ for (int i = 0, j = s.size() - 1; i < s.size()/2; i++, j--)      #i < s.size()/2
    
 3. 剩余字符小于 2k 但大于或等于 k 个，则反转前 k 个字符
 
-```Python
+```python
 class Solution:
     def reverseStr(self, s: str, k: int) -> str:
         """
@@ -80,7 +80,7 @@ class Solution:
 
 **好处**：不用申请新数组。从后向前填充元素，避免了从前向后填充元素时，每次添加元素都要将添加元素之后的所有元素向后移动的问题。
 
-```C++
+```c++
 #include <iostream>
 using namespace std;
 int main() {
@@ -115,7 +115,7 @@ int main() {
 }
 ```
 
-```Python
+```python
 def replace_digits_with_number(s: str) -> str:
     result = []
     for char in s:
@@ -130,7 +130,7 @@ s = input().strip()
 print(replace_digits_with_number(s))
 ```
 
-```C++
+```c++
 #include <iostream>
 using namespace std;
 int main(){
