@@ -6,7 +6,7 @@
 
 ![image](../images/151-reverse-words-in-a-string.png)
 
-```Python
+```python
 class Solution:
     def reverse(self, s, start, end):
         while start < end:
@@ -53,7 +53,7 @@ class Solution:
 
 ![image](../images/cama-reverse-right-string.png)
 
-```Python
+```python
 k = int(input())
 s = input()
 print(s[len(s) - k:]+s[:len(s) - k])
@@ -67,7 +67,7 @@ print(s[len(s) - k:]+s[:len(s) - k])
 ![image](../images/28-find-the-index-of-the-first-occurrence-in-a-string.png)
 
 
-```Python
+```python
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         next = [0] * len(needle)
@@ -103,7 +103,7 @@ class Solution:
 
 - 暴力法：
 
-```Python
+```python
 class Solution:
     def repeatedSubstringPattern(self, s: str) -> bool:
         n = len(s)
@@ -120,7 +120,7 @@ class Solution:
 
 - 移动匹配
 
-```Python
+```python
 class Solution:
     def repeatedSubstringPattern(self, s: str) -> bool:
         n = len(s)
@@ -134,7 +134,7 @@ class Solution:
 
 - KMP法
 
-```Python
+```python
 class Solution:
     def repeatedSubstringPattern(self, s: str) -> bool:
         next = [0] * len(s)
