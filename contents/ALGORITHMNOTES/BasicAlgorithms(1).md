@@ -24,7 +24,7 @@
 
 下标转换：返回结果时需将下标从0-based转换为1-based。
 
-```Python
+```python
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         #时间复杂度O（n）
@@ -75,7 +75,7 @@ class Solution:
 
 空间复杂度：O(1)，忽略存储结果的空间，仅使用常数空间。
 
-```Python
+```python
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
