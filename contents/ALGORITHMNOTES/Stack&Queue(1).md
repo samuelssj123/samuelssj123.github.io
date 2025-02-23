@@ -39,7 +39,7 @@ push数据时，只要数据放进输入栈就好，但在pop的时候，输出�
 
 ![image](../images/232-implement-queue-using-stacks.png)
 
-```Python
+```python
 class MyQueue:
 
     def __init__(self):
@@ -77,7 +77,7 @@ class MyQueue:
 ![image](../images/225-implement-stack-using-queues.png)
 
 
-```Python
+```python
 class MyStack:
 
     def __init__(self):
@@ -117,7 +117,7 @@ class MyStack:
 ![image](../images/20-valid-parentheses.png)
 
 
-```Python
+```python
 class Solution:
     def isValid(self, s: str) -> bool:
         sl = []
@@ -143,7 +143,7 @@ class Solution:
 
 - 法一：使用栈
   
-```Python
+```python
 class Solution:
     def removeDuplicates(self, s: str) -> str:
         st = []
@@ -157,7 +157,7 @@ class Solution:
 
 - 法二：使用双指针
 
-```Python
+```python
 class Solution:
     def removeDuplicates(self, s: str) -> str:
         fast = slow = 0
