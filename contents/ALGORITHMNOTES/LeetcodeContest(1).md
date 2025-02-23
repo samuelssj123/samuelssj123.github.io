@@ -2,6 +2,8 @@ LeetCode Biweekly Contest 150
 
 # 3452.好数字之和
 
+[LeetCode](https://leetcode.cn/problems/sum-of-good-numbers/description/)
+
 ## 审题
 
 - 当`i - k`和`i + k`这两个下标对应的元素都存在时，需要同时满足`nums[i] > nums[i - k]`和`nums[i] > nums[i + k]`，`nums[i]`才是好元素。
@@ -52,7 +54,7 @@ class Solution:
 ### 合并两个子条件
 由于要同时满足关于 `i - k` 位置和 `i + k` 位置的要求，所以需要用逻辑与（`and`）将上述两个子条件连接起来，最终就得到了判断条件 `(i < k or nums[i] > nums[i - k]) and (i + k >= len(nums) or nums[i] > nums[i + k])`。逻辑与的特点是只有当两个子条件都为 `True` 时，整个判断条件才为 `True`，这与题目要求的同时满足两个位置的条件相契合。
 
-```ppython
+```python
 class Solution:
     def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
         ans = 0
@@ -61,3 +63,98 @@ class Solution:
                 ans += nums[i]
         return ans
 ```
+
+
+# 3453. 分割正方形Ⅰ
+
+[Leetcode](https://leetcode.cn/problems/separate-squares-i/description/)
+
+## 方法一：浮点二分
+
+```python
+class Solution:
+    def separateSquares(self, squares: List[List[int]]) -> float:
+        M = 100000
+        S = sum(l * l for xi, yi, l in squares)
+
+        def check(y: float) -> bool:
+            area = 0
+            for xi, yi, l in squares:
+                if yi < y:
+                    area += l * min(y - yi, l)
+            return area >= S / 2
+        
+        left = 0
+        right = maxy = max(y + l for _, y, l in squares)
+        for i in range((maxy * M).bit_length()):
+            mid = (left + right) / 2
+            if check(mid):
+                right = mid
+            else:
+                left = mid
+        return (left + right) / 2  # 区间中点误差小
+```
+
+## 方法二： 整数二分
+
+### 写法一：
+
+```python
+class Solution:
+    def separateSquares(self, squares: List[List[int]]) -> float:
+        M = 100000
+        S = sum(l * l for xi, yi, l in squares)
+
+        def check(y: int) -> bool:
+            area = 0
+            for xi, yi, l in squares:
+                if yi * M < y:
+                    area += l * min(y - yi * M, l * M)
+            return area >= (S * M) / 2
+        
+        maxy = max(y + l for _, y, l in squares)
+        return bisect_left(range(maxy * M), True, key = check) / M
+# return bisect_left(range(maxy * M), True, key = check) / M 这行代码的整体作用是利用二分查找算法，在所有可能的分割线位置中，找到满足分割线下方正方形面积之和至少为总面积一半的最小分割线位置，并将其转换为浮点数形式返回。
+```
+
+### 写法二：
+
+```python
+class Solution:
+    def separateSquares(self, squares: List[List[int]]) -> float:
+        def calcarea(y: int) -> int:
+            area = 0
+            for xi, yi, l in squares:
+                if yi < y:
+                    area += l * min(y - yi, l)
+            return area
+                    
+        S = sum(l * l for xi, yi, l in squares)
+        maxy = max(y + l for _, y, l in squares)
+        y = bisect_left(range(maxy), S, key = lambda y : calcarea(y) * 2) 
+
+        area_y = calcarea(y)
+        sum_l = area_y - calcarea(y - 1)
+        return y - (area_y * 2 - S) / (sum_l * 2)
+```
+
+### 写法三：
+
+```python
+class Solution:
+    def separateSquares(self, squares: List[List[int]]) -> float:
+        S = 0
+        diff = defaultdict(int)
+        for xi, yi, l in squares:
+            S += l * l 
+            diff[yi] += l 
+            diff[yi + l] -= l 
+
+        area = sum_l = 0
+        for y, y2 in pairwise(sorted(diff)):
+            sum_l += diff[y]
+            area += sum_l * (y2 - y)
+            if area * 2 >= S:
+                return y2 - (area * 2 - S) / (sum_l * 2) 
+```
+题解参考：灵茶山艾府
