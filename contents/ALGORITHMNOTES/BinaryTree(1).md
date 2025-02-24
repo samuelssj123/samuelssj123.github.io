@@ -496,7 +496,7 @@ class Solution:
             for i in range(size):
                 node = que.popleft()
                 if i == size - 1:
-                    result.append(node.val) # 将每一层的最后元素放入result数组中
+                    result.append(node.val) # 将每一层的最后元素放入result数组中，只需要记录每层最右的数
                 if node.left:
                     que.append(node.left)
                 if node.right:
@@ -521,7 +521,7 @@ class Solution:
         que = deque([root])
         while que :
             size = len(que)
-            levelsum = 0
+            levelsum = 0  #额外记录一下每层的和
             for i in range(size):
                 node = que.popleft()
                 levelsum += node.val
@@ -629,10 +629,100 @@ class Solution:
         return root
 ```
 
-[117.填充每个节点的下一个右侧节点指针II(opens new window)]()
-[104.二叉树的最大深度(opens new window)]()
-[111.二叉树的最小深度]()
+[117.填充每个节点的下一个右侧节点指针II(opens new window)](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/)
+
+这道题目说是二叉树，但116题目说是完整二叉树，其实没有任何差别，一样的代码一样的逻辑一样的味道。
+
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+"""
+
+class Solution:
+    def connect(self, root: 'Node') -> 'Node':
+        if not root:
+            return root
+        que = deque([root]) #创建一个 deque 对象 que，并将列表 [root] 中的元素依次添加到这个双端队列中。由于 [root] 只有一个元素 root，所以最终 que 这个双端队列中初始只有一个元素，即根节点 root。
+        while que :
+            size = len(que)
+            prev = None
+            while size:
+                node = que.popleft()
+                if prev:
+                    prev.next = node
+                prev = node
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+                size -= 1
+        return root
+```
 
 
+[104.二叉树的最大深度(opens new window)](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)
 
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0 #返回深度
+        result = []
+        que = deque([root])
+        while que :
+            size = len(que)
+            vec = []
+            while size:
+                node = que.popleft()
+                vec.append(node.val)
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+                size -= 1
+            result.append(vec)
+        return len(result) #返回深度
+```
 
+[111.二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)
+
+需要注意的是，只有当左右孩子都为空的时候，才说明遍历的最低点了。如果其中一个孩子为空则不是最低点。
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        que = deque([root])
+        depth = 0 #额外记录一下深度
+        while que :
+            size = len(que)
+            depth += 1
+            while size:
+                node = que.popleft()
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+                size -= 1
+                if not node.left and not node.right:
+                    return depth  #记录一下深度
+```
