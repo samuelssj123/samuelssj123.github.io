@@ -1,6 +1,6 @@
 List: 理论基础，二叉树的递归遍历，二叉树的迭代遍历，二叉树的统一迭代法，二叉树的层序遍历
 
-[理论基础](#01)，[二叉树的递归遍历](#02)，[](#03)，[](#04),[](#05)
+[理论基础](#01)，[二叉树的递归遍历](#02)，[二叉树的迭代遍历](#03)，[二叉树的统一迭代法](#04),[二叉树的层序遍历](#05)
 
 # <span id="01">理论基础</span>
 
@@ -184,7 +184,7 @@ class Solution:
         if not root:
             return []
         node = root
-        while node or st:
+        while node or st:    # 如果是and的话，就没法运行else分支了。
             if node: # 先迭代访问最底层的左子树节点
                 st.append(node)
                 node = node.left 
@@ -195,13 +195,162 @@ class Solution:
         return result
 ```
 
-# <span id="04">理论基础</span>
+# <span id="04">二叉树的统一迭代法</span>
 
-[Leetcode]() [Learning Materials]()
+[Learning Materials](https://programmercarl.com/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%BB%9F%E4%B8%80%E8%BF%AD%E4%BB%A3%E6%B3%95.html#%E6%80%9D%E8%B7%AF)
 
-![image](../images/.png)
+如何处理风格不统一的问题？先想问题是如何造成的。使用栈的话，无法同时解决访问节点（遍历节点）和处理节点（将元素放进结果集）不一致的情况。
 
-# <span id="05">理论基础</span>
+因此，那我们就将访问的节点放入栈中，把要处理的节点也放入栈中但是要做标记。
+
+如何标记呢？
+
+方法一：就是要处理的节点放入栈之后，紧接着放入一个空指针作为标记。 这种方法可以叫做空指针标记法。
+
+方法二：加一个 `boolean` 值跟随每个节点，`false` (默认值) 表示需要为该节点和它的左右儿子安排在栈中的位次，`true` 表示该节点的位次之前已经安排过了，可以收割节点了。 这种方法可以叫做`boolean` 标记法。
+
+## 空指针标记法
+
+- 中序遍历：把中节点放入，不空的话：取出中，放入右、中（再次放入）、NULL、左；空的话：去栈的NULL、访问栈的top
+
+![image](../images/binary-tree-traversal4.png)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        st = []
+        result = []
+        if root:
+            st.append(root)
+        
+        while st:
+            node = st.pop()
+            if node:
+                if node.right:
+                    st.append(node.right)
+                st.append(node)
+                st.append(None)
+                if node.left:
+                    st.append(node.left)
+            else:
+                node = st.pop()
+                result.append(node.val)
+        
+        return result
+```
+
+- 中序遍历：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        st = []
+        result = []
+        if root:
+            st.append(root)
+        
+        while st:
+            node = st.pop()
+            if node:
+                st.append(node)
+                st.append(None)
+                if node.right:
+                    st.append(node.right)
+                if node.left:
+                    st.append(node.left)
+                
+            else:
+                node = st.pop()
+                result.append(node.val)
+        
+        return result
+```
+
+- 前序遍历：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        st = []
+        result = []
+        if root:
+            st.append(root)
+        
+        while st:
+            node = st.pop()
+            if node:
+                if node.right:
+                    st.append(node.right)
+                if node.left:
+                    st.append(node.left)
+                st.append(node)
+                st.append(None)
+            else:
+                node = st.pop()
+                result.append(node.val)
+        
+        return result
+```
+
+## boolean 标记法
+
+```c++
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        stack<pair<TreeNode*, bool>> st;
+        if (root != nullptr)
+            st.push(make_pair(root, false)); // 多加一个参数，false 为默认值，含义见下文注释
+
+        while (!st.empty()) {
+            auto node = st.top().first;
+            auto visited = st.top().second; //多加一个 visited 参数，使“迭代统一写法”成为一件简单的事
+            st.pop();
+
+            if (visited) { // visited 为 True，表示该节点和两个儿子位次之前已经安排过了，现在可以收割节点了
+                result.push_back(node->val);
+                continue;
+            }
+
+            // visited 当前为 false, 表示初次访问本节点，此次访问的目的是“把自己和两个儿子在栈中安排好位次”。
+            
+            // 中序遍历是'左中右'，右儿子最先入栈，最后出栈。
+            if (node->right)
+                st.push(make_pair(node->right, false));
+            
+            // 把自己加回到栈中，位置居中。
+            // 同时，设置 visited 为 true，表示下次再访问本节点时，允许收割。
+            st.push(make_pair(node, true));
+
+            if (node->left)
+                st.push(make_pair(node->left, false)); // 左儿子最后入栈，最先出栈
+        }
+        
+        return result;
+    }
+};
+```
+
+# <span id="05">二叉树的层序遍历</span>
 
 [Leetcode]() [Learning Materials]()
 
