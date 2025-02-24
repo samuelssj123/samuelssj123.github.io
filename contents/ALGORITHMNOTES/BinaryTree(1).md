@@ -107,7 +107,61 @@ class Solution:
 
 ![image](../images/binary-tree-traversal2.png)
 
+## 前序的遍历节点和处理节点的顺序一致，后序也类似，代码类似
 
+**根节点为空则返回空列表，时刻注意判空**
+
+- 前序遍历：
+  
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        st = []
+        result = []
+        if root:
+            st.append(root)
+        while st:
+            node = st.pop()
+            if node:
+                result.append(node.val)
+            if node.right:
+                st.append(node.right)
+            if node.left:
+                st.append(node.left)
+        return result
+```
+
+- 后序遍历：一颠左右，二翻转
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        st = []
+        result = []
+        if root:
+            st.append(root)
+        while st:
+            node = st.pop()
+            if node:
+                result.append(node.val)
+            if node.left:  
+                st.append(node.left)
+            if node.right:
+                st.append(node.right)
+        return result[::-1]
+```
 # <span id="04">理论基础</span>
 
 [Leetcode]() [Learning Materials]()
