@@ -105,11 +105,12 @@ class Solution:
 
 [Leetcode后序](https://leetcode.cn/problems/binary-tree-postorder-traversal/description/) 
 
-![image](../images/binary-tree-traversal2.png)
 
 ## 前序的遍历节点和处理节点的顺序一致，后序也类似，代码类似
 
 **根节点为空则返回空列表，时刻注意判空**
+
+![image](../images/binary-tree-traversal2.png)
 
 - 前序遍历：
   
@@ -162,6 +163,38 @@ class Solution:
                 st.append(node.right)
         return result[::-1]
 ```
+
+## 中序遍历：
+
+**因为前序遍历中访问节点（遍历节点）和处理节点（将元素放进result数组中）可以同步处理，但是中序就无法做到同步。**
+
+![image](../images/binary-tree-traversal3.png)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        st = []
+        result = []
+        if not root:
+            return []
+        node = root
+        while node or st:
+            if node: # 先迭代访问最底层的左子树节点
+                st.append(node)
+                node = node.left 
+            else: # 到达最左节点后处理栈顶节点
+                node = st.pop()
+                result.append(node.val)
+                node = node.right
+        return result
+```
+
 # <span id="04">理论基础</span>
 
 [Leetcode]() [Learning Materials]()
