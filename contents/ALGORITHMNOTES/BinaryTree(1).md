@@ -238,17 +238,17 @@ class Solution:
             st.append(root)
         
         while st:
-            node = st.pop()
+            node = st.pop() // 将该节点弹出，避免重复操作，下面再将右中左节点添加到栈中（→if语句）   // 将空节点弹出 （→else语句）
             if node:
                 if node.right:
-                    st.append(node.right)
-                st.append(node)
-                st.append(None)
+                    st.append(node.right)  // 添加右节点（空节点不入栈）
+                st.append(node)   // 添加中节点
+                st.append(None)  // 中节点访问过，但是还没有处理，加入空节点做为标记。
                 if node.left:
-                    st.append(node.left)
-            else:
-                node = st.pop()
-                result.append(node.val)
+                    st.append(node.left)  // 添加左节点（空节点不入栈）
+            else:   // 只有遇到空节点的时候，才将下一个节点放进结果集
+                node = st.pop()  // 重新取出栈中元素
+                result.append(node.val) // 加入到结果集
         
         return result
 ```
