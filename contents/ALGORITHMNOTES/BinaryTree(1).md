@@ -412,7 +412,227 @@ class Solution:
 
 # <span id="05">二叉树的层序遍历</span>
 
-[Leetcode]() [Learning Materials]()
+[Learning Materials]()
 
-![image](../images/.png)
+![image](../images/binary-tree-traversal5.png)
+
+[102.二叉树的层序遍历(opens new window)](https://leetcode.cn/problems/binary-tree-level-order-traversal/description/)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return []
+        result = []
+        que = deque([root])
+        while que :
+            size = len(que)
+            vec = []
+            while size:
+                node = que.popleft()
+                vec.append(node.val)
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+                size -= 1
+            result.append(vec)
+        return result
+```
+
+[107.二叉树的层次遍历II(opens new window)](https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/description/)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return []
+        result = []
+        que = deque([root])
+        while que :
+            size = len(que)
+            vec = []
+            while size:
+                node = que.popleft()
+                vec.append(node.val)
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+                size -= 1
+            result.append(vec)
+        return result[::-1]  #自底向上遍历
+```
+
+[199.二叉树的右视图(opens new window)](https://leetcode.cn/problems/binary-tree-right-side-view/description/)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+        result = []
+        que = deque([root])
+        while que :
+            size = len(que)
+            for i in range(size):
+                node = que.popleft()
+                if i == size - 1:
+                    result.append(node.val) # 将每一层的最后元素放入result数组中
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+        return result
+```
+
+[637.二叉树的层平均值(opens new window)](https://leetcode.cn/problems/average-of-levels-in-binary-tree/description/)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
+        if not root:
+            return []
+        result = []
+        que = deque([root])
+        while que :
+            size = len(que)
+            levelsum = 0
+            for i in range(size):
+                node = que.popleft()
+                levelsum += node.val
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+            result.append(levelsum / size)
+        return result
+```
+
+[429.N叉树的层序遍历(opens new window)](https://leetcode.cn/problems/n-ary-tree-level-order-traversal/description/)
+
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: Optional[int] = None, children: Optional[List['Node']] = None):
+        self.val = val
+        self.children = children
+"""
+
+class Solution:
+    def levelOrder(self, root: 'Node') -> List[List[int]]:
+        if not root:
+            return []
+        result = []
+        que = deque([root])
+        while que :
+            size = len(que)
+            vec = []
+            while size:
+                node = que.popleft()
+                vec.append(node.val)
+                for child in node.children:
+                    que.append(child)
+                size -= 1
+            result.append(vec)
+        return result
+```
+
+[515.在每个树行中找最大值(opens new window)](https://leetcode.cn/problems/find-largest-value-in-each-tree-row/description/)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def largestValues(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+        result = []
+        que = deque([root])
+        while que :
+            size = len(que)
+            vec = []
+            while size:
+                node = que.popleft()
+                vec.append(node.val)
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+                size -= 1
+            result.append(max(vec))
+        return result
+```
+
+[116.填充每个节点的下一个右侧节点指针(opens new window)](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/description/)
+
+本题依然是层序遍历，只不过在单层遍历的时候记录一下本层的头部节点，然后在遍历的时候让前一个节点指向本节点就可以了
+
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+"""
+
+class Solution:
+    def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
+        if not root:
+            return root
+        que = deque([root]) #创建一个 deque 对象 que，并将列表 [root] 中的元素依次添加到这个双端队列中。由于 [root] 只有一个元素 root，所以最终 que 这个双端队列中初始只有一个元素，即根节点 root。
+        while que :
+            size = len(que)
+            prev = None
+            while size:
+                node = que.popleft()
+                if prev:
+                    prev.next = node
+                prev = node
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+                size -= 1
+        return root
+```
+
+[117.填充每个节点的下一个右侧节点指针II(opens new window)]()
+[104.二叉树的最大深度(opens new window)]()
+[111.二叉树的最小深度]()
+
+
+
 
