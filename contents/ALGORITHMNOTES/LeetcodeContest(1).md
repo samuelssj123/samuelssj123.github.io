@@ -189,6 +189,157 @@ class Solution:
 
 - 编程技巧：把第一次扫描过程中的关键数据 `area` 和 `sumLen` 记录到一个数组中，然后遍历数组（或者二分），这样可以避免跑两遍线段树（空间换时间）。 
 
+### 题目分析
+本题要求在给定的二维整数数组 `squares` 中，找到一条水平分割线对应的最小 `y` 坐标，使得该线以上正方形的总面积等于该线以下正方形的总面积。其中正方形可能重叠，重叠区域只统计一次。
+
+### 解题思路
+1. **离散化横坐标**：收集所有正方形的左右边界横坐标，去重并排序，用于后续的线段树构建和查询。
+2. **构建线段树**：以离散化后的横坐标为基础构建线段树，线段树的每个节点记录该区间内被矩形覆盖次数最少的底边长之和、被矩形覆盖的最小次数以及懒标记。
+3. **模拟扫描线**：将每个正方形的底部和顶部边界作为事件点，按照纵坐标从小到大排序。模拟扫描线从下往上移动，每次遇到事件点时更新线段树，计算当前扫描线以下的被覆盖底边长之和，进而计算累计面积。
+4. **寻找分割线**：记录每个事件点处的累计面积和被覆盖底边长之和。通过二分查找找到最后一个使得下方面积小于总面积一半的位置，根据该位置的信息计算出分割线的 `y` 坐标。
+
+### 代码详解
+```python
+from itertools import pairwise
+from bisect import bisect_left
+from typing import List
+
+# 定义线段树节点类
+class Node:
+    __slots__ = 'l', 'r', 'min_cover_len', 'min_cover', 'todo' 
+    def __init__(self):
+        self.l = 0  # 节点对应区间的左边界
+        self.r = 0  # 节点对应区间的右边界
+        self.min_cover_len = 0  # 区间内被矩形覆盖次数最少的底边长之和
+        self.min_cover = 0  # 区间内被矩形覆盖的最小次数
+        self.todo = 0  # 子树内的所有节点的 min_cover 需要增加的量，可正可负
+```
+上述代码定义了线段树的节点类 `Node`，使用 `__slots__` 来限制实例属性，提高内存使用效率。每个节点记录了区间的左右边界、最小覆盖底边长之和、最小覆盖次数以及懒标记。
+
+```python
+class SegmentTree:
+    def __init__(self, xs: List[int]):
+        n = len(xs) - 1  # xs.size() 个横坐标有 xs.size()-1 个差值
+        self.seg = [Node() for _ in range(2 << (n-1).bit_length())]  # 初始化线段树数组
+        self.build(xs, 1, 0, n - 1)  # 构建线段树
+
+    def get_uncovered_length(self) -> int:
+        return 0 if self.seg[1].min_cover else self.seg[1].min_cover_len  # 如果根节点被覆盖，返回0，否则返回未覆盖长度
+
+    # 根据左右儿子的信息，更新当前节点的信息
+    def maintain(self, o: int) -> None:
+        lo = self.seg[o * 2]  # 左子节点
+        ro = self.seg[o * 2 + 1]  # 右子节点
+        mn = min(lo.min_cover, ro.min_cover)  # 左右子节点的最小覆盖次数中的较小值
+        self.seg[o].min_cover = mn  # 更新当前节点的最小覆盖次数
+        # 只统计等于 min_cover 的底边长之和
+        self.seg[o].min_cover_len = (lo.min_cover_len if lo.min_cover == mn else 0) + \
+                                    (ro.min_cover_len if ro.min_cover == mn else 0) 
+
+    # 仅更新节点信息，不下传懒标记 todo
+    def do(self, o: int, v: int) -> None:
+        self.seg[o].min_cover += v  # 更新当前节点的最小覆盖次数
+        self.seg[o].todo += v  # 更新当前节点的懒标记
+
+    # 下传懒标记 todo
+    def spread(self, o:int) -> None:
+        v = self.seg[o].todo  # 获取当前节点的懒标记
+        if v:
+            self.do(o * 2, v)  # 下传给左子节点
+            self.do(o * 2 + 1, v)  # 下传给右子节点
+            self.seg[o].todo = 0  # 清空当前节点的懒标记
+
+    # 建树
+    def build(self, xs: List[int], o:int, l:int, r:int ) -> None:
+        self.seg[o].l = l  # 设置当前节点的左边界
+        self.seg[o].r = r  # 设置当前节点的右边界
+        if l == r:
+            self.seg[o].min_cover_len = xs[l + 1] - xs[l]  # 叶子节点的未覆盖长度为横坐标差值
+            return
+        m = (l + r) // 2  # 计算中点
+        self.build(xs, o * 2, l ,m)  # 递归构建左子树
+        self.build(xs, o * 2 + 1, m + 1, r)  # 递归构建右子树
+        self.maintain(o)  # 更新当前节点信息
+
+    # 区间更新
+    def update(self, o : int, l :int, r: int, v: int) -> None:
+        if l <= self.seg[o].l and self.seg[o].r <= r:
+            self.do(o, v)  # 如果当前区间完全包含在更新区间内，直接更新
+            return
+        self.spread(o)  # 下传懒标记
+        m = (self.seg[o].l + self.seg[o].r) // 2  # 计算中点
+        if l <= m:
+            self.update(o * 2, l, r, v)  # 递归更新左子树
+        if m < r:
+            self.update(o * 2 + 1, l, r, v)  # 递归更新右子树
+        self.maintain(o)  # 更新当前节点信息
+```
+上述代码定义了 `SegmentTree` 类，用于实现线段树的各种操作：
+- `__init__` 方法初始化线段树数组并调用 `build` 方法构建线段树。
+- `get_uncovered_length` 方法用于获取根节点的未覆盖长度。
+- `maintain` 方法根据左右子节点信息更新当前节点信息。
+- `do` 方法用于更新节点信息但不下传懒标记。
+- `spread` 方法用于下传懒标记。
+- `build` 方法递归构建线段树。
+- `update` 方法用于区间更新，包括懒标记的处理和节点信息的更新。
+
+```python
+class Solution:
+    def separateSquares(self, squares: List[List[int]]) -> float:
+        xs = []
+        events = []
+        for lx , y , l in squares:
+            rx = lx + l
+            xs.append(lx)  # 收集正方形左边界横坐标
+            xs.append(rx)  # 收集正方形右边界横坐标
+            events.append((y, lx, rx, 1))  # 记录正方形底部事件点
+            events.append((y + l, lx, rx, -1))  # 记录正方形顶部事件点
+        
+        # 排序，方便离散化
+        xs = sorted(set(xs))  # 去重并排序横坐标
+
+        # 初始化线段树
+        t = SegmentTree(xs)  # 根据离散化后的横坐标构建线段树
+
+        # 模拟扫描线从下往上移动
+        events.sort(key = lambda e: e[0])  # 按纵坐标排序事件点
+        records = []
+        tot_area = 0
+        for (y, lx, rx, delta), e2 in pairwise(events):
+            l = bisect_left(xs, lx)  # 离散化横坐标
+            r = bisect_left(xs, rx) - 1  # 离散化横坐标
+            t.update(1, l, r, delta )  # 更新线段树
+            sum_len = xs[-1] - xs[0] - t.get_uncovered_length()  # 计算被覆盖底边长之和
+            records.append((tot_area, sum_len))  # 记录累计面积和被覆盖底边长之和
+            tot_area += sum_len * (e2[0] - y)  # 计算累计面积
+        
+        i = bisect_left(records, tot_area, key = lambda r: r[0] * 2) - 1  # 二分查找满足条件的位置
+        area, sum_len = records[i]  # 获取该位置的累计面积和被覆盖底边长之和
+        return events[i][0] + (tot_area - area * 2) / (sum_len * 2)  # 计算分割线的y坐标
+```
+上述代码定义了 `Solution` 类的 `separateSquares` 方法，用于解决题目问题：
+- 收集所有正方形的横坐标和事件点信息。
+- 对横坐标去重排序后构建线段树。
+- 按纵坐标排序事件点，模拟扫描线从下往上移动，更新线段树并记录关键信息。
+- 通过二分查找找到满足条件的位置，计算并返回分割线的 `y` 坐标。
+
+### 模拟运行过程
+假设有两个正方形 `squares = [[0, 0, 2], [1, 1, 2]]`：
+1. **收集横坐标和事件点**：
+    - 横坐标 `xs = [0, 2, 1, 3]`，去重排序后 `xs = [0, 1, 2, 3]`。
+    - 事件点 `events = [(0, 0, 2, 1), (2, 0, 2, -1), (1, 1, 3, 1), (3, 1, 3, -1)]`，排序后 `events = [(0, 0, 2, 1), (1, 1, 3, 1), (2, 0, 2, -1), (3, 1, 3, -1)]`。
+2. **构建线段树**：
+    - 以 `xs` 为基础构建线段树，初始化节点信息。
+3. **模拟扫描线**：
+    - 第一次循环，事件点为 `(0, 0, 2, 1)` 和 `(1, 1, 3, 1)`，更新线段树，计算被覆盖底边长之和和累计面积，记录信息。
+    - 第二次循环，事件点为 `(1, 1, 3, 1)` 和 `(2, 0, 2, -1)`，继续更新和计算。
+    - 第三次循环，事件点为 `(2, 0, 2, -1)` 和 `(3, 1, 3, -1)`，完成扫描。
+4. **寻找分割线**：
+    - 通过二分查找找到合适的位置，计算分割线的 `y` 坐标并返回。
+
+通过以上步骤，代码能够正确找到满足条件的分割线的 `y` 坐标。 
+
+题解参考：灵茶山艾府
 
 # 3455.最短匹配子字符串
 
@@ -291,11 +442,5 @@ class Solution:
                 j = next[j - 1] #回退一次，骗循环没找到结果，让下次循环接着找另一个。
         return pos
 ```
-
-
-
-
-
-
 
 题解参考：灵茶山艾府
