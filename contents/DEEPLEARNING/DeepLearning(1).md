@@ -42,8 +42,8 @@ d2l.plt.scatter(features[:,(1)].detach().numpy(), labels.detach().numpy(), 1);
 #.detach() 是 PyTorch 中张量的方法，用于返回一个新的张量，这个新张量和原张量共享数据，但会从计算图中分离出来，即不再计算梯度。这在将张量数据转换为 numpy 数组时很常用，因为 numpy 数组不支持计算梯度。
 ```
 
-    features: tensor([-1.5131, -0.5141]) 
-    label: tensor([2.9240])
+    features: tensor([-1.4466,  0.5117]) 
+    label: tensor([-0.4277])
     
 
 
@@ -88,26 +88,26 @@ for X,y in data_iter(batch_size, features, labels):
     break  #避免输出太多，打印完第一个看看就行了。
 ```
 
-    tensor([[-0.4380,  1.1015],
-            [ 0.0894,  0.0131],
-            [-0.1448, -1.9261],
-            [-1.9886, -1.1573],
-            [-0.2117, -0.2338],
-            [ 1.1591,  1.1163],
-            [-1.2666, -0.7379],
-            [ 0.5283, -0.3690],
-            [-0.4135, -0.1274],
-            [-0.4790,  0.8121]]) 
-     tensor([[-0.4330],
-            [ 4.3530],
-            [10.4584],
-            [ 4.1571],
-            [ 4.5582],
-            [ 2.7293],
-            [ 4.1896],
-            [ 6.5156],
-            [ 3.8044],
-            [ 0.4767]])
+    tensor([[ 0.5009,  1.7091],
+            [-0.5592, -0.0865],
+            [ 1.7916, -0.2262],
+            [-2.0745,  0.5016],
+            [-0.7463,  0.4646],
+            [ 0.4047, -1.1396],
+            [ 0.4019, -0.7257],
+            [-2.2715,  0.0131],
+            [-0.6447, -2.5727],
+            [-1.0709,  0.7085]]) 
+     tensor([[-0.6184],
+            [ 3.3930],
+            [ 8.5531],
+            [-1.6598],
+            [ 1.1215],
+            [ 8.8787],
+            [ 7.4507],
+            [-0.3884],
+            [11.6640],
+            [-0.3399]])
     
 
 ## 初始化模型参数和定义模型
@@ -206,11 +206,11 @@ for epoch in range(num_epochs):
         print(f'epoch {epoch + 1}, loss {float(train_l.mean()):f}')
 ```
 
-    epoch 1, loss 0.036595
-    epoch 2, loss 0.000138
-    epoch 3, loss 0.000051
-    epoch 4, loss 0.000051
-    epoch 5, loss 0.000051
+    epoch 1, loss 0.030671
+    epoch 2, loss 0.000117
+    epoch 3, loss 0.000050
+    epoch 4, loss 0.000050
+    epoch 5, loss 0.000050
     
 
 
@@ -219,8 +219,8 @@ print(f' w的估计误差：{true_w - w.reshape(true_w.shape)}')
 print(f' b的估计误差：{true_b - b}')
 ```
 
-     w的估计误差：tensor([-4.7469e-04, -1.5736e-05], grad_fn=<SubBackward0>)
-     b的估计误差：tensor([-0.0008], grad_fn=<RsubBackward1>)
+     w的估计误差：tensor([-1.0896e-04,  8.3447e-06], grad_fn=<SubBackward0>)
+     b的估计误差：tensor([-9.7752e-05], grad_fn=<RsubBackward1>)
     
 
 # 线性回归的简洁实现
@@ -237,12 +237,98 @@ from d2l import torch as d2l
 ```python
 true_w = torch.tensor([2, -3.4])
 true_b = 4.2
-features, labels = d2l.synthetic_data(true_w, true_b, 1000)
+features, labels = d2l.synthetic_data(true_w, true_b, 10000)
 ```
 
 
 ```python
+# 读取数据集
 def load_array(data_arrays, batch_size, is_train = True):
     """构造一个PyTorch数据迭代器"""
-    
+    dataset = data.TensorDataset(*data_arrays)
+    return data.DataLoader(dataset, batch_size, shuffle = is_train)
+#这个函数 load_array 用于创建一个 PyTorch 的数据迭代器。
+#它接受数据集（由特征和标签组成的元组 data_arrays）、批次大小 batch_size 和一个布尔值 is_train（表示是否是训练数据，用于决定是否打乱数据）作为参数。
+#函数内部使用 torch.utils.data.TensorDataset 将特征和标签组合成一个数据集对象，
+#然后使用 torch.utils.data.DataLoader 创建一个数据加载器，返回该数据加载器。
+
+batch_size = 10
+data_iter = load_array((features, labels), batch_size)
+
+next(iter(data_iter))
 ```
+
+
+
+
+    [tensor([[ 0.5232,  0.4768],
+             [-0.2838,  0.3474],
+             [-0.5015, -0.1516],
+             [ 0.1772,  0.8857],
+             [ 0.2580, -1.4576],
+             [-0.0212,  0.2001],
+             [ 0.5162, -0.2898],
+             [ 1.0451,  1.8036],
+             [-0.3003, -0.4767],
+             [ 0.7565, -0.9393]]),
+     tensor([[3.6345],
+             [2.4507],
+             [3.7081],
+             [1.5223],
+             [9.6842],
+             [3.4812],
+             [6.2248],
+             [0.1363],
+             [5.2297],
+             [8.8977]])]
+
+
+
+
+```python
+# 定义模型
+from torch import nn
+net = nn.Sequential(nn.Linear(2,1))
+```
+
+
+```python
+# 初始化模型参数
+net[0].weight.data.normal_(0, 0.5) #将线性层的权重参数初始化为服从均值为 0，标准差为 0.5 的正态分布
+net[0].bias.data.fill_(0) #将偏置参数初始化为 0
+
+# 定义损失函数
+loss = nn.MSELoss()
+
+# 定义优化算法
+trainer = torch.optim.SGD(net.parameters(),lr = 0.0003)
+```
+
+
+```python
+# 训练
+num_epochs = 6
+for epoch in range(num_epochs):
+    for X, y in data_iter:
+        l = loss(net(X), y)
+        trainer.zero_grad() #将优化器中所有参数的梯度清零，避免梯度累加
+        l.backward() #进行反向传播，计算损失关于模型参数的梯度
+        trainer.step() #根据计算得到的梯度更新模型参数
+    l = loss(net(features), labels)
+    print(f'epoch {epoch + 1}, loss {1:f}')
+
+w = net[0].weight.data
+print(f' w的估计误差：{true_w - w.reshape(true_w.shape)}')
+b = net[0].bias.data
+print(f' b的估计误差：{true_b - b}')
+```
+
+    epoch 1, loss 1.000000
+    epoch 2, loss 1.000000
+    epoch 3, loss 1.000000
+    epoch 4, loss 1.000000
+    epoch 5, loss 1.000000
+    epoch 6, loss 1.000000
+     w的估计误差：tensor([ 0.0276, -0.0946])
+     b的估计误差：tensor([0.1169])
+    
