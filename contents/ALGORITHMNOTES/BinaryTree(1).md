@@ -446,6 +446,46 @@ class Solution:
         return result
 ```
 
+- 递归版：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return []
+        levels = []
+
+        def traverse(node, level):
+            if not node:
+                return
+            if len(levels) == level:
+                levels.append([])
+            levels[level].append(node.val)
+            traverse(node.left, level + 1)
+            traverse(node.right, level + 1)
+        traverse(root, 0)
+        return levels
+```
+
+- 代码思路
+这段代码使用了深度优先搜索（DFS）的递归方法来实现二叉树的层序遍历。具体思路如下：
+1. **边界条件检查**：首先检查根节点是否为空，如果为空则直接返回空列表。
+2. **初始化结果列表**：创建一个空列表 `levels` 用于存储每一层的节点值。
+3. **定义递归函数**：定义一个内部递归函数 `traverse`，该函数接受两个参数：当前节点 `node` 和当前节点所在的层级 `level`。
+    - **递归终止条件**：如果当前节点为空，则直接返回。
+    - **检查当前层级是否需要创建新列表**：如果 `levels` 列表的长度等于当前层级 `level`，说明还没有为该层级创建列表，需要在 `levels` 中添加一个空列表。
+    - **添加当前节点值到对应层级列表**：将当前节点的值添加到 `levels` 中对应层级的列表中。
+    - **递归遍历左右子树**：分别递归调用 `traverse` 函数处理当前节点的左子节点和右子节点，同时将层级加 1。
+4. **启动递归**：调用 `traverse` 函数，从根节点开始，层级为 0。
+5. **返回结果**：返回存储每一层节点值的二维列表 `levels`。
+
+
 [107.二叉树的层次遍历II(opens new window)](https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/description/)
 
 ```python
