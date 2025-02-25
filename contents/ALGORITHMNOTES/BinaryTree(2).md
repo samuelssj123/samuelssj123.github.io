@@ -1,6 +1,8 @@
 List: 226.翻转二叉树，101. 对称二叉树（含100.相同的树、572.另一个树的子树），104.二叉树的最大深度（含559.n叉树的最大深度），111.二叉树的最小深度
 
-[226.翻转二叉树invert-binary-tree](#01)，[101. 对称二叉树symmetric-tree](#02)，[104.二叉树的最大深度maximum-depth-of-binary-tree](#03)，[](#04),[](#05)
+[226.翻转二叉树invert-binary-tree](#01)，[101. 对称二叉树symmetric-tree](#02)，[104.二叉树的最大深度maximum-depth-of-binary-tree](#03)，[111.二叉树的最小深度minimum-depth-of-binary-tree](#04)
+
+**后序遍历的本质是把子节点信息记录传给父节点！**
 
 # <span id="01">226.翻转二叉树invert-binary-tree</span>
 
@@ -386,6 +388,38 @@ class Solution:
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 ```
 
+## 递归：前序遍历求高度——回溯的思想
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:    
+            return 0
+        self.res = 0
+        self.getdepth(root, 1)
+        return self.res
+         
+    def getdepth(self, node, depth):
+        self.res = max(self.res, depth)
+        if not node.left and not node.right:
+            return
+        if node.left:
+            self.getdepth(node.left, depth + 1)  #深度先+1，再回溯。全部代码应该是：depth += 1;self.getdepth(node.left, depth); depth -= 1
+        if node.right:
+            self.getdepth(node.right, depth + 1)
+        return
+```
+
+回溯法是一种选优搜索法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法。
+
+在计算二叉树最大深度的代码中，回溯思想主要体现在递归调用的过程中。当我们递归地探索二叉树的每个节点时，每次进入一个新的节点，深度就加 1，相当于向前探索；当探索完一个节点及其子树后，递归调用返回，回到上一层节点，这就相当于回溯。
+
 ## 迭代-层序遍历：
 
 最大的深度就是二叉树的层数，和层序遍历的方式极其吻合。
@@ -440,14 +474,82 @@ class Solution:
         return depth + 1
 ```
 
-# <span id="04">理论基础</span>
+# <span id="04">111.二叉树的最小深度minimum-depth-of-binary-tree</span>
 
-[Leetcode]() [Learning Materials]()
+[Leetcode](https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/) [Learning Materials](https://programmercarl.com/0111.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
-![image](../images/.png)
+![image](../images/111-minimum-depth-of-binary-tree.png)
 
-# <span id="05">理论基础</span>
 
-[Leetcode]() [Learning Materials]()
+## 后序遍历：
 
-![image](../images/.png)
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:    
+            return 0
+        leftheight = self.minDepth(root.left)
+        rightheight = self.minDepth(root.right)
+        if not root.left and root.right:
+            return 1 + rightheight
+        if root.left and not root.right:
+            return 1 + leftheight
+        return 1 + min(leftheight, rightheight)
+```
+
+- 精简版：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:    
+            return 0
+        if not root.left and root.right:
+            return 1 + self.minDepth(root.right)
+        if root.left and not root.right:
+            return 1 + self.minDepth(root.left)
+        return 1 + min(self.minDepth(root.left), self.minDepth(root.right))
+```
+
+- 层次遍历：当左右孩子都为空的时候，说明是最低点的一层了，退出。代码见上一节层次遍历的例题。
+
+## 前序遍历：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:    
+            return 0
+        self.res = float('inf')
+        self.getdepth(root, 1)
+        return self.res
+#self.属性名 时，定义的是实例属性，该属性会绑定到类的具体实例上。而直接使用 变量名 定义的是局部变量，它只在当前函数的作用域内有效。          
+    def getdepth(self, node, depth):
+        if not node:    
+            return 0
+        if not node.left and not node.right:
+            self.res = min(self.res, depth)
+        if node.left:
+            self.getdepth(node.left, depth + 1)
+        if node.right:
+            self.getdepth(node.right, depth + 1)
+```
+
