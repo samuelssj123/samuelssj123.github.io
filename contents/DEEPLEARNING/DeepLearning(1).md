@@ -48,7 +48,7 @@ d2l.plt.scatter(features[:,(1)].detach().numpy(), labels.detach().numpy(), 1);
 
 
     
-![svg](output_6_1.svg)
+![svg](../images/1output_6_1.svg)
     
 
 
