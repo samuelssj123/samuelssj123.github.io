@@ -32,7 +32,8 @@
 
 - 11.[理论基础，二叉树的递归遍历，二叉树的迭代遍历，二叉树的统一迭代法，二叉树的层序遍历](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(1).html)
 
-
+- 12.[226.翻转二叉树，101. 对称二叉树（含100.相同的树、572.另一个树的子树），104.二叉树的最大深度（含559.n叉树的最大深度），111.二叉树的最小深度](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(2).html)
+  
 # 基础算法 Basic Algorithms
 
 - 相向双指针：[Basic Algorithms(1)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(1).html)
