@@ -1,6 +1,6 @@
-List: 226.翻转二叉树，101. 对称二叉树，104.二叉树的最大深度，111.二叉树的最小深度
+List: 226.翻转二叉树，101. 对称二叉树（含100.相同的树、572.另一个树的子树），104.二叉树的最大深度（含559.n叉树的最大深度），111.二叉树的最小深度
 
-[226.翻转二叉树invert-binary-tree](#01)，[101. 对称二叉树symmetric-tree](#02)，[](#03)，[](#04),[](#05)
+[226.翻转二叉树invert-binary-tree](#01)，[101. 对称二叉树symmetric-tree](#02)，[104.二叉树的最大深度maximum-depth-of-binary-tree](#03)，[](#04),[](#05)
 
 # <span id="01">226.翻转二叉树invert-binary-tree</span>
 
@@ -283,11 +283,162 @@ class Solution:
         return True
 ```
 
-# <span id="03">理论基础</span>
 
-[Leetcode]() [Learning Materials]()
+## 变式训练、相关题目
 
-![image](../images/.png)
+[100.相同的树(opens new window)](https://leetcode.cn/problems/same-tree/description/)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if (p and not q) or (not p and q):
+            return False
+        elif (not p and not q):
+            return True
+        root = TreeNode(0, left = p, right = q)
+        def comparenode(left, right):
+            if not left and right:
+                return False
+            if left and not right:
+                return False
+            if not left and not right:
+                return True
+            if left.val != right.val:
+                return False
+            outside = comparenode(left.left, right.left)
+            inside = comparenode(left.right, right.right)
+            return inside and outside
+        return comparenode(root.left, root.right)
+```
+
+[572.另一个树的子树(opens new window)](https://leetcode.cn/problems/subtree-of-another-tree/description/)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        if not root:
+            return False
+        if self.comparenode(root, subRoot):
+            return True
+        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+
+    def comparenode(self, p, q):
+        if not p and q:
+            return False
+        if p and not q:
+            return False
+        if not p and not q:
+            return True
+        if p.val != q.val:
+            return False
+        return self.comparenode(p.left, q.left) and self.comparenode(p.right, q.right)
+```
+
+# <span id="03">104.二叉树的最大深度maximum-depth-of-binary-tree</span>
+
+[Leetcode](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/) [Learning Materials](https://programmercarl.com/0104.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
+
+![image](../images/104-maximum-depth-of-binary-tree.png)
+
+## 递归-后序遍历求高度：根节点的最大高度就是本题要求的二叉树的最大深度
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        leftheight = self.maxDepth(root.left)
+        rightheight = self.maxDepth(root.right)
+        height = 1 + max(leftheight, rightheight)
+        return height
+```
+
+- 极简版：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:    return 0
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+```
+
+## 迭代-层序遍历：
+
+最大的深度就是二叉树的层数，和层序遍历的方式极其吻合。
+
+只需要加入一个变量来记录深度即可。
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:    
+            return 0
+        que = deque([root])
+        depth = 0
+        while que:
+            size = len(que)
+            depth += 1
+            for i in range(size):
+                node = que.popleft()
+                if node.left:
+                    que.append(node.left)
+                if node.right:
+                    que.append(node.right)
+        return depth
+```
+
+## 相关题目：
+
+[559.n叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-n-ary-tree/description/)
+
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: Optional[int] = None, children: Optional[List['Node']] = None):
+        self.val = val
+        self.children = children
+"""
+
+class Solution:
+    def maxDepth(self, root: 'Node') -> int:
+        if not root:
+            return 0
+        depth = 0
+        for i in range(len(root.children)):
+            depth = max(depth, self.maxDepth(root.children[i]))
+        return depth + 1
+```
 
 # <span id="04">理论基础</span>
 
