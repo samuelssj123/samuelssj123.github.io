@@ -1,2 +1,2 @@
-- Ch1 线性神经网络：线性回归 + 基础优化算法 [note] [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(1).html)
-- Ch1 线性神经网络：Softmax回归+损失函数+图像分类数据集 [note] [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(2).html)
+- Ch1 线性神经网络：线性回归 + 基础优化算法 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EfLnz4isGJ9LhDAHSfiTQLMBtEFiefaTPLDL699VnVP88w?e=Jb27z4) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(1).html)
+- Ch1 线性神经网络：Softmax回归+损失函数+图像分类数据集 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EaR9FKhTZaFAsMchoB1de1wBrbFFsYFhEQnQ4OtCF6JKKw?e=IVfxrD) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(2).html)
