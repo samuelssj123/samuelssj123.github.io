@@ -1,6 +1,6 @@
 List: 110.平衡二叉树，257. 二叉树的所有路径，404.左叶子之和，222.完全二叉树的节点个数
 
-[110.平衡二叉树balanced-binary-tree](#01)，[257. 二叉树的所有路径binary-tree-paths](#02)，[](#03)，[](#04),[](#05)
+[110.平衡二叉树balanced-binary-tree](#01)，[257. 二叉树的所有路径binary-tree-paths](#02)，[404.左叶子之和sum-of-left-leaves](#03)，[222.完全二叉树的节点个数count-complete-tree-nodes](#04)
 
 # <span id="01">110.平衡二叉树balanced-binary-tree</span>
 
@@ -360,20 +360,126 @@ class Solution:
 循环结束：由于栈 `st` 为空，循环结束，返回结果列表 `result`，即 `["1->2->4", "1->3"]`，这正是从根节点到叶子节点的所有路径。
 
 
-# <span id="03">理论基础</span>
+# <span id="03">404.左叶子之和sum-of-left-leaves</span>
 
-[Leetcode]() [Learning Materials]()
+[Leetcode](https://leetcode.cn/problems/sum-of-left-leaves/description/) 
 
-![image](../images/.png)
+[Learning Materials](https://programmercarl.com/0404.%E5%B7%A6%E5%8F%B6%E5%AD%90%E4%B9%8B%E5%92%8C.html)
 
-# <span id="04">理论基础</span>
+![image](../images/404-sum-of-left-leaves.png)
 
-[Leetcode]() [Learning Materials]()
+## 递归法：
 
-![image](../images/.png)
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        if not root.left and not root.right:
+            return 0
+        leftsum = self.sumOfLeftLeaves(root.left)
+        if root.left and not root.left.left and not root.left.right:
+            leftsum = root.left.val
+        rightsum = self.sumOfLeftLeaves(root.right)
+        left_sum = leftsum + rightsum
+        return left_sum
+```
 
-# <span id="05">理论基础</span>
+判断条件放在后面也是可以通过的。
 
-[Leetcode]() [Learning Materials]()
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        if not root.left and not root.right:
+            return 0
+        leftsum = self.sumOfLeftLeaves(root.left)
+        rightsum = self.sumOfLeftLeaves(root.right)
+        if root.left and not root.left.left and not root.left.right:
+            leftsum = root.left.val
+        left_sum = leftsum + rightsum
+        return left_sum
+```
 
-![image](../images/.png)
+## 迭代法：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        st = [root]
+        result = 0
+        while st:
+            node = st.pop()
+            if node.right:
+                st.append(node.right)
+            if node.left:
+                st.append(node.left)
+            if node.left and not node.left.left and not node.left.right:
+                result += node.left.val
+        return result
+```
+
+# <span id="04">222.完全二叉树的节点个数count-complete-tree-nodes</span>
+
+[Leetcode](https://leetcode.cn/problems/count-complete-tree-nodes/description/) 
+
+[Learning Materials](https://programmercarl.com/0222.%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
+
+![image](../images/222-count-complete-tree-nodes.png)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def countNodes(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        left = root.left
+        right = root.right
+        leftdepth = 0
+        rightdepth = 0
+        while left:
+            left = left.left
+            leftdepth += 1
+        while right:
+            right = right.right
+            rightdepth += 1
+        if leftdepth == rightdepth:
+            return (2 << leftdepth) -1
+        leftnum = self.countNodes(root.left)
+        rightnum = self.countNodes(root.right)
+        return leftnum + rightnum + 1
+```
+
+#### 1. 利用完全二叉树特性
+对于完全二叉树，如果从根节点开始，不断向左遍历得到的深度 `leftdepth` 和不断向右遍历得到的深度 `rightdepth` 相等，说明这是一棵满二叉树。满二叉树的节点数量可以通过公式 $2^{h + 1}-1$ 来计算，其中 $h$ 是树的高度。在代码中，`(2 << leftdepth) - 1` 等价于 $2^{leftdepth + 1}-1$，这样就可以直接得出该满二叉树的节点数量，避免了对满二叉树内部节点的重复计算。
+
+#### 2. 递归处理非满二叉树部分
+如果 `leftdepth` 不等于 `rightdepth`，说明这不是一棵满二叉树。此时，将树拆分为左子树和右子树，分别递归调用 `countNodes` 函数计算左子树和右子树的节点数量，最后加上根节点（即 `+ 1`），得到整棵树的节点数量。由于每次递归调用都会处理不同的子树，不会出现重复计算的情况。
+
+
