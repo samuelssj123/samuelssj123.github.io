@@ -96,7 +96,7 @@ show_images(X.reshape(18, 28, 28), 2, 9, titles=get_fashion_mnist_labels(y));
 
 
     
-![svg](output_10_0.svg)
+![svg](../images/2output_10_0.svg)
     
 
 
@@ -510,7 +510,7 @@ train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 
 
     
-![svg](output_42_0.svg)
+![svg](../images/3output_42_0.svg)
     
 
 
@@ -533,7 +533,7 @@ predict_ch3(net, test_iter)
 
 
     
-![svg](output_44_0.svg)
+![svg](../images/4output_44_0.svg)
     
 
 
