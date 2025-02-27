@@ -1,4 +1,4 @@
-List: 找树左下角的值，路径总和，从中序与后序遍历序列构造二叉树
+List: 找树左下角的值，路径总和(力扣112/113)，从中序与后序遍历序列构造二叉树
 
 [513.找树左下角的值find-bottom-left-tree-value](#01)，[112. 路径总和path-sum](#02)，[](#03)
 
@@ -160,6 +160,82 @@ class Solution:
                 st.append((node.left, path_sum + node.left.val))
 
         return False
+```
+## 相关题目：
+
+[113.路径之和Ⅱ]（https://leetcode.cn/problems/path-sum-ii/description/）
+
+区别在于要找到所有路径。所以递归函数不要返回值.
+
+## 递归法
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
+        self.result = []
+        self.path = []
+        if not root:
+            return self.result
+        self.path.append(root.val)
+        self.traversal(root, targetSum - root.val)
+        return self.result
+    
+    def traversal(self, node, count):
+        if not node.left and not node.right and count == 0:
+            self.result.append(self.path[:])
+            return 
+        if not node.left and not node.right:
+            return
+        
+        if node.left:
+            self.path.append(node.left.val)
+            count -= node.left.val
+            self.traversal(node.left, count)
+            count += node.left.val
+            self.path.pop()
+
+        if node.right:
+            self.path.append(node.right.val)
+            count -= node.right.val
+            self.traversal(node.right, count)
+            count += node.right.val
+            self.path.pop()
+        
+        return
+```
+
+## 迭代法
+
+需要记录下来path的路径，就是多了一个值去记录累加。
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
+        if not root:
+            return []
+        st = [(root, [root.val])]
+        res = []
+        while st:
+            node, path = st.pop()
+            if not node.left and not node.right and sum(path) == targetSum:
+                res.append(path)
+            if node.right:
+                st.append((node.right, path + [node.right.val]))
+            if node.left:
+                st.append((node.left, path + [node.left.val]))
+        return res
 ```
 
 # <span id="03">理论基础</span>
