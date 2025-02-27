@@ -1,6 +1,6 @@
-List: 找树左下角的值，路径总和(力扣112/113)，从中序与后序遍历序列构造二叉树
+List: 找树左下角的值，路径总和(力扣112/113)，从中序分别与后序、前序遍历序列构造二叉树（含力扣105/106）
 
-[513.找树左下角的值find-bottom-left-tree-value](#01)，[112. 路径总和path-sum](#02)，[](#03)
+[513.找树左下角的值find-bottom-left-tree-value](#01)，[112. 路径总和path-sum](#02)，[106.从中序与后序遍历序列构造二叉树construct-binary-tree-from-inorder-and-postorder-traversal](#03)
 
 # <span id="01">513.找树左下角的值find-bottom-left-tree-value</span>
 
@@ -238,11 +238,84 @@ class Solution:
         return res
 ```
 
-# <span id="03">理论基础</span>
+# <span id="03">106.从中序与后序遍历序列构造二叉树construct-binary-tree-from-inorder-and-postorder-traversal</span>
 
-[Leetcode]() 
+[Leetcode](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/) 
 
-[Learning Materials]()
+[Learning Materials](https://programmercarl.com/0106.%E4%BB%8E%E4%B8%AD%E5%BA%8F%E4%B8%8E%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
-![image](../images/.png)
+![image](../images/106-construct-binary-tree-from-inorder-and-postorder-traversal.png)
 
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+        #后序数组为空
+        if len(postorder) == 0:
+            return None
+        #后序数组最后一个元素是根节点
+        rootvalue = postorder[-1]
+        root = TreeNode(rootvalue)
+        if len(postorder) == 1: #优化
+            return root
+        #寻找中序数组位置作为切割点
+        for i in range(len(inorder)):
+            if inorder[i] == rootvalue:
+                index = i
+                break
+        #切中序数组
+        leftin = inorder[:index]
+        rightin = inorder[index + 1:]
+        #切后序数组
+        leftpost = postorder[:len(leftin)]
+        rightpost = postorder[len(leftin): - 1]
+        #递归处理左右区间
+        root.left = self.buildTree(leftin, leftpost)
+        root.right = self.buildTree(rightin, rightpost)
+        return root
+```
+
+## 相关题目：
+
+[105.从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+
+思路完全一致，注意切割区间的范围，左闭右开。
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        #前序数组为空
+        if len(preorder) == 0:
+            return None
+        #前序数组第一个元素是根节点
+        rootvalue = preorder[0]
+        root = TreeNode(rootvalue)
+        if len(preorder) == 1: #优化
+            return root
+        #寻找中序数组位置作为切割点
+        for i in range(len(inorder)):
+            if inorder[i] == rootvalue:
+                index = i
+                break
+        #切中序数组
+        leftin = inorder[:index]
+        rightin = inorder[index + 1:]
+        #切前序数组
+        leftpre = preorder[1:len(leftin) + 1]
+        rightpre = preorder[len(leftin) + 1:]
+        #递归处理左右区间
+        root.left = self.buildTree(leftpre, leftin)
+        root.right = self.buildTree(rightpre, rightin)
+        return root
+```
