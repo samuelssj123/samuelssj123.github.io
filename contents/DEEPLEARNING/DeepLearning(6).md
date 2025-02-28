@@ -168,7 +168,7 @@ train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 
 
     
-![svg](2.4-1output_7_0.svg)
+![svg](../images/2.4-1output_7_0.svg)
     
 
 
@@ -197,7 +197,7 @@ train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 
 
     
-![svg](2.4-2output_8_0.svg)
+![svg](../images/2.4-2output_8_0.svg)
     
 
 
