@@ -1,7 +1,7 @@
 List: 654.最大二叉树，617.合并二叉树，700.二叉搜索树中的搜索，98.验证二叉搜索树
 
 
-[654.最大二叉树maximum-binary-tree](#01)，[617.合并二叉树merge-two-binary-trees](#02)，[](#03)，[](#04),[](#05)
+[654.最大二叉树maximum-binary-tree](#01)，[617.合并二叉树merge-two-binary-trees](#02)，[700.二叉搜索树中的搜索search-in-a-binary-search-tree](#03)，[98.验证二叉搜索树validate-binary-search-tree](#04)
 
 # <span id="01">654.最大二叉树maximum-binary-tree</span>
 
@@ -159,26 +159,162 @@ class Solution:
         return root1
 ```
 
-# <span id="03">理论基础</span>
+# <span id="03">700.二叉搜索树中的搜索search-in-a-binary-search-tree</span>
 
-[Leetcode]() 
+[Leetcode](https://leetcode.cn/problems/search-in-a-binary-search-tree/description/) 
 
-[Learning Materials]()
+[Learning Materials](https://programmercarl.com/0700.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E6%90%9C%E7%B4%A2.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
-![image](../images/.png)
+![image](../images/700-search-in-a-binary-search-tree.png)
 
-# <span id="04">理论基础</span>
+## 递归法：
 
-[Leetcode]() 
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        if not root or root.val == val:
+            return root
+        if root.val > val:
+            result = self.searchBST(root.left, val)
+        if root.val < val:
+            result = self.searchBST(root.right, val)
+        return result
+```
 
-[Learning Materials]()
+## 迭代法：
 
-![image](../images/.png)
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        while root:
+            if root.val > val:
+                root = root.left
+            elif root.val < val:
+                root = root.right
+            else:
+                return root
+        return None
+```
 
-# <span id="05">理论基础</span>
+# <span id="04">98.验证二叉搜索树validate-binary-search-tree</span>
 
-[Leetcode]() 
+[Leetcode](https://leetcode.cn/problems/validate-binary-search-tree/description/) 
 
-[Learning Materials]()
+[Learning Materials](https://programmercarl.com/0098.%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
-![image](../images/.png)
+![image](../images/98-validate-binary-search-tree.png)
+
+## 方法一：中序+检查顺序
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        self.result = []
+        self.isValid(root)
+        for i in range(1, len(self.result)):
+            if self.result[i - 1] >= self.result[i]: #注意要小于等于，搜索树里不能有相同元素
+                return False
+        return True
+    def isValid(self, root):
+        if not root:
+            return True
+        self.isValid(root.left)
+        self.result.append(root.val)
+        self.isValid(root.right)
+```
+
+## 方法二：不额外用数组判定顺序，直接在递归中判断
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        self.value = float('-inf')
+        return self.isValid(root)
+    def isValid(self, root):
+        if not root:
+            return True
+        left = self.isValid(root.left)
+        if root.val > self.value:
+            self.value = root.val
+        else:
+            return False
+        right = self.isValid(root.right)
+        return left and right
+```
+
+## 方法三：由于测试数据中有很小的数，用双指针判断，记录前一个节点：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        self.pre = None
+        return self.isValid(root)
+    def isValid(self, root):
+        if not root:
+            return True
+        left = self.isValid(root.left)
+        if self.pre and root.val <= self.pre.val:
+            return False
+        self.pre = root
+        right = self.isValid(root.right)
+        return left and right
+```
+
+## 方法四：迭代法，直接在中序遍历上改编
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        st = []
+        node = root
+        pre = None
+        while st and node:
+            if node:
+                st.append(node) 
+                node = node.left #左
+            else:
+                node = node.pop() #弹出的数据就是要处理的数据， 中
+                if pre and node.val <= pre.val:
+                    return False
+                pre = node # 保存前一个节点的值
+                node = node.right #右
+        return True
+```
+
+```
