@@ -72,7 +72,7 @@ train(lambd = 0)
 
 
     
-![svg](2.3-1output_6_1.svg)
+![svg](../images/2.3-1output_6_1.svg)
     
 
 
@@ -87,7 +87,7 @@ train(lambd = 3)
 
 
     
-![svg](2.3-2output_7_1.svg)
+![svg](../images/2.3-2output_7_1.svg)
     
 
 
@@ -129,7 +129,7 @@ train_concise(0)
 
 
     
-![svg](2.3-3output_9_1.svg)
+![svg](../images/2.3-3output_9_1.svg)
     
 
 
@@ -143,7 +143,7 @@ train_concise(3)
 
 
     
-![svg](2.3-4output_10_1.svg)
+![svg](../images/2.3-4output_10_1.svg)
     
 
 
