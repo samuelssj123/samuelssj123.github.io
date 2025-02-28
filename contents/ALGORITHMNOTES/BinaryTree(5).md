@@ -1,14 +1,15 @@
-List: 理论基础，二叉树的递归遍历，二叉树的迭代遍历，二叉树的统一迭代法，二叉树的层序遍历
+List: 654.最大二叉树，617.合并二叉树，700.二叉搜索树中的搜索，98.验证二叉搜索树
 
-[理论基础](#01)，[](#02)，[](#03)，[](#04),[](#05)
 
-# <span id="01">理论基础</span>
+[654.最大二叉树maximum-binary-tree](#01)，[](#02)，[](#03)，[](#04),[](#05)
 
-[Leetcode]() 
+# <span id="01">654.最大二叉树maximum-binary-tree</span>
 
-[Learning Materials]()
+[Leetcode](https://leetcode.cn/problems/maximum-binary-tree/description/) 
 
-![image](../images/.png)
+[Learning Materials](https://programmercarl.com/0654.%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91.html)
+
+![image](../images/654-maximum-binary-tree.png)
 
 ```python
 class TreeNode:
