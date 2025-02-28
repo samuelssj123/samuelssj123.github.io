@@ -9,7 +9,7 @@ List: 654.最大二叉树，617.合并二叉树，700.二叉搜索树中的搜�
 
 [Learning Materials](https://programmercarl.com/0654.%E6%9C%80%E5%A4%A7%E4%BA%8C%E5%8F%89%E6%A0%91.html)
 
-![image](../images/654-maximum-binary-tree.png)
+![image](../images/654-maximum-binary-tree.png) 
 
 ```python
 # Definition for a binary tree node.
