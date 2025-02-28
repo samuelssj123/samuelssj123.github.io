@@ -7,3 +7,7 @@
 - Ch2 多层感知机：多层感知机 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EVkg6ByoFMFPsvce9YUhsaIBIXjX0npVR3SoLsqke9YDXA?e=G34GHb) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(3).html)
 
 - Ch2 多层感知机：模型选择+欠拟合和过拟合 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EYaNQODkqxtGnRAJ87ofvkoBhee-BJBhTjDU0Brod_U-vg?e=X8EW47)  [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(4).html)
+
+- Ch2 多层感知机：权重衰退 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/Edd1_agwqkVIg-jhtmdKaB4BfqHzxlIbIpmJex0TjkOchA?e=k1hpeV)  [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(5).html)
+
+- - Ch2 多层感知机：丢弃法 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EUl3KAraXnZPmJnvDEB27lUBTRJ2kXkAzpvgd19NUQumJQ?e=bhB2r8)  [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(6).html)
