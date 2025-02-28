@@ -1,7 +1,7 @@
 List: 654.最大二叉树，617.合并二叉树，700.二叉搜索树中的搜索，98.验证二叉搜索树
 
 
-[654.最大二叉树maximum-binary-tree](#01)，[](#02)，[](#03)，[](#04),[](#05)
+[654.最大二叉树maximum-binary-tree](#01)，[617.合并二叉树merge-two-binary-trees](#02)，[](#03)，[](#04),[](#05)
 
 # <span id="01">654.最大二叉树maximum-binary-tree</span>
 
@@ -72,13 +72,92 @@ class Solution:
         return node
 ```
 
-# <span id="02">理论基础</span>
+# <span id="02">617.合并二叉树merge-two-binary-trees</span>
 
-[Leetcode]() 
+[Leetcode](https://leetcode.cn/problems/merge-two-binary-trees/description/) 
 
-[Learning Materials]()
+[Learning Materials](https://programmercarl.com/0617.%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
-![image](../images/.png)
+![image](../images/617-merge-two-binary-trees.png)
+
+## 递归法：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root1:
+            return root2
+        if not root2:
+            return root1
+        root1.val += root2.val  
+        root1.left = self.mergeTrees(root1.left, root2.left)
+        root1.right = self.mergeTrees(root1.right, root2.right)
+        return root1
+```
+
+- 递归的下面顺序也是可以的
+
+```python
+        root1.left = self.mergeTrees(root1.left, root2.left)
+        root1.val += root2.val  
+        root1.right = self.mergeTrees(root1.right, root2.right)
+```
+
+```python
+        root1.left = self.mergeTrees(root1.left, root2.left)
+        root1.right = self.mergeTrees(root1.right, root2.right)
+        root1.val += root2.val
+```
+
+## 迭代法：
+
+使用队列、层序遍历。
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root1:
+            return root2
+        if not root2:
+            return root1
+        
+        que = deque()
+        que.append(root1)
+        que.append(root2)
+    #用队列处理两个要相加的情况，直接在t1上修改，只需要额外考虑t1空而t2不空的情况。
+        while que:
+            node1 = que.popleft()
+            node2 = que.popleft()
+            #此时两个节点一定不为空，val相加
+            node1.val += node2.val
+            #如果两棵树左节点都不为空，加入队列
+            if node1.left and node2.left:
+                que.append(node1.left)
+                que.append(node2.left)
+            #如果两棵树右节点都不为空，加入队列
+            if node1.right and node2.right:
+                que.append(node1.right)
+                que.append(node2.right)
+            #当t1的左节点 为空 t2左节点不为空，就赋值过去
+            if not node1.left and node2.left:
+                node1.left = node2.left
+            #当t1的右节点 为空 t2右节点不为空，就赋值过去
+            if not node1.right and node2.right:
+                node1.right = node2.right
+        return root1
+```
 
 # <span id="03">理论基础</span>
 
