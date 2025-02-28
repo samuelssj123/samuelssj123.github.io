@@ -37,6 +37,8 @@
 - 13.[110.平衡二叉树，257. 二叉树的所有路径，404.左叶子之和，222.完全二叉树的节点个数](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(3).html)
 
 - 14.[找树左下角的值，路径总和(力扣112/113)，从中序分别与后序、前序遍历序列构造二叉树（含力扣105/106）](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(4).html)
+
+- 15.[654.最大二叉树，617.合并二叉树，700.二叉搜索树中的搜索，98.验证二叉搜索树](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(5).html)
   
 # 基础算法 Basic Algorithms
 
