@@ -4,6 +4,6 @@
   
 - Ch1 线性神经网络：Softmax回归+损失函数+图像分类数据集 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EaR9FKhTZaFAsMchoB1de1wBrbFFsYFhEQnQ4OtCF6JKKw?e=IVfxrD) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(2).html)
 
-- Ch2 多层感知机：多层感知机 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EVkg6ByoFMFPsvce9YUhsaIBIXjX0npVR3SoLsqke9YDXA?e=G34GHb)
+- Ch2 多层感知机：多层感知机 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EVkg6ByoFMFPsvce9YUhsaIBIXjX0npVR3SoLsqke9YDXA?e=G34GHb) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(3).html)
 
-- Ch2 多层感知机：模型选择+欠拟合和过拟合 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EYaNQODkqxtGnRAJ87ofvkoBhee-BJBhTjDU0Brod_U-vg?e=X8EW47)
+- Ch2 多层感知机：模型选择+欠拟合和过拟合 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EYaNQODkqxtGnRAJ87ofvkoBhee-BJBhTjDU0Brod_U-vg?e=X8EW47)  [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(4).html)
