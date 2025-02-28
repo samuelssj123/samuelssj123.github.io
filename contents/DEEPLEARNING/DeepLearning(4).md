@@ -171,7 +171,7 @@ train(poly_features[:n_train, :4], poly_features[n_train:, :4],
 
 
     
-![svg](2.2-1output_9_1.svg)
+![svg](../images/2.2-1output_9_1.svg)
     
 
 
@@ -188,7 +188,7 @@ train(poly_features[:n_train, :2], poly_features[n_train:, :2],
 
 
     
-![svg](2.2-2output_10_1.svg)
+![svg](../images/2.2-2output_10_1.svg)
     
 
 
@@ -208,7 +208,7 @@ train(poly_features[:n_train, :], poly_features[n_train:, :],
 
 
     
-![svg](2.2-3output_11_1.svg)
+![svg](../images/2.2-3output_11_1.svg)
     
 
 
