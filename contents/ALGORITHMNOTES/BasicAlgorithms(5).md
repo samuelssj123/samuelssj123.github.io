@@ -98,7 +98,9 @@ class Solution:
 
 通过上述方法，我们可以在 $O(log n)$ 的时间复杂度内找到旋转排序数组中的最小值。
 
-### 力扣 33 题：搜索旋转排序数组题解
+# 力扣 33 题：搜索旋转排序数组题解
+
+[Leetcode](https://leetcode.cn/problems/search-in-rotated-sorted-array/description/)
 
 #### 题目描述
 整数数组 `nums` 按升序排列，数组中的值 互不相同 。在传递给函数之前，`nums` 在预先未知的某个下标 `k`（`0 <= k < nums.length`）上进行了 旋转，使数组变为 `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]`（下标 从 0 开始 计数）。例如， `[0,1,2,4,5,6,7]` 在下标 `3` 处经旋转后可能变为 `[4,5,6,7,0,1,2]` 。
