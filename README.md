@@ -40,9 +40,13 @@ Day 16 530.二叉搜索树的最小绝对差，501.二叉搜索树中的众数�
 
 相向双指针：Basic Algorithms(2)
 
-滑动窗口：Basic Algorithms(3)
+二分查找（大全）：Basic Algorithms(4)
 
-二分查找大全：Basic Algorithms(4)
+二分查找（变式）：Basic Algorithms(5)
+
+链表（反转）：Basic Algorithms(6)
+
+链表（快慢指针）：Basic Algorithms(6)
 
 ## 力扣周赛提升
 
