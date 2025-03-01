@@ -54,6 +54,9 @@
 
 - 二分查找变式：[Basic Algorithms(5)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(5).html)
 
+- 反转链表：[Basic Algorithms(6)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(6).html)
+  
+
 # 力扣周赛 LeetCode Weekly Contest
 
 - [力扣双周赛 LeetCode Biweekly Contest No.150](https://samuelssj123.github.io/contents/ALGORITHMNOTES/LeetcodeContest(1).html)
