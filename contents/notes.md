@@ -39,6 +39,8 @@
 - 14.[找树左下角的值，路径总和(力扣112/113)，从中序分别与后序、前序遍历序列构造二叉树（含力扣105/106）](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(4).html)
 
 - 15.[654.最大二叉树，617.合并二叉树，700.二叉搜索树中的搜索，98.验证二叉搜索树](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(5).html)
+
+- 16.[530.二叉搜索树的最小绝对差，501.二叉搜索树中的众数，236. 二叉树的最近公共祖先](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(6).html)
   
 # 基础算法 Basic Algorithms
 
