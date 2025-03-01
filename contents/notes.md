@@ -50,12 +50,13 @@
 
 - 滑动窗口：[Basic Algorithms(3)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(3).html)
 
-- 二分查找大全：[Basic Algorithms(4)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(4).html)
+- 二分查找（大全）：[Basic Algorithms(4)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(4).html)
 
-- 二分查找变式：[Basic Algorithms(5)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(5).html)
+- 二分查找（变式）：[Basic Algorithms(5)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(5).html)
 
-- 反转链表：[Basic Algorithms(6)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(6).html)
-  
+- 链表（反转）：[Basic Algorithms(6)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(6).html)
+
+- 链表（快慢指针）：[Basic Algorithms(6)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(6).html)
 
 # 力扣周赛 LeetCode Weekly Contest
 
