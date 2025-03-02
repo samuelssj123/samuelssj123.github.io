@@ -11,3 +11,5 @@
 - Ch2 多层感知机：权重衰退 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/Edd1_agwqkVIg-jhtmdKaB4BfqHzxlIbIpmJex0TjkOchA?e=k1hpeV)  [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(5).html)
 
 - Ch2 多层感知机：丢弃法 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EUl3KAraXnZPmJnvDEB27lUBTRJ2kXkAzpvgd19NUQumJQ?e=bhB2r8)  [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(6).html)
+
+- Ch2 多层感知机：数值稳定性+模型初始化和激活函数 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/ES448HmSuedGpmUk5y0rlWIBMlIqqA2gceL0arWW5yPzng?e=ELUvT5) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(7).html)
