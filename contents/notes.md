@@ -56,8 +56,12 @@
 
 - 链表（反转）：[Basic Algorithms(6)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(6).html)
 
-- 链表（快慢指针）：[Basic Algorithms(6)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(6).html)
+- 链表（快慢指针）：[Basic Algorithms(6)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(7).html)
 
+- 链表（删除、去重）：[Basic Algorithms(6)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(8).html)
+
+- 二叉树（递归、搜索树）：[Basic Algorithms(6)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(9).html)
+  
 # 力扣周赛 LeetCode Weekly Contest
 
 - [力扣双周赛 LeetCode Biweekly Contest No.150](https://samuelssj123.github.io/contents/ALGORITHMNOTES/LeetcodeContest(1).html)
