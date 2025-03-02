@@ -1,6 +1,6 @@
 # 二叉树综合：递归的应用、二叉搜索树
 
-
+![image](../images/binarytreereview.png)
 
 # 199题的递归法：
 
