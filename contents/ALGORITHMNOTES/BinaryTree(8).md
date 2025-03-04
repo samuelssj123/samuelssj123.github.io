@@ -228,9 +228,11 @@ class Solution:
 
 # <span id="04">理论基础</span>
 
-[Leetcode]() 
+[Learning Materials](https://programmercarl.com/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%BB%E7%BB%93%E7%AF%87.html#%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93)
 
-[Learning Materials]()
+涉及到二叉树的构造，无论普通二叉树还是二叉搜索树一定前序，都是先构造中节点。
 
-![image](../images/.png)
+求普通二叉树的属性，一般是后序，一般要通过递归函数的返回值做计算。
+
+求二叉搜索树的属性，一定是中序了，要不白瞎了有序性了。
 
