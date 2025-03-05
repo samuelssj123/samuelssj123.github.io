@@ -21,3 +21,7 @@
 - Ch3 卷积神经网络：多个输入输出通道 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/Ee65PhaS2OhFrj4qqY_zvZwBwXO7VFCe5K9jO71iw9e4Jg?e=EaW9Da) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(10).html)
 
 - Ch3 卷积神经网络：池化层 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EaZ3uHG_d8dBikaFY6MMeoYBbf2MGbAHu3-KGp134fGUfw?e=4MFV36) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(11).html)
+
+- Ch3 卷积神经网络：经典卷积神经网络LeNet [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EX0Dlb-JKpVFtAsBx40k_YwBY5AQoLl49fZVb8geKYPt9g?e=hXPReu) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(12).html)
+ 
+- Ch4 现代卷积神经网络：深度卷积神经网络AlexNet [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EesU8zLJF_RKvtA1jm6YTdkB3Id42-Kj182BG71tLBbQ_g?e=Hvm9qf) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(13).html)
