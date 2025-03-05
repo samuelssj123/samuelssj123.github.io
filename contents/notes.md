@@ -48,7 +48,7 @@
 
 # 回溯算法 Back Tracking
 
-- 18.[669. 修剪二叉搜索树，108.将有序数组转换为二叉搜索树，538.把二叉搜索树转换为累加树，538.把二叉搜索树转换为累加树](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(1).html)
+- 18.[理论基础，77. 组合，216.组合总和III，17.电话号码的字母组合](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(1).html)
  
 # 基础算法 Basic Algorithms
 
