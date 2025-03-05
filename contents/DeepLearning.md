@@ -17,3 +17,7 @@
 - Ch3 卷积神经网络：卷积 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/Edjcka1qCTFNgeqeaRp1nhwB1ibiXZDWa1IQmA_yHYyvng?e=R6dsSB) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(8).html)
 
 - Ch3 卷积神经网络：填充和步幅 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EaKrOP1mBLJOtg6VgLv79iUBQCUMKwna-xiObe3IHopV6A?e=zqs4B1) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(9).html)
+
+- Ch3 卷积神经网络：多个输入输出通道 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/Ee65PhaS2OhFrj4qqY_zvZwBwXO7VFCe5K9jO71iw9e4Jg?e=EaW9Da) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(10).html)
+
+- Ch3 卷积神经网络：池化层 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EaZ3uHG_d8dBikaFY6MMeoYBbf2MGbAHu3-KGp134fGUfw?e=4MFV36) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(11).html)
