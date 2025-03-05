@@ -45,7 +45,11 @@
 - 17.[235. 二叉搜索树的最近公共祖先，701.二叉搜索树中的插入操作，450.删除二叉搜索树中的节点](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(7).html)
 
 - 18.[669. 修剪二叉搜索树，108.将有序数组转换为二叉搜索树，538.把二叉搜索树转换为累加树，538.把二叉搜索树转换为累加树](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(8).html)
-  
+
+# 回溯算法 Back Tracking
+
+- 18.[669. 修剪二叉搜索树，108.将有序数组转换为二叉搜索树，538.把二叉搜索树转换为累加树，538.把二叉搜索树转换为累加树](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(1).html)
+ 
 # 基础算法 Basic Algorithms
 
 - 相向双指针：[Basic Algorithms(1)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(1).html)
