@@ -78,7 +78,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr, d2l.try_gpu())
 
 
     
-![svg](.../images/dp13output_3_1.svg)
+![svg](../images/dp13output_3_1.svg)
     
 
 
