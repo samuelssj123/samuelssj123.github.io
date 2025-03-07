@@ -1,6 +1,6 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'notes', 'experience', 'DeepLearning'];
+const section_names = ['home', 'notes', 'Full-Stack Feed', 'DeepLearning'];
 
 
 window.addEventListener('DOMContentLoaded', event => {
