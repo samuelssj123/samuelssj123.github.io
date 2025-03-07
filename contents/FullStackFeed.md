@@ -12,7 +12,7 @@ Sharpen your blade in the LeetCode Arena! We dissect weekly/biweekly contest pro
 
 Prior to proceeding, it's advisable to revisit the foundational algorithms outlined below. Should time permit, consulting the notes section above may provide a more comprehensive reference.
 
-# 基础算法 Basic Algorithms
+## 基础算法 Basic Algorithms
 
 - 相向双指针：[Basic Algorithms(1)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(1).html)
 
