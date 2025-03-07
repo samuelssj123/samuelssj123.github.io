@@ -25,3 +25,11 @@
 - Ch3 卷积神经网络：经典卷积神经网络LeNet [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EX0Dlb-JKpVFtAsBx40k_YwBY5AQoLl49fZVb8geKYPt9g?e=hXPReu) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(12).html)
  
 - Ch4 现代卷积神经网络：深度卷积神经网络AlexNet [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EesU8zLJF_RKvtA1jm6YTdkB3Id42-Kj182BG71tLBbQ_g?e=Hvm9qf) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(13).html)
+
+- Ch4 现代卷积神经网络：使用块的网络（VGG） [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/ETfUWHvle3BFoYbb2Qxd0noBrnDEdYKXmFTbv6Z1eg5JIg?e=jks0Ql) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(14).html)
+
+- Ch4 现代卷积神经网络：网络中的网络（NiN） [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EX_1cxN8fYdHkShZQgCeYFIBJBaWLaSrdOAK63J_X9I0xg?e=brj6bW) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(15).html)
+
+- Ch4 现代卷积神经网络：含并行连结的网络（GoogLeNet） [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EV0HKqpmfERDijFo-xx_05AB1KCatC4EcwdZ5WzhK20DLQ?e=bEHyVR) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(16).html)
+
+- Ch4 现代卷积神经网络：批量规一化 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EYSPKU2qesxGgU4YPlKEAcsBdDya-6PNkWHh9_GO1ajuWQ?e=G2MWIc) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(17).html)
