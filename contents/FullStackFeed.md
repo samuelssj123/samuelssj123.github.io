@@ -28,7 +28,7 @@ Prior to proceeding, it's advisable to revisit the foundational algorithms outli
 
 - 链表（删除、去重）：[Basic Algorithms(8)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(8).html)
 
-- 二叉树（递归、搜索树）：[Basic Algorithms(9)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(9).html
+- 二叉树（递归、搜索树）：[Basic Algorithms(9)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(9).html)
 
 
 # Ctrl + Alt + Elite: Projects Hub 
