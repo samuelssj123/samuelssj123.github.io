@@ -51,6 +51,8 @@
 - 18.[理论基础，77. 组合，216.组合总和III，17.电话号码的字母组合](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(1).html)
 
 - 19.[39. 组合总和，40.组合总和II，131.分割回文串](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(2).html)
+
+- 20.[93.复原IP地址，78.子集，90.子集II](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(3).html)
  
 # 基础算法 Basic Algorithms
 
