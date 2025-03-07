@@ -1,6 +1,6 @@
 List: 93.复原IP地址，78.子集，90.子集II
 
-[93.复原IP地址problems/restore-ip-addresses](#01)，[](#02)，[](#03)
+[93.复原IP地址problems/restore-ip-addresses](#01)，[78.子集subsets](#02)，[90.子集IIsubsets-ii](#03)
 
 # <span id="01">93.复原IP地址problems/restore-ip-addresses</span>
 
@@ -117,19 +117,63 @@ for i in range(startIndex, min(startIndex+3, len(s))):
             path.pop()
 ```
 
-# <span id="02">理论基础</span>
+# <span id="02">78.子集subsets</span>
 
-[Leetcode]() 
+[Leetcode](https://leetcode.cn/problems/subsets/) 
 
-[Learning Materials]()
+[Learning Materials](https://programmercarl.com/0078.%E5%AD%90%E9%9B%86.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
-![image](../images/.png)
+![image](../images/78-subsets.png)
 
-# <span id="03">理论基础</span>
+```python
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        result = []
+        self.backtracking(nums, 0, [], result)
+        return result
+    def backtracking(self, nums, startindex, path, result):
+        result.append(path[:])
+        if startindex > len(nums):
+            return
+        for i in range(startindex, len(nums)):
+            path.append(nums[i])
+            self.backtracking(nums, i + 1, path, result)
+            path.pop()
+```
 
-[Leetcode]() 
+# <span id="03">90.子集IIsubsets-ii</span>
 
-[Learning Materials]()
+[Leetcode](https://leetcode.cn/problems/subsets-ii/description/) 
 
-![image](../images/.png)
+[Learning Materials](https://programmercarl.com/0090.%E5%AD%90%E9%9B%86II.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
+![image](../images/90-subsets-ii.png)
+
+```python
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        result = []
+        used = [0] * len(nums)
+        nums.sort()
+        self.backtracking(nums, 0, [], result, used)
+        return result
+    def backtracking(self, nums, startindex, path, result, used):
+        result.append(path[:])
+        for i in range(startindex, len(nums)):
+            if i > 0 and nums[i] == nums[i - 1] and used[i - 1] == 0:
+                continue
+            path.append(nums[i])
+            used[i] = 1
+            self.backtracking(nums, i + 1, path, result, used)
+            used[i] = 0
+            path.pop()
+```
+
+- 也可以使用uset = set()直接去重
+
+- 直接用startindex去重：利用递归的时候下一个startIndex是i+1而不是0去重
+
+```python
+if i > startIndex and nums[i] == nums[i - 1]:
+                continue
+```
