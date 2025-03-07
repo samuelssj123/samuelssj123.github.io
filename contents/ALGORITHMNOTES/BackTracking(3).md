@@ -1,14 +1,14 @@
 List: 93.复原IP地址，78.子集，90.子集II
 
-[93.复原IP地址problems/restore-ip-addresses](#01)，[78.子集subsets](#02)，[90.子集IIsubsets-ii](#03)
+[93.复原IP地址restore-ip-addresses](#01)，[78.子集subsets](#02)，[90.子集IIsubsets-ii](#03)
 
-# <span id="01">93.复原IP地址problems/restore-ip-addresses</span>
+# <span id="01">93.复原IP地址restore-ip-addresses</span>
 
 [Leetcode](https://leetcode.cn/problems/restore-ip-addresses/) 
 
 [Learning Materials](https://programmercarl.com/0093.复原IP地址.html)
 
-![image](../images/93-problems/restore-ip-addresses.png)
+![image](../images/93-restore-ip-addresses.png)
 
 ```python
 class Solution:
