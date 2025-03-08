@@ -4,6 +4,10 @@ Deconstruct algorithmic patterns into bite-sized, memorable chunks with our modu
 
 - Information Technology Basic Knowledge (High School's Teachers Level) [notes](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/Ee5xgoaURXxBh1_TUoe0HksBvf1Q-MRSnIBzpQVgPfD9GQ?e=arT8xE)  [videos](https://www.bilibili.com/video/BV1UB9uYjEGY/)
 
+- （随笔）贪心算法理论基础的通俗理解 [​Article Link​](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EeO69_Osqr9OkNBsFA5E7CoBblqk9rPemHGJpCjV1Jellg?e=6Ivdrg)
+
+- Approaches to Interdisciplinary Research Paper Study((Shortlisted for THU/PKU Recommended Admission)) [Example 1(https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EYWb8j_ziBZCjY49G_bQVZcBVkqvZ6_c81reQN83XNbuxg?e=49nXpf)] [Example 2](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EdTci6gJ4clGnBRa6ymlV3UBU8_r8AhmPFbJf9rg6vwknQ?e=djqRZR)
+
 # CodeCanvas: LeetCode Contest
 
 Sharpen your blade in the LeetCode Arena! We dissect weekly/biweekly contest problems through the lens of competitive programming – delivering multi solution, time complexity tradeoff analysis, and live leaderboard climbing tactics. Because every line of code here is a step toward your personal PB.
