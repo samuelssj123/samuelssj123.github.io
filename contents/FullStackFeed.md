@@ -36,6 +36,10 @@ Prior to proceeding, it's advisable to revisit the foundational algorithms outli
 
 - 二叉树（递归、搜索树）：[Basic Algorithms(9)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(9).html)
 
+- 二叉树（最近公共祖先、层序类）：[Basic Algorithms(10)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(10).html)
+
+- 回溯法（子集、组合、排列）：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(11).html)
+
 
 # Ctrl + Alt + Elite: Projects Hub 
 
