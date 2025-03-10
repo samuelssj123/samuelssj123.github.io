@@ -37,3 +37,5 @@
 - Ch4 现代卷积神经网络：残差网络（ResNet） [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/ETHPZCN07x9ArHMXVJGC48ABsxub77PwQwIdI6IZqKXvWA?e=QI33KA) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(18).html)
 
 - Ch5 编译器和解释器：深度学习硬件：CPU、GPU、TPU、多卡并行 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EUb2aYda3cNDiokk1MnquYoBoTODv8QOUIEjDmTHOYSoFQ?e=Frx17C) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(18).html)
+
+- Ch5 编译器和解释器：分布式计算 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EZkigCL8gbtFs9CRaxC3WGcBxvJ9nGO-GdbnC-kwfrh3Mw?e=lsekgS)
