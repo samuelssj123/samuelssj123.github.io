@@ -55,3 +55,7 @@
 - 20.[93.复原IP地址，78.子集，90.子集II](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(3).html)
  
 - 21.[491.递增子序列，46.全排列，47.全排列 II，332.重新安排行程，51.N皇后，37.解数独，总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(4).html)
+
+# 贪心算法 Greedy Algorithm
+
+- 22.[491.递增子序列，46.全排列，47.全排列 II，332.重新安排行程，51.N皇后，37.解数独，总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(1).html)
