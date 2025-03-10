@@ -58,4 +58,4 @@
 
 # 贪心算法 Greedy Algorithm
 
-- 22.[491.递增子序列，46.全排列，47.全排列 II，332.重新安排行程，51.N皇后，37.解数独，总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(1).html)
+- 22.[理论基础，455.分发饼干，376. 摆动序列，53. 最大子序和](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(1).html)
