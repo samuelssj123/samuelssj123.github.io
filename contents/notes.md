@@ -60,6 +60,6 @@
 
 - 22.[理论基础，455.分发饼干，376. 摆动序列，53. 最大子序和](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(1).html)
 
-- 23.[134. 加油站，135. 分发糖果，860.柠檬水找零，406.根据身高重建队列](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(2).html)
+- 23.[122.买卖股票的最佳时机II，55. 跳跃游戏，45.跳跃游戏II，1005.K次取反后最大化的数组和](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(2).html)
   
 - 24.[134. 加油站，135. 分发糖果，860.柠檬水找零，406.根据身高重建队列](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(3).html)
