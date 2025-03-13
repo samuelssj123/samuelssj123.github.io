@@ -63,3 +63,5 @@
 - 23.[122.买卖股票的最佳时机II，55. 跳跃游戏，45.跳跃游戏II，1005.K次取反后最大化的数组和](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(2).html)
   
 - 24.[134. 加油站，135. 分发糖果，860.柠檬水找零，406.根据身高重建队列](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(3).html)
+
+- 25.[452. 用最少数量的箭引爆气球，435. 无重叠区间，763.划分字母区间](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(4).html)
