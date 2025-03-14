@@ -15,7 +15,7 @@ d2l.plt.imshow(img);
 
 
     
-![svg](dl23output_2_0.svg)
+![svg](../images/dl23output_2_0.svg)
     
 
 
@@ -85,7 +85,7 @@ fig.axes.add_patch(bbox_to_rect(cat_bbox, 'red'));
 
 
     
-![svg](dl23output_7_0.svg)
+![svg](../images/dl23output_7_0.svg)
     
 
 
@@ -248,7 +248,7 @@ for ax, label in zip(axes, batch[1][0:10]):
 
 
     
-![png](dl23output_15_0.png)
+![png](../images/dl23output_15_0.png)
     
 
 
