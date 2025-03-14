@@ -47,3 +47,5 @@
 - Ch6 计算机视觉：物体检测 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EcHt32sPwMNMhFbibFAO3pABiJSOX9XqtzbiPg8xXxQEvQ?e=3oIWId) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(23).html)
 
 - Ch6 计算机视觉：锚框 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EbFnwHBSBzlFsGobaT9UYKgBhyHUCBXi2n7Mf-UwkGsiNw?e=bIa6p0) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(24).html)
+
+- Ch6 计算机视觉：物体检测算法——R-CNN+SSD+YOLO [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EeUR3B9E5gpPg6JazSoJHGQBG_7k4J4OEe5J6G1H7guvvA?e=4YhCRU) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(24).html)
