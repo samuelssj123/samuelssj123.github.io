@@ -59,3 +59,26 @@ class Solution:
     交集的范围：所有区间左端点取最大值，右端点取最小值。
 """
 ```
+
+
+# [3469.移除所有数组元素的最小代价](https://leetcode.cn/problems/find-minimum-cost-to-remove-array-elements/description/)
+
+
+```python
+class Solution:
+    def minCost(self, nums: List[int]) -> int:
+        n = len(nums)
+        f = [[0] * i for i in range(n + 1)]
+        f[n] = nums
+        f[n - 1] = [max(x, nums[-1]) for x in nums]
+        for i in range(n - 3 + n % 2, 0, -2):
+            b, c = nums[i], nums[i + 1]
+            for j in range(i):
+                a = nums[j]
+                f[i][j] = min(f[i + 2][j] + max(b, c),
+                            f[i + 2][i] + max(a, c),
+                            f[i + 2][i + 1] + max(a, b))
+        return f[1][0]
+```
+
+# [3470.全排列Ⅳ](https://leetcode.cn/problems/permutations-iv/description/)
