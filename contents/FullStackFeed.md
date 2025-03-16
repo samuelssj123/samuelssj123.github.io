@@ -14,6 +14,8 @@ Sharpen your blade in the LeetCode Arena! We dissect weekly/biweekly contest pro
 
 - [力扣双周赛 LeetCode Biweekly Contest No.150](https://samuelssj123.github.io/contents/ALGORITHMNOTES/LeetcodeContest(1).html)
 
+- [力扣双周赛 LeetCode Biweekly Contest No.151](https://samuelssj123.github.io/contents/ALGORITHMNOTES/LeetcodeContest(1).html)
+
 Prior to proceeding, it's advisable to revisit the foundational algorithms outlined below. Should time permit, consulting the notes section above may provide a more comprehensive reference.
 
 ## 基础算法 Basic Algorithms
