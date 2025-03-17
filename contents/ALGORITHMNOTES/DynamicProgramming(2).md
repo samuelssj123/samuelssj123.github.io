@@ -1,7 +1,7 @@
 List: 62.不同路径，63. 不同路径 II，343. 整数拆分，96.不同的二叉搜索树
 
 
-[62.不同路径unique-paths](#01)，[63. 不同路径 IIunique-paths-ii](#02)，[](#03)，[](#04),[](#05)
+[62.不同路径unique-paths](#01)，[63. 不同路径 IIunique-paths-ii](#02)，[343. 整数拆分integer-break](#03)，[](#04),[](#05)
 
 # <span id="01">62.不同路径unique-paths</span>
 
@@ -106,13 +106,13 @@ class Solution:
         return dp[m - 1][n - 1]
 ```
 
-# <span id="03">理论基础</span>
+# <span id="03">343. 整数拆分integer-break</span>
 
-[Leetcode]() 
+[Leetcode](https://leetcode.cn/problems/integer-break/description/) 
 
-[Learning Materials]()
+[Learning Materials](https://programmercarl.com/0343.%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
 
-![image](../images/.png)
+![image](../images/343-integer-break.png)
 
 # <span id="04">理论基础</span>
 
