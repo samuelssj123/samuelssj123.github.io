@@ -50,3 +50,15 @@
 
 - Ch6 计算机视觉：物体检测算法——R-CNN+SSD+YOLO [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EeUR3B9E5gpPg6JazSoJHGQBG_7k4J4OEe5J6G1H7guvvA?e=4YhCRU) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(25).html)
 
+- Ch6 计算机视觉：语义分割 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EclrLYWZAv9LhVzTs9kXYdABb-sJ0y-11ikkJTcAoSk0hg?e=S187Hc) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(26).html)
+
+- Ch6 计算机视觉：转置卷积 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EVOv8HYvX6RLkiI6FarfEIgB-ig9CY2Il164VPFS6VH0EA?e=5NcOL6) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(27).html)
+
+- Ch6 计算机视觉：全连接卷积神经网络 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EXiEhUdQuXlNvsuqIUUNI0oBiuapuTeyAp109BhhjbAIHg?e=OEB26F) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(28).html)
+
+- Ch6 计算机视觉：样式迁移 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/ESfST4f10NNBsFgbvqHRrEQBUV9ml7y0IyaMN1yYKhMxyQ?e=18rgIh) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(29).html)
+
+
+
+
+
