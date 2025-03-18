@@ -143,3 +143,59 @@ class Solution:
         - 选择当前元素 `nums[i - 1]`，那么就需要在前 `i - 1` 个元素中凑出和为 `j - nums[i - 1]`，即 `dp[i - 1][j - nums[i - 1]]`。
     - 只要这两种选择中有一种能够凑出和为 `j`，那么 `dp[i][j]` 就为 `True`，所以使用 `or` 运算符来合并这两种情况。
 
+我们以数组 `nums = [1, 5, 11, 5]` 为例来详细绘制 `dp` 数组在状态转移过程中的表格情况。
+
+首先，计算出 `target = sum(nums) // 2 = (1 + 5 + 11 + 5) // 2 = 11`。
+
+### 初始化 `dp` 数组
+| `i` \ `j` | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | True | False | False | False | False | False | False | False | False | False | False | False |
+
+这里 `i` 表示考虑前 `i` 个元素，`j` 表示要凑出的目标和。`dp[0][0]` 初始化为 `True`，因为不选任何元素时和为 0；其他 `dp[0][j]`（`j > 0`）初始化为 `False`，因为不选元素无法凑出大于 0 的和。
+
+### 考虑第一个元素 `nums[0] = 1`（`i = 1`）
+- 当 `j < 1` 时，`dp[1][j] = dp[0][j]`。
+- 当 `j >= 1` 时，`dp[1][j] = dp[0][j] or dp[0][j - 1]`。
+
+| `i` \ `j` | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | True | False | False | False | False | False | False | False | False | False | False | False |
+| 1 | True | True | False | False | False | False | False | False | False | False | False | False |
+
+### 考虑第二个元素 `nums[1] = 5`（`i = 2`）
+- 当 `j < 5` 时，`dp[2][j] = dp[1][j]`。
+- 当 `j >= 5` 时，`dp[2][j] = dp[1][j] or dp[1][j - 5]`。
+
+| `i` \ `j` | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | True | False | False | False | False | False | False | False | False | False | False | False |
+| 1 | True | True | False | False | False | False | False | False | False | False | False | False |
+| 2 | True | True | False | False | False | True | True | False | False | False | False | False |
+
+### 考虑第三个元素 `nums[2] = 11`（`i = 3`）
+- 当 `j < 11` 时，`dp[3][j] = dp[2][j]`。
+- 当 `j >= 11` 时，`dp[3][j] = dp[2][j] or dp[2][j - 11]`。
+
+| `i` \ `j` | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | True | False | False | False | False | False | False | False | False | False | False | False |
+| 1 | True | True | False | False | False | False | False | False | False | False | False | False |
+| 2 | True | True | False | False | False | True | True | False | False | False | False | False |
+| 3 | True | True | False | False | False | True | True | False | False | False | False | True |
+
+### 考虑第四个元素 `nums[3] = 5`（`i = 4`）
+- 当 `j < 5` 时，`dp[4][j] = dp[3][j]`。
+- 当 `j >= 5` 时，`dp[4][j] = dp[3][j] or dp[3][j - 5]`。
+
+| `i` \ `j` | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | True | False | False | False | False | False | False | False | False | False | False | False |
+| 1 | True | True | False | False | False | False | False | False | False | False | False | False |
+| 2 | True | True | False | False | False | True | True | False | False | False | False | False |
+| 3 | True | True | False | False | False | True | True | False | False | False | False | True |
+| 4 | True | True | False | False | False | True | True | False | False | False | True | True |
+
+最终，我们查看 `dp[4][11]` 的值为 `True`，这表明可以将数组 `[1, 5, 11, 5]` 划分为两个和相等的子集（例如 `[1, 5, 5]` 和 `[11]`）。
+
+通过这个表格，我们可以清晰地看到 `dp` 数组在状态转移过程中是如何根据是否选择当前元素来更新状态的。 
