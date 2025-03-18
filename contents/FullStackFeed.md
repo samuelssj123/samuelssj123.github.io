@@ -8,6 +8,8 @@ Deconstruct algorithmic patterns into bite-sized, memorable chunks with our modu
 
 - Approaches to Interdisciplinary Research Paper Study(Shortlisted for THU/PKU Recommended Admission) [Example 1](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EYWb8j_ziBZCjY49G_bQVZcBVkqvZ6_c81reQN83XNbuxg?e=49nXpf) [Example 2](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EdTci6gJ4clGnBRa6ymlV3UBU8_r8AhmPFbJf9rg6vwknQ?e=djqRZR)
 
+- Literature Review of LLM in Asset Pricing base on investors [Research Analysis](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/ETP0F7Ky7zFCslLN0vAh3y8BJCey52DjsYkvOHzeIzASFw?e=ILtIL5)
+
 # CodeCanvas: LeetCode Contest
 
 Sharpen your blade in the LeetCode Arena! We dissect weekly/biweekly contest problems through the lens of competitive programming – delivering multi solution, time complexity tradeoff analysis, and live leaderboard climbing tactics. Because every line of code here is a step toward your personal PB.
