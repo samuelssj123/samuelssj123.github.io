@@ -58,7 +58,7 @@
 
 - Ch6 计算机视觉：样式迁移 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/ESfST4f10NNBsFgbvqHRrEQBUV9ml7y0IyaMN1yYKhMxyQ?e=18rgIh) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(29).html)
 
-
+- Ch7 循环神经网络：序列模型与文本预处理 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EUqOBd7FuKFEiHH0KaymijYBsewPX35xvhjh8hTNBwmJHA?e=PkvHQk) [code1:序列模型](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(30).html) [code2:文本预处理](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(31).html)
 
 
 
