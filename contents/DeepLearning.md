@@ -60,5 +60,8 @@
 
 - Ch7 循环神经网络：序列模型与文本预处理 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EUqOBd7FuKFEiHH0KaymijYBsewPX35xvhjh8hTNBwmJHA?e=PkvHQk) [code1:序列模型](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(30).html) [code2:文本预处理](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(31).html)
 
+- Ch7 循环神经网络：语言模型 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EUgT3_fGmedDsxHWSLqcAz8BmoPRbJPX0uME6i6macb94w?e=BBdhus) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(32).html)
+
+- Ch7 循环神经网络：循环神经网络 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EQMlZxIkV5VLq1L8BRRn3qgBkDN7l5mmyUgNrtmPJAmjXw?e=a3Za7H) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(33).html) 
 
 
