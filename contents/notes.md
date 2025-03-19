@@ -75,3 +75,5 @@
 - 28.[62.不同路径，63. 不同路径 II，343. 整数拆分，96.不同的二叉搜索树](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(2).html)
 
 - 29.[01背包问题 二维，01背包问题 一维，416. 分割等和子集](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(3).html)
+
+- 30.[1049. 最后一块石头的重量 II，494. 目标和，474.一和零](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(4).html)
