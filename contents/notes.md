@@ -79,3 +79,6 @@
 - 30.[1049. 最后一块石头的重量 II，494. 目标和，474.一和零](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(4).html)
 
 - 31.[完全背包理论基础，518. 零钱兑换 II，377. 组合总和 Ⅳ，70. 爬楼梯 （进阶）](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(5).html)
+
+- 32.[322. 零钱兑换，279.完全平方数，139.单词拆分，多重背包，背包问题总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(6).html)
+
