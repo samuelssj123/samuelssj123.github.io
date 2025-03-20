@@ -149,7 +149,6 @@ class Solution:
 
 [Learning Materials](https://programmercarl.com/0070.%E7%88%AC%E6%A5%BC%E6%A2%AF%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E7%89%88%E6%9C%AC.html#%E6%80%9D%E8%B7%AF)
 
-![image](../images/.png)
 
 思路：
 
