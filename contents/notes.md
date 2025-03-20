@@ -77,3 +77,5 @@
 - 29.[01背包问题 二维，01背包问题 一维，416. 分割等和子集](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(3).html)
 
 - 30.[1049. 最后一块石头的重量 II，494. 目标和，474.一和零](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(4).html)
+
+- 31.[完全背包理论基础，518. 零钱兑换 II，377. 组合总和 Ⅳ，70. 爬楼梯 （进阶）](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(5).html)
