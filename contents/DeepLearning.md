@@ -62,8 +62,10 @@
 
 - Ch7 循环神经网络：语言模型 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EUgT3_fGmedDsxHWSLqcAz8BmoPRbJPX0uME6i6macb94w?e=BBdhus) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(32).html)
 
-- Ch7 循环神经网络：门控循环单元GRU [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EWtd9ba4fkNDu2RQr77lAJkB3507h1dh83QG4S5RungSlw?e=9OZfGB) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(33).html)
+- Ch7 循环神经网络：循环神经网络RNN [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EQMlZxIkV5VLq1L8BRRn3qgBkDN7l5mmyUgNrtmPJAmjXw?e=a3Za7H) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(33).html)
+  
+- Ch8 现代循环神经网络：门控循环单元GRU [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EWtd9ba4fkNDu2RQr77lAJkB3507h1dh83QG4S5RungSlw?e=9OZfGB) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(34).html)
 
-- Ch7 循环神经网络：循环神经网络 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EQMlZxIkV5VLq1L8BRRn3qgBkDN7l5mmyUgNrtmPJAmjXw?e=a3Za7H) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(33).html) 
+
 
 
