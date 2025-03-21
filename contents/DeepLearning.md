@@ -68,4 +68,5 @@
 
 - Ch8 现代循环神经网络：LSTM+深层+双向循环神经网络 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/Eaz9uABcSPpGso5XMkHEifEBCCcfTB6IRMf8jWdDJRQKWQ?e=dUQn43) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(35).html)
 
+- Ch8 现代循环神经网络：编码器-解码器 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EUeAdYfTF05PgppnGDU7PfABKJbVc1lCKLHMF8Nt6kevhQ?e=XkTfNu) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(36).html)
 
