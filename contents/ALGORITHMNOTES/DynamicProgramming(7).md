@@ -66,4 +66,23 @@ class Solution:
 
 ![image](../images/337-house-robber-iii.png)
 
-
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rob(self, root: Optional[TreeNode]) -> int:
+        result = self.robtree(root)
+        return max(result[0], result[1])
+    def robtree(self, cur):
+        if not cur:
+            return [0, 0]
+        leftdp = self.robtree(cur.left)
+        rightdp = self.robtree(cur.right)
+        val1 = cur.val + leftdp[0] + rightdp[0]
+        val2 = max(leftdp[0], leftdp[1]) + max(rightdp[0], rightdp[1])
+        return [val2, val1]
+```
