@@ -82,3 +82,4 @@
 
 - 32.[322. 零钱兑换，279.完全平方数，139.单词拆分，多重背包，背包问题总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(6).html)
 
+- 33.[198.打家劫舍，213.打家劫舍II，337.打家劫舍III](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(7).html)
