@@ -20,7 +20,7 @@ Sharpen your blade in the LeetCode Arena! We dissect weekly/biweekly contest pro
 
 Prior to proceeding, it's advisable to revisit the foundational algorithms outlined below. Should time permit, consulting the notes section above may provide a more comprehensive reference.
 
-## 基础算法 Basic Algorithms
+### 基础算法 Basic Algorithms
 
 - 相向双指针：[Basic Algorithms(1)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(1).html)
 
@@ -44,6 +44,11 @@ Prior to proceeding, it's advisable to revisit the foundational algorithms outli
 
 - 回溯法（子集、组合、排列）：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(11).html)
 
+- 动态规划（从记忆化搜索到递推、背包、线性DP、状态机DP）：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(12).html)
+
+- 动态规划（区间DP、树形DP）：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(13).html)
+
+- 单调栈：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(14).html)
 
 # Ctrl + Alt + Elite: Projects Hub 
 
