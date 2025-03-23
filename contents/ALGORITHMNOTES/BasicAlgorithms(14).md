@@ -1,5 +1,7 @@
 # 单调栈
 
+![image](../images/basicalgorithm14.png)
+
 T1:[739.每日温度](https://leetcode.cn/problems/daily-temperatures/description/)
 
 **及时去掉无用数据, 保证栈中数据有序**
