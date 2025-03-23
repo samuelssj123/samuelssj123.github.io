@@ -78,6 +78,8 @@ fi=newF
 
 ## 背包类
 
+![image](../images/basicalgorithm12-1.png)
+
 例题2：01背包[494.目标和](https://leetcode.cn/problems/target-sum/)
 
 ```python
@@ -153,6 +155,8 @@ class Solution:
 ```
 
 # 线性DP
+
+![image](../images/basicalgorithm12-2.png)
 
 例题4：[1143.最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/description/)
 
@@ -325,6 +329,8 @@ class Solution:
 
 
 ## 状态机DP
+
+![image](../images/basicalgorithm12-3.png)
 
 例题7：[122.买卖股票的最佳时机Ⅱ](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/description/)
 
