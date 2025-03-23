@@ -2,6 +2,8 @@
 
 ## 区间DP
 
+![image](../images/basicalgorithm13-1.png)
+
 T1: [516.最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/description/)
 
 ```python
@@ -101,4 +103,8 @@ class Solution:
 - **空间复杂度**：$O(n^2)$，主要用于存储二维数组 `f`。
 
 
-## 
+## 树形DP
+
+![image](../images/basicalgorithm13-2.png)
+
+T3:[543.二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/description/)
