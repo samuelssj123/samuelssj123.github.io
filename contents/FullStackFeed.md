@@ -44,11 +44,11 @@ Prior to proceeding, it's advisable to revisit the foundational algorithms outli
 
 - 回溯法（子集、组合、排列）：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(11).html)
 
-- 动态规划（从记忆化搜索到递推、背包、线性DP、状态机DP）：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(12).html)
+- 动态规划（从记忆化搜索到递推、背包、线性DP、状态机DP）：[Basic Algorithms(12)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(12).html)
 
-- 动态规划（区间DP、树形DP）：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(13).html)
+- 动态规划（区间DP、树形DP）：[Basic Algorithms(13)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(13).html)
 
-- 单调栈、单调队列：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(14).html)
+- 单调栈、单调队列：[Basic Algorithms(14)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(14).html)
 
 # Ctrl + Alt + Elite: Projects Hub 
 
