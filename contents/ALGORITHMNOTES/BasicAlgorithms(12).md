@@ -420,4 +420,7 @@ class Solution:
         return f[-1][-1][0]
 ```
 
+
+![image](../images/basicalgorithm12-4.png)
+
 #本部分代码参考作者：灵茶山艾府
