@@ -48,7 +48,7 @@ Prior to proceeding, it's advisable to revisit the foundational algorithms outli
 
 - 动态规划（区间DP、树形DP）：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(13).html)
 
-- 单调栈：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(14).html)
+- 单调栈、单调队列：[Basic Algorithms(11)](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BasicAlgorithms(14).html)
 
 # Ctrl + Alt + Elite: Projects Hub 
 
