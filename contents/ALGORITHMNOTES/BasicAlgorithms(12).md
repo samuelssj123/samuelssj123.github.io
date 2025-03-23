@@ -323,4 +323,95 @@ class Solution:
 
 **空间复杂度**：O(k)，其中 `k` 为 LIS 的长度，最坏情况下 `k = n`。
 
+
+## 状态机DP
+
+例题7：[122.买卖股票的最佳时机Ⅱ](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/description/)
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        @cache
+        def dfs(i, hold):
+            if i < 0:
+                return -inf if hold else 0
+            if hold:
+                return max(dfs(i - 1, True), dfs(i - 1, False) - prices[i])
+            return max(dfs(i - 1, False), dfs(i - 1, True) + prices[i])
+        return dfs(n - 1, False)
+```
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        f = [[0] * 2 for _ in range(n + 1)]
+        f[0][1] = -inf
+        for i, p in enumerate(prices):
+            f[i + 1][0] = max(f[i][0], f[i][1] + p)
+            f[i + 1][1] = max(f[i][1], f[i][0] - p)
+        return f[n][0]
+```
+
+例题8：[309.买卖股票的最佳时机含冷冻期](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/)
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        @cache
+        def dfs(i, hold):
+            if i < 0:
+                return -inf if hold else 0
+            if hold:
+                return max(dfs(i - 1, True), dfs(i - 2, False) - prices[i]) #只需修改 dfs(i - 2, False)
+            return max(dfs(i - 1, False), dfs(i - 1, True) + prices[i])
+        return dfs(n - 1, False)
+```
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        f = [[0] * 2 for _ in range(n + 2)]
+        f[1][1] = -inf
+        for i, p in enumerate(prices):
+            f[i + 2][0] = max(f[i + 1][0], f[i + 1][1] + p)
+            f[i + 2][1] = max(f[i + 1][1], f[i][0] - p)
+        return f[-1][0]
+```
+
+例题9：[188.买卖股票的最佳时机Ⅳ](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/description/)
+
+```python
+class Solution:
+    def maxProfit(self, k: int, prices: List[int]) -> int:
+        n = len(prices)
+        @cache
+        def dfs(i, j, hold):
+            if j < 0:
+                return -inf
+            if i < 0:
+                return -inf if hold else 0
+            if hold:
+                return max(dfs(i - 1, j, True), dfs(i - 1, j, False) - prices[i]) #只需修改 dfs(i - 2, False)
+            return max(dfs(i - 1, j, False), dfs(i - 1, j - 1, True) + prices[i])
+        return dfs(n - 1, k, False)
+```
+
+```python
+class Solution:
+    def maxProfit(self, k: int, prices: List[int]) -> int:
+        n = len(prices)
+        f = [[[-inf] * 2 for _ in range(k + 2)] for _ in range(n + 1)]
+        for j in range(1, k + 2):
+            f[0][j][0] = 0
+        for i, p in enumerate(prices):
+            for j in range(1, k + 2):
+                f[i + 1][j][0] = max(f[i][j][0], f[i][j][1] + p)
+                f[i + 1][j][1] = max(f[i][j][1], f[i][j - 1][0] - p)
+        return f[-1][-1][0]
+```
+
 #本部分代码参考作者：灵茶山艾府
