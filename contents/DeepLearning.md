@@ -89,7 +89,7 @@
 
 - Ch8 现代循环神经网络：序列到序列学习（seq2seq） [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EVNrycbxBf1Huk6nOSG6d0sB1WjdL9VRuq-JkXHLYwZ_eQ?e=htylqI) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(37).html)
 
-- Ch8 现代循环神经网络：束搜索 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EZ3v1GSQ_rdKgw981Wud0DUBum696Pba3k4KoUzoFfv3pw?e=fjF9wQ) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(38).html)
+- Ch8 现代循环神经网络：束搜索 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EZ3v1GSQ_rdKgw981Wud0DUBum696Pba3k4KoUzoFfv3pw?e=fjF9wQ) 
 
 ### 注意力机制 Attention Mechanisms
 
@@ -103,4 +103,4 @@
 
 - Ch9 注意力机制：BERT微调 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EcVuhh4n5QRKrbdqQat4pqIBSuNQjzD99fmmDMz0mXMjug?e=RR13QV) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(43).html)
 
-- Ch9 注意力机制：优化算法 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EZ6yU96SMHxNpbEiAGY2kqUBVjBBtNuDBY1YvqxvLxwrYA?e=P0XnMW) [code](https://samuelssj123.github.io/contents/DEEPLEARNING/DeepLearning(44).html)
+- Ch9 注意力机制：优化算法 [note](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EZ6yU96SMHxNpbEiAGY2kqUBVjBBtNuDBY1YvqxvLxwrYA?e=P0XnMW) 
