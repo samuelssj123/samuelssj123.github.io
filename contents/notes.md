@@ -89,3 +89,5 @@
 - 35.[188.买卖股票的最佳时机IV，309.最佳买卖股票时机含冷冻期，714.买卖股票的最佳时机含手续费，股票总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(9).html)
 
 - 36.[300.最长递增子序列，674. 最长连续递增序列，718. 最长重复子数组](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(10).html)
+
+- 37.[1143.最长公共子序列，1035.不相交的线，53. 最大子序和，392.判断子序列](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(11).html)
