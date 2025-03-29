@@ -93,3 +93,5 @@
 - 37.[1143.最长公共子序列，1035.不相交的线，53. 最大子序和，392.判断子序列](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(11).html)
 
 - 38.[115.不同的子序列，583. 两个字符串的删除操作，72. 编辑距离，编辑距离总结篇](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(12).html)
+
+- 39.[647. 回文子串，516.最长回文子序列，动态规划总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(13).html)
