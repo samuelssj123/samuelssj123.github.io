@@ -53,3 +53,7 @@ Prior to proceeding, it's advisable to revisit the foundational algorithms outli
 # Ctrl + Alt + Elite: Projects Hub 
 
 Reverse-engineer trending GitHub repos, then reimagine them with cutting-edge twists. This is a collaborative playground for architectural forensics – where we dissect tech stacks like digital surgeons. Coming soon: distributed system simulations, full-stack project DNA recombination, and open-source ethos survival kits.
+
+- [Project 2 : Attention Map](https://github.com/samuelssj123/samuelssj123.github.io/blob/5709faeb09bbae6b2cab8c17ca7b8e2bf771e42b/contents/Code/Project2AttentionMap)
+
+  > The project aims to ​visualize attention mechanisms in Chinese texts, providing intuitive heatmaps to demonstrate the semantic relevance strength between different words when processed by Transformer models such as BERT.
