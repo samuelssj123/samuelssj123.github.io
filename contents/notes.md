@@ -98,4 +98,4 @@
 
 ## 单调栈 ​Monotonic Stack
 
-- 40.[739. 每日温度，496.下一个更大元素，503.下一个更大元素II](https://samuelssj123.github.io/contents/ALGORITHMNOTES/MonotonicStack(1).html)
+- 40.[739. 每日温度，496.下一个更大元素，503.下一个更大元素II](https://samuelssj123.github.io/contents/ALGORITHMNOTES/​MonotonicStack(1).html)
