@@ -54,6 +54,12 @@ Prior to proceeding, it's advisable to revisit the foundational algorithms outli
 
 Reverse-engineer trending GitHub repos, then reimagine them with cutting-edge twists. This is a collaborative playground for architectural forensics – where we dissect tech stacks like digital surgeons. Coming soon: distributed system simulations, full-stack project DNA recombination, and open-source ethos survival kits.
 
+- [Project 1 : The Impact of Company-Level Events on Stock Prices](https://github.com/samuelssj123/samuelssj123.github.io/blob/580786c91eeddf2f3bf718f179f04eebd77cba19/contents/Code/Project1EventAnalysis.ipynb)
+
+  > This is a financial research tool designed to analyze the impact of company-level events on stock prices. Its core functions include calculating **abnormal returns (AR)** and visualizing how specific events influence stock performance. The tool integrates statistical models to isolate event-driven price movements from market-wide trends, enabling researchers to quantify and graphically represent the causal relationship between corporate actions (e.g., earnings announcements, mergers) and equity valuation changes. ([Sample Data & Code](https://mailbnueducn-my.sharepoint.com/:f:/g/personal/sjs_mail_bnu_edu_cn/EvjUxziM7AFMt0rZ3vOnKFEBP02vYLsIczaVunbO0M835g?e=xtUNgD))
+
 - [Project 2 : Attention Map](https://github.com/samuelssj123/samuelssj123.github.io/blob/5709faeb09bbae6b2cab8c17ca7b8e2bf771e42b/contents/Code/Project2AttentionMap)
 
   > The project aims to ​visualize attention mechanisms in Chinese texts, providing intuitive heatmaps to demonstrate the semantic relevance strength between different words when processed by Transformer models such as BERT.
+
+
