@@ -1,34 +1,34 @@
-# 数组 Array
+## 数组 Array
 
 -  1.[数组理论基础，704. 二分查找，27. 移除元素，977.有序数组的平方](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Array(1).html)
   
 -  2.[209.长度最小的子数组，59.螺旋矩阵II，区间和，开发商购买土地，数组总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Array(2).html)
 
-# 链表 Linked List
+## 链表 Linked List
  
 -  3.[链表理论基础，203.移除链表元素，707.设计链表，206.反转链表](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Linked_List(1).html)
   
 -  4.[24. 两两交换链表中的节点，19.删除链表的倒数第N个节点，面试题 02.07. 链表相交，142.环形链表II，总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Linked_List(2).html) 
 
-# 哈希表 Hash Table
+## 哈希表 Hash Table
 
 -  5.[哈希表理论基础，242.有效的字母异位词，349.两个数组的交集，202.快乐数，1. 两数之和](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Hash_Table(1).html)
   
 -  6.[454.四数相加II，383. 赎金信，15. 三数之和，18. 四数之和，总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Hash_Table(2).html)
 
-# 字符串 String
+## 字符串 String
 
 - 7.[344.反转字符串，541. 反转字符串II，卡码网：54.替换数字](https://samuelssj123.github.io/contents/ALGORITHMNOTES/String(1).html)
 
 - 8.[151.翻转字符串里的单词，卡码网：55.右旋转字符串，28. 实现 strStr()，459.重复的子字符串，字符串总结，双指针回顾](https://samuelssj123.github.io/contents/ALGORITHMNOTES/String(2).html)
 
-# 栈和队列 Stack & Queue
+## 栈和队列 Stack & Queue
 
 - 9.[栈和队列理论基础，232. 用栈实现队列，225. 用队列实现栈，20. 有效的括号，1047. 删除字符串中的所有相邻重复项](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Stack&Queue(1).html)
 
 - 10.[150. 逆波兰表达式求值，239. 滑动窗口最大值，347.前 K 个高频元素，栈和队列总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/Stack&Queue(2).html)
 
-# 二叉树 Binary Tree
+## 二叉树 Binary Tree
 
 - 11.[理论基础，二叉树的递归遍历，二叉树的迭代遍历，二叉树的统一迭代法，二叉树的层序遍历](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(1).html)
 
@@ -46,7 +46,7 @@
 
 - 18.[669. 修剪二叉搜索树，108.将有序数组转换为二叉搜索树，538.把二叉搜索树转换为累加树，538.把二叉搜索树转换为累加树](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BinaryTree(8).html)
 
-# 回溯算法 Back Tracking
+## 回溯算法 Back Tracking
 
 - 18.[理论基础，77. 组合，216.组合总和III，17.电话号码的字母组合](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(1).html)
 
@@ -56,7 +56,7 @@
  
 - 21.[491.递增子序列，46.全排列，47.全排列 II，332.重新安排行程，51.N皇后，37.解数独，总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/BackTracking(4).html)
 
-# 贪心算法 Greedy Algorithm
+## 贪心算法 Greedy Algorithm
 
 - 22.[理论基础，455.分发饼干，376. 摆动序列，53. 最大子序和](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(1).html)
 
@@ -68,7 +68,7 @@
 
 - 26.[56. 合并区间，738.单调递增的数字，968.监控二叉树，总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GreedyAlgorithm(5).html)
 
-# 动态规划 Dynamic Programming
+## 动态规划 Dynamic Programming
 
 - 27.[理论基础，509. 斐波那契数，70. 爬楼梯，746. 使用最小花费爬楼梯](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(1).html)
 
@@ -95,3 +95,7 @@
 - 38.[115.不同的子序列，583. 两个字符串的删除操作，72. 编辑距离，编辑距离总结篇](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(12).html)
 
 - 39.[647. 回文子串，516.最长回文子序列，动态规划总结](https://samuelssj123.github.io/contents/ALGORITHMNOTES/DynamicProgramming(13).html)
+
+## 单调栈 ​Monotonic Stack
+
+- 40.[739. 每日温度，496.下一个更大元素，503.下一个更大元素II](https://samuelssj123.github.io/contents/ALGORITHMNOTES​MonotonicStack(1).html)
