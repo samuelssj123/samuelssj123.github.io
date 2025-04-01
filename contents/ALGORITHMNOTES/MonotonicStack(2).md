@@ -1,6 +1,6 @@
 List: 42. 接雨水，84.柱状图中最大的矩形
 
-[42. 接雨水trapping-rain-water](#01)，[](#02)
+[42. 接雨水trapping-rain-water](#01)，[84.柱状图中最大的矩形largest-rectangle-in-histogram](#02)
 
 # <span id="01">42. 接雨水trapping-rain-water</span>
 
