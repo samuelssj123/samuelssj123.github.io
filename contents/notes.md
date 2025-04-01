@@ -99,3 +99,5 @@
 ## 单调栈 ​Monotonic Stack
 
 - 40.[739. 每日温度，496.下一个更大元素，503.下一个更大元素II](https://samuelssj123.github.io/contents/ALGORITHMNOTES/​MonotonicStack(1).html)
+
+- 41.[42. 接雨水，84.柱状图中最大的矩形](https://samuelssj123.github.io/contents/ALGORITHMNOTES/​MonotonicStack(2).html)
