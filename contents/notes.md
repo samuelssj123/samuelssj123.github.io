@@ -104,4 +104,4 @@
 
 ## 图论 Graph Theory
 
-- 42.[t](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(1).html)
+- 42.[图论理论基础，深度优先搜索理论基础，98. 所有可达路径，广度优先搜索理论基础](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(1).html)
