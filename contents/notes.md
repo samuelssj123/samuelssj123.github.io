@@ -105,3 +105,6 @@
 ## 图论 Graph Theory
 
 - 42.[图论理论基础，深度优先搜索理论基础，98. 所有可达路径，广度优先搜索理论基础](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(1).html)
+
+- 43.[99. 岛屿数量（深搜），99. 岛屿数量（广搜），100. 岛屿的最大面积](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(2).html)
+
