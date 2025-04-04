@@ -1,6 +1,6 @@
-List: 101. 孤岛的总面积，102. 沉没孤岛
+List: 101. 孤岛的总面积，102. 沉没孤岛，103. 水流问题，104.建造最大岛屿
 
-[101. 孤岛的总面积](#01)，[102. 沉没孤岛](#02)，[](#03)，[](#04),[](#05)
+[101. 孤岛的总面积](#01)，[102. 沉没孤岛](#02)，[103. 水流问题](#03)，[104.建造最大岛屿](#04)
 
 # <span id="01">101. 孤岛的总面积</span>
 
@@ -125,6 +125,8 @@ print(count)
 
 [Learning Materials](https://www.programmercarl.com/kamacoder/0102.%E6%B2%89%E6%B2%A1%E5%AD%A4%E5%B2%9B.html)
 
+![image](../images/GraphTheory(3)-2.png)
+
 思路依然是从地图周边出发，将周边空格相邻的陆地都做上标记，然后在遍历一遍地图，遇到 陆地 且没做过标记的，那么都是地图中间的 陆地 ，全部改成水域就行。
 
 步骤一：深搜或者广搜将地图周边的 1 （陆地）全部改成 2 （特殊标记）
@@ -182,26 +184,164 @@ for row in grid:
     print(' '.join(map(str, row)))
 ```
 
-# <span id="03">理论基础</span>
+# <span id="03">103. 水流问题</span>
 
-[卡码网KamaCoder]() 
+[卡码网KamaCoder](https://kamacoder.com/problempage.php?pid=1175) 
 
-[Learning Materials]()
+[Learning Materials](https://www.programmercarl.com/kamacoder/0103.%E6%B0%B4%E6%B5%81%E9%97%AE%E9%A2%98.html#%E6%80%9D%E8%B7%AF)
 
-![image](../images/.png)
+![image](../images/GraphTheory(3)-3.png)
 
-# <span id="04">理论基础</span>
+一个比较直白的想法，其实就是 遍历每个点，然后看这个点 能不能同时到达第一组边界和第二组边界。
 
-[卡码网KamaCoder]() 
+遍历每一个节点，是 m * n，遍历每一个节点的时候，都要做深搜，深搜的时间复杂度是： m * n
 
-[Learning Materials]()
+那么整体时间复杂度 就是 O(m^2 * n^2) ，这是一个四次方的时间复杂度。
 
-![image](../images/.png)
+反过来想，从第一组边界上的节点 逆流而上，将遍历过的节点都标记上。
 
-# <span id="05">理论基础</span>
+同样从第二组边界的边上节点 逆流而上，将遍历过的节点也标记上。
 
-[Leetcode]() 
+然后两方都标记过的节点就是既可以流向第一组边界也可以流向第二组边界的节点。
 
-[Learning Materials]()
+最后，我们得到两个方向交界的这些节点，就是我们最后要求的节点。
 
-![image](../images/.png)
+
+```python
+first = set()
+second = set()
+directions = [[-1, 0], [0, 1], [1, 0], [0, -1]]
+
+def dfs(i, j, graph, visited, side):
+    if visited[i][j]:
+        return
+    visited[i][j] = True
+    side.add((i, j))
+    for x, y in directions:
+        nx = i + x 
+        ny = j + y 
+        if nx < 0 or ny < 0 or nx >= len(graph) or ny >= len(graph[0]):
+            continue
+        if int(graph[nx][ny]) >= int(graph[i][j]):
+            dfs(nx, ny, graph, visited, side)
+
+def main():
+    global first
+    global second
+    n, m = map(int, input().strip().split())
+    graph = []
+    for _ in range(n):
+        row = input().strip().split()
+        graph.append(row)
+    # 是否可到达第一边界
+    visited = [[False] * m for _ in range(n)]
+    for i in range(m):
+        dfs(0, i, graph, visited, first)
+    for i in range(n):
+        dfs(i, 0, graph, visited, first)
+    # 是否可到达第二边界
+    visited = [[False] * m for _ in range(n)]
+    for i in range(m):
+        dfs(n - 1, i, graph, visited, second)
+    for i in range(n):
+        dfs(i, m - 1, graph, visited, second)
+    # 可到达第一边界和第二边界
+    res = first & second
+    for x, y in res:
+        print(f"{x} {y}")
+    
+if __name__ == "__main__":
+    main()
+```
+
+# <span id="04">104.建造最大岛屿</span>
+
+[卡码网KamaCoder](https://kamacoder.com/problempage.php?pid=1176) 
+
+[Learning Materials](https://www.programmercarl.com/kamacoder/0104.%E5%BB%BA%E9%80%A0%E6%9C%80%E5%A4%A7%E5%B2%9B%E5%B1%BF.html#%E6%80%9D%E8%B7%AF)
+
+![image](../images/GraphTheory(3)-4.png)
+
+本题的一个暴力想法，应该是遍历地图尝试 将每一个 0 改成1，然后去搜索地图中的最大的岛屿面积。
+
+计算地图的最大面积：遍历地图 + 深搜岛屿，时间复杂度为 n * n。
+
+（其实使用深搜还是广搜都是可以的，其目的就是遍历岛屿做一个标记，相当于染色，那么使用哪个遍历方式都行，以下我用深搜来讲解）
+
+每改变一个0的方格，都需要重新计算一个地图的最大面积，所以 整体时间复杂度为：n^4。
+
+- 优化：
+
+其实每次深搜遍历计算最大岛屿面积，我们都做了很多重复的工作。
+
+只要用一次深搜把每个岛屿的面积记录下来就好。
+
+第一步：一次遍历地图，得出各个岛屿的面积，并做编号记录。可以使用map记录，key为岛屿编号，value为岛屿面积
+
+第二步：再遍历地图，遍历0的方格（因为要将0变成1），并统计该1（由0变成的1）周边岛屿面积，将其相邻面积相加在一起，遍历所有 0 之后，就可以得出 选一个0变成1 之后的最大面积。
+
+当然这里还有一个优化的点，就是 可以不用 visited数组，因为有mark来标记，所以遍历过的grid[i][j]是不等于1的。
+
+
+```python
+from typing import List
+from collections import defaultdict
+
+direction = [(1,0),(-1,0),(0,1),(0,-1)]
+res = 0
+idx = 1
+count_area = defaultdict(int)
+
+def max_area_island(grid):
+    global res, idx, count_area
+    res = 0
+    idx = 1
+    count_area.clear()
+    if not grid or len(grid) == 0 or len(grid[0]) == 0:
+        return 0
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
+            if grid[i][j] == 1:
+                idx += 1
+                count_area[idx] = dfs(grid, i, j)
+    # 计算改变一个0后的最大可能面积
+    check_largest_connect_island(grid)
+    # 返回最大值
+    max_original = max(count_area.values(), default=0)
+    return max(res, max_original)
+    
+def dfs(grid, row, col):
+    if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] != 1:
+        return 0
+    grid[row][col] = idx
+    area = 1
+    for i, j in direction:
+        nx = row + i
+        ny = col + j
+        area += dfs(grid, nx, ny)
+    return area
+
+def check_largest_connect_island(grid):
+    global res
+    m, n = len(grid), len(grid[0])
+    for row in range(m):
+        for col in range(n):
+            if grid[row][col] == 0:
+                area = 1
+                visited = set()
+                for i, j in direction:
+                    nx = row + i 
+                    ny = col + j
+                    if 0 <= nx < len(grid) and 0 <= ny < len(grid[0]) and grid[nx][ny] != 0 and grid[nx][ny] not in visited:
+                        visited.add(grid[nx][ny])
+                        area += count_area[grid[nx][ny]]
+                res = max(res, area)
+
+m, n = map(int, input().split())
+grid = []
+
+for i in range(m):
+    grid.append(list(map(int,input().split())))
+
+print(max_area_island(grid))
+```
