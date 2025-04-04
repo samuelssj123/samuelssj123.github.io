@@ -345,3 +345,118 @@ for i in range(m):
 
 print(max_area_island(grid))
 ```
+
+
+### 题目理解
+题目要求给定一个由 1（陆地）和 0（水）组成的矩阵，你最多可以将矩阵中的一格水变为一块陆地，然后计算在执行此操作之后，矩阵中最大的岛屿面积是多少。岛屿面积是组成岛屿的陆地的总数，岛屿是被水包围，并且通过水平方向或垂直方向上相邻的陆地连接而成的，同时假设矩阵外均被水包围。
+
+### 整体思路
+整体思路分为以下几个步骤：
+1. **标记不同的岛屿**：遍历矩阵，使用深度优先搜索（DFS）标记每个岛屿，并记录每个岛屿的面积。
+2. **尝试将一个水单元格变为陆地**：遍历矩阵中的每个水单元格，计算将其变为陆地后能连接的岛屿总面积。
+3. **比较并返回最大值**：比较原始岛屿的最大面积和将一个水单元格变为陆地后的最大面积，返回其中的最大值。
+
+### 代码各部分详细解释
+
+#### 全局变量
+```python
+direction = [(1,0),(-1,0),(0,1),(0,-1)]
+res = 0
+idx = 1
+count_area = defaultdict(int)
+```
+- `direction`：这是一个列表，存储了四个方向（下、上、右、左）的偏移量，用于在深度优先搜索中遍历相邻的单元格。
+- `res`：用于记录将一个水单元格变为陆地后能得到的最大岛屿面积。
+- `idx`：用于给不同的岛屿分配唯一的编号，初始值为 1。
+- `count_area`：这是一个 `defaultdict`，用于记录每个岛屿的面积，键为岛屿的编号，值为岛屿的面积。
+
+#### `max_area_island` 函数
+```python
+def max_area_island(grid):
+    global res, idx, count_area
+    res = 0
+    idx = 1
+    count_area.clear()
+    if not grid or len(grid) == 0 or len(grid[0]) == 0:
+        return 0
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
+            if grid[i][j] == 1:
+                idx += 1
+                count_area[idx] = dfs(grid, i, j)
+    # 计算改变一个0后的最大可能面积
+    check_largest_connect_island(grid)
+    # 返回最大值
+    max_original = max(count_area.values(), default=0)
+    return max(res, max_original)
+```
+- **功能**：计算矩阵中最大的岛屿面积，考虑将一个水单元格变为陆地的情况。
+- **步骤**：
+  1. 重置全局变量 `res`、`idx` 和清空 `count_area`，确保每次调用函数时数据是干净的。
+  2. 检查矩阵是否为空，如果为空则直接返回 0。
+  3. 遍历矩阵中的每个单元格，如果是陆地（值为 1），则调用 `dfs` 函数标记该岛屿，并记录其面积到 `count_area` 中。
+  4. 调用 `check_largest_connect_island` 函数，计算将一个水单元格变为陆地后能得到的最大岛屿面积。
+  5. 计算原始岛屿的最大面积 `max_original`。
+  6. 返回 `res` 和 `max_original` 中的最大值。
+
+#### `dfs` 函数
+```python
+def dfs(grid, row, col):
+    if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]) or grid[row][col] != 1:
+        return 0
+    grid[row][col] = idx
+    area = 1
+    for i, j in direction:
+        nx = row + i
+        ny = col + j
+        area += dfs(grid, nx, ny)
+    return area
+```
+- **功能**：使用深度优先搜索标记一个岛屿，并计算该岛屿的面积。
+- **步骤**：
+  1. 检查当前单元格是否越界或者不是陆地（值不为 1），如果是则返回 0。
+  2. 将当前单元格标记为当前岛屿的编号 `idx`。
+  3. 初始化岛屿面积为 1。
+  4. 遍历四个方向的相邻单元格，递归调用 `dfs` 函数，并将返回的面积累加到当前岛屿面积中。
+  5. 返回当前岛屿的面积。
+
+#### `check_largest_connect_island` 函数
+```python
+def check_largest_connect_island(grid):
+    global res
+    m, n = len(grid), len(grid[0])
+    for row in range(m):
+        for col in range(n):
+            if grid[row][col] == 0:
+                area = 1
+                visited = set()
+                for i, j in direction:
+                    nx = row + i 
+                    ny = col + j
+                    if 0 <= nx < len(grid) and 0 <= ny < len(grid[0]) and grid[nx][ny] != 0 and grid[nx][ny] not in visited:
+                        visited.add(grid[nx][ny])
+                        area += count_area[grid[nx][ny]]
+                res = max(res, area)
+```
+- **功能**：遍历矩阵中的每个水单元格，计算将其变为陆地后能连接的岛屿总面积，并更新 `res` 为最大值。
+- **步骤**：
+  1. 遍历矩阵中的每个单元格，如果是水（值为 0），则进行以下操作。
+  2. 初始化面积为 1，表示将当前水单元格变为陆地。
+  3. 使用 `visited` 集合记录已经访问过的岛屿编号，避免重复计算。
+  4. 遍历四个方向的相邻单元格，如果相邻单元格是陆地且对应的岛屿编号未被访问过，则将该岛屿的面积累加到当前面积中，并将该岛屿编号加入 `visited` 集合。
+  5. 更新 `res` 为当前面积和 `res` 中的最大值。
+
+#### 主程序部分
+```python
+m, n = map(int, input().split())
+grid = []
+
+for i in range(m):
+    grid.append(list(map(int,input().split())))
+
+print(max_area_island(grid))
+```
+- **功能**：读取输入的矩阵行数和列数，以及矩阵的具体元素，然后调用 `max_area_island` 函数计算并输出最大岛屿面积。
+
+### 总结
+通过上述步骤，我们先标记出矩阵中的所有岛屿并记录其面积，然后尝试将每个水单元格变为陆地，计算连接后的岛屿总面积，最后返回最大的岛屿面积。
