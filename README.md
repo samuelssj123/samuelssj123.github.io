@@ -8,5 +8,5 @@ This repository contains abundant resources, primarily including:
   
 - Deep learning materials with notes and code based on classic courses
   
-- Interview preparation FAQs ("八股文") and classic project examples
+- Interview preparation FAQs and classic project examples
 
