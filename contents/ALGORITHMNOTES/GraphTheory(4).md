@@ -14,31 +14,11 @@ List:
 
 ```
 
-# <span id="02"></span>
-
-[卡码网KamaCoder](https://kamacoder.com/problempage.php?pid=1183) 
-
-[Learning Materials](https://www.programmercarl.com/kamacoder/0110.%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%A5%E9%BE%99.html#%E6%80%9D%E8%B7%AF)
 
 ---
 1. **一段话总结**：题目要求在给定的字典`strList`中，从`beginStr`转换到`endStr`，每次只能改变一个字符且中间字符串必须在字典中，求最短转换序列的字符串数目，不存在则返回0。解题**思路**是通过枚举替换字符判断字符串间的连接关系，构建图结构，然后利用**广度优先搜索（BFS）**在无权图中求最短路，同时使用`set`检查字符串是否在集合中，用`map`记录访问情况和路径长度，防止死循环。还可尝试**双向BFS**优化，但未详细讲解。
-2. **思维导图**
-```mindmap
-## **题目描述**
-- 从beginStr到endStr按规则转换
-- 转换条件：每次改一个字符且中间串在字典中
-- 输入输出格式：含字典大小、起始和结束字符串及字典内容
-## **解题思路**
-- 构建图：枚举替换字符判断连接关系
-- 求最短路：用BFS在无权图中找最短路径
-- 防止死循环：用标记位记录节点是否访问
-## **代码实现**
-- C++代码：用unordered_set和unordered_map辅助
-- Java代码：开头部分，需继续完善
-## **优化拓展**
-- 双向BFS：从头尾两端搜索可优化
-```
-3. **详细总结**
+
+2. **详细总结**
     - **题目要求**：给定字典`strList`、起始字符串`beginStr`和结束字符串`endStr`，要求找出从`beginStr`到`endStr`的最短转换序列中的字符串数目。转换需满足：序列首为`beginStr`，尾为`endStr`；每次仅能改变一个位置的字符；中间字符串必须在`strList`中；`beginStr`和`endStr`不在`strList`中，且字符串仅由小写字母组成。若不存在转换序列，返回0。
     - **输入输出**：
 |输入|描述|
@@ -59,6 +39,13 @@ List:
         - **答案**：`unordered_set`用于存储字典`strList`中的字符串，在检查某个替换后的字符串是否在字典中时，使用`unordered_set`的`find`方法效率更高。`unordered_map`用于记录`strList`里的字符串是否被访问过，同时记录从起点到该字符串的路径长度，以此来避免重复访问和计算路径长度。
     - **问题3：双向BFS与普通BFS相比有什么优势？**
         - **答案**：双向BFS从起始点和终点两端同时进行搜索，能更快地找到相遇点，从而减少搜索的范围和时间复杂度。普通BFS是从起点单向搜索，搜索范围相对较大，在一些复杂情况下双向BFS的效率更高，但实现相对复杂一些。 
+
+# <span id="02"></span>
+
+[卡码网KamaCoder](https://kamacoder.com/problempage.php?pid=1183) 
+
+[Learning Materials](https://www.programmercarl.com/kamacoder/0110.%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%A5%E9%BE%99.html#%E6%80%9D%E8%B7%AF)
+
 
 ```python
 
