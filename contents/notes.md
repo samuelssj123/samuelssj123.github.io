@@ -111,3 +111,5 @@
 - 44.[101. 孤岛的总面积，102. 沉没孤岛，103. 水流问题，104.建造最大岛屿](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(3).html)
 
 - 45.[110. 字符串接龙，105.有向图的完全可达性，106. 岛屿的周长](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(4).html)
+
+- 46.[并查集理论基础，107. 寻找存在的路径](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(5).html)
