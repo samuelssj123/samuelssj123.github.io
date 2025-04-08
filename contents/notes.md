@@ -116,4 +116,4 @@
 
 - 47.[108. 冗余连接，109. 冗余连接II](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(6).html)
 
-- 48.[s](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(7).html)
+- 48.[prim算法精讲，kruskal算法精讲，拓扑排序精讲](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(7).html)
