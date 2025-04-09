@@ -144,6 +144,7 @@ if __name__ == "__main__":
 
 ## 大模型改的代码也能通过，但是加了层提前终止的逻辑，而且还是用的sys输入
 
+```python
 import sys
 
 def main():
@@ -192,6 +193,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
 
 # <span id="03">bellman_ford之单源有限最短路</span>
 
