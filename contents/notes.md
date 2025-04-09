@@ -117,3 +117,5 @@
 - 47.[108. 冗余连接，109. 冗余连接II](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(6).html)
 
 - 48.[prim算法精讲，kruskal算法精讲，拓扑排序精讲](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(7).html)
+
+- 49.[dijkstra（朴素版）精讲，dijkstra（堆优化版）精讲，Bellman_ford 算法精讲 ](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(8).html)
