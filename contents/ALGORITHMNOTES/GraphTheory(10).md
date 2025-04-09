@@ -11,7 +11,53 @@ List: Floyd 算法精讲，A * 算法精讲 （A star算法），最短路算法
 ![image](../images/GraphTheory(10)-1.png)
 
 ```python
+n, m = map(int, input().split())
+grid = [[[float('inf')] * (n + 1) for _ in range(n+1)] for _ in range(n+1)]
 
+for i in range(m):
+    p1, p2, val = map(int, input().split())
+    grid[p1][p2][0] = val
+    grid[p2][p1][0] = val
+
+for k in range(1, n + 1):
+    for i in range(1, n + 1):
+        for j in range(1, n + 1):
+            grid[i][j][k] = min(grid[i][j][k - 1], grid[i][k][k - 1] + grid[k][j][k - 1])
+
+z = int(input())
+while z:
+    start, end = map(int, input().split())
+    if grid[start][end][n] == float('inf'):
+        print(-1)
+    else:
+        print(grid[start][end][n])
+    z -= 1
+```
+
+## 空间优化：
+
+```python
+n, m = map(int, input().split())
+grid = [[float('inf')] * (n + 1) for _ in range(n+1)]
+
+for i in range(m):
+    p1, p2, val = map(int, input().split())
+    grid[p1][p2] = val
+    grid[p2][p1] = val
+
+for k in range(1, n + 1):
+    for i in range(1, n + 1):
+        for j in range(1, n + 1):
+            grid[i][j] = min(grid[i][j], grid[i][k] + grid[k][j])
+
+z = int(input())
+while z:
+    start, end = map(int, input().split())
+    if grid[start][end] == float('inf'):
+        print(-1)
+    else:
+        print(grid[start][end])
+    z -= 1
 ```
 
 # <span id="02">A * 算法精讲 （A star算法）</span>
@@ -23,7 +69,62 @@ List: Floyd 算法精讲，A * 算法精讲 （A star算法），最短路算法
 ![image](../images/GraphTheory(10)-2.png)
 
 ```python
+# 初始化移动步数矩阵
+moves = [[0] * 1001 for _ in range(1001)]
+# 骑士的八个移动方向
+direction = [(1, 2), (2, 1), (-1, 2), (2, -1), (1, -2), (-2, 1), (-1, -2), (-2, -1)]
+class Knight:
+    def __init__(self, x, y, g, h, f):
+        self.x = x
+        self.y = y
+        self.g = g
+        self.h = h
+        self.f = f
+    # 重载小于运算符，用于优先队列排序
+    def __lt__(self, other):
+        return self.f < other.f
 
+
+# 使用 Python 的 heapq 模块实现优先队列，而不是 deque
+
+# 启发式函数，计算当前位置到目标位置的启发式距离
+def Heuristic(k, b1, b2):
+    heuristic = (k.x - b1) * (k.x - b1) + (k.y - b2) * (k.y - b2) # 不开根号，提高运算效率
+    return heuristic
+
+# A*算法实现
+import heapq
+def astar(k, b1, b2):
+    que = []
+    heapq.heappush(que, k)
+    while que:
+        cur = heapq.heappop(que)
+        if cur.x == b1 and cur.y == b2:
+            break
+        for i in range(8):
+            nxx = cur.x + direction[i][0]
+            nxy = cur.y + direction[i][1]
+            nx = Knight(nxx, nxy, 0, 0, 0)
+            if nx.x < 1 or nx.x > 1000 or nx.y < 1 or nx.y > 1000:
+                continue
+            if not moves[nx.x][nx.y]:
+                moves[nx.x][nx.y] = moves[cur.x][cur.y] + 1
+                nx.g = cur.g + 5 #不开根号，1*1+2*2 = 5
+                nx.h = Heuristic(nx, b1, b2)
+                nx.f = nx.g + nx.h 
+                heapq.heappush(que, nx)
+
+n = int(input())
+while n:
+    n -= 1
+    a1, a2, b1, b2 = map(int, input().split())
+    # 重置移动步数矩阵
+    moves = [[0] * 1001 for _ in range(1001)]
+    start = Knight(a1, a2, 0, 0, 0)
+    start.h = Heuristic(start, b1, b2)
+    start.f = start.g + start.h 
+    astar(start, b1, b2)
+    print(moves[b1][b2])
 ```
 
 # <span id="03">最短路算法总结篇</span>
