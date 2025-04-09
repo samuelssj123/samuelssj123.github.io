@@ -86,6 +86,52 @@ else:
     print(minDist[n])
 ```
 
+估计是系统的bug，把代码包到main函数里，然后把变量名sto改名就能通过
+
+同样代码，前两次还出现错误了，sto的变量名也不是必须修改，改回去，发现偶尔也能提交成功
+
+真的很离谱，代码没改，但是多提交几次，就从运行错误-超时-正确了！
+
+![image](../images/GraphTheory(9)-4.png)
+
+封装起来能运行的代码是：
+
+```python
+def main():
+    n, m = map(int, input().split())
+    grid = []
+    minDist = [float('inf')] * (n + 1)
+    for i in range(m):
+        p1, p2, val = map(int, input().split())
+        grid.append([p1, p2, val])
+
+    minDist[1] = 0
+    flag = False
+
+    for i in range(1, n + 1):
+        for side in grid:
+            sfrom = side[0]
+            sto = side[1]
+            sval = side[2]
+            if i < n :
+                if minDist[sfrom] != float('inf') and minDist[sto] > minDist[sfrom] + sval:
+                    minDist[sto] = minDist[sfrom] + sval
+            else:
+                if minDist[sfrom] != float('inf') and minDist[sto] > minDist[sfrom] + sval:
+                    flag = True
+
+    if flag:
+        print('circle')
+    elif minDist[n] == float('inf'):
+        print('unconnected')
+    else:
+        print(minDist[n])
+
+if __name__ == "__main__":
+    main()
+```
+
+
 ## 参考答案代码
 
 ```python
