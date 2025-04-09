@@ -1,4 +1,4 @@
-List: dijkstra（朴素版）精讲，dijkstra（堆优化版）精讲，Bellman_ford 算法精讲
+List: dijkstra（朴素版）精讲，dijkstra（堆优化版）精讲，Bellman_ford 算法精讲 
 
 [dijkstra（朴素版）精讲](#01)，[dijkstra（堆优化版）精讲](#02)，[Bellman_ford 算法精讲](#03)
 
