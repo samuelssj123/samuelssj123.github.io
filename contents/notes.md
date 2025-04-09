@@ -119,3 +119,5 @@
 - 48.[prim算法精讲，kruskal算法精讲，拓扑排序精讲](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(7).html)
 
 - 49.[dijkstra（朴素版）精讲，dijkstra（堆优化版）精讲，Bellman_ford 算法精讲 ](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(8).html)
+
+- 50.[Bellman_ford 队列优化算法（又名SPFA），bellman_ford之判断负权回路，bellman_ford之单源有限最短路](https://samuelssj123.github.io/contents/ALGORITHMNOTES/GraphTheory(9).html)
