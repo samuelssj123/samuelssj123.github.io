@@ -1,6 +1,50 @@
-List: dijkstra（朴素版）精讲，dijkstra（堆优化版）精讲，Bellman_ford 算法精讲 
+List: 拓扑排序精讲，dijkstra（朴素版）精讲，dijkstra（堆优化版）精讲，Bellman_ford 算法精讲 
 
-[dijkstra（朴素版）精讲](#01)，[dijkstra（堆优化版）精讲](#02)，[Bellman_ford 算法精讲](#03)
+[拓扑排序精讲](#01)，[dijkstra（朴素版）精讲](#02)，[dijkstra（堆优化版）精讲](#01)，[Bellman_ford 算法精讲](#03)
+
+
+# <span id="03">拓扑排序精讲</span>
+
+[卡码网KamaCoder](https://kamacoder.com/problempage.php?pid=1191) 
+
+[Learning Materials](https://www.programmercarl.com/kamacoder/0117.%E8%BD%AF%E4%BB%B6%E6%9E%84%E5%BB%BA.html#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E7%9A%84%E8%83%8C%E6%99%AF)
+
+![image](../images/GraphTheory(7)-3.png)
+
+```python
+from collections import deque, defaultdict
+
+n, m = map(int, input().split())
+indegree = [0] * n
+umap = defaultdict(list)
+que = deque()
+result = []
+
+while m:
+    s, t = map(int, input().split())
+    indegree[t] += 1
+    umap[s].append(t)
+    m -= 1
+
+for i in range(n):
+    if indegree[i] == 0:
+        que.append(i)
+
+while que:
+    cur = que.popleft()
+    result.append(cur)
+    files = umap[cur]
+    if files:
+        for i in range(len(files)):
+            indegree[files[i]] -= 1
+            if indegree[files[i]] == 0:
+                que.append(files[i])
+
+if len(result) == n:
+    print(" ".join(map(str, result)))
+else:
+    print(-1)
+```
 
 # <span id="01">dijkstra（朴素版）精讲</span>
 
