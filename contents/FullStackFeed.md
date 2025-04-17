@@ -62,4 +62,7 @@ Reverse-engineer trending GitHub repos, then reimagine them with cutting-edge tw
 
   > The project aims to ​visualize attention mechanisms in Chinese texts, providing intuitive heatmaps to demonstrate the semantic relevance strength between different words when processed by Transformer models such as BERT.
 
+- [Project3 : ​​Principles and Methods of Machine Learning in the Digital Economy​​](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EQANtnKCwWxPqgZNsGu2crsBMJh3mX2I_sZfN1EDP9Dwkw?e=7GaIVe)
+
+  > This is an educational reform project of Beijing Normal University, aimed at providing teaching materials for an introductory course on the digital economy designed for undergraduate students. The following is the initial draft of the machine learning section for this textbook.
 
