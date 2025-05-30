@@ -66,3 +66,8 @@ Reverse-engineer trending GitHub repos, then reimagine them with cutting-edge tw
 
   > This is an educational reform project of Beijing Normal University, aimed at providing teaching materials for an introductory course on the digital economy designed for undergraduate students. The following is the initial draft of the machine learning section for this textbook.
 
+- [Project4 : Samples and Explorations for Quantitative Finance]
+
+| *Topic 1: How Trump and Paris Agreement shock Climate Change Exposure in stock market, [Report PDF](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/ESVv-E_tvshDrpWlcLc6r_gBR4WfN-UsGkRUldqoB3nrBQ?e=5n87ep).* <br> 
+| *Topic 2: Measuring China Climate Policy Risk(with Text Mining Basic Knowledge), [Report PDF](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EWCN-qKj4G5ElwYdZYEA_hcB4cVZ4fzGjvYc3M-1vG2Czw?e=K4DVyO).* <br>
+| *Topic 3: Mimicking Portfolio Construction to Hedge Green Policy Risks, China Securities Association, [File Attachment](https://mailbnueducn-my.sharepoint.com/:f:/g/personal/sjs_mail_bnu_edu_cn/ErLLs83RNS9EgkQdp4HrzWIBVlo1xcD05i5GzfE4n0wA0w?e=fMc9nP).*
