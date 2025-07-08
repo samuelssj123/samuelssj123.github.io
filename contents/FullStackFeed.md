@@ -2,6 +2,18 @@
 
 Deconstruct algorithmic patterns into bite-sized, memorable chunks with our modular learning system. Each concept comes with video explainers or visual cheatsheets. Because understanding beats memorization – this is where coding literacy meets career acceleration.
 
+## 学术及学业专著 Academic Monograph
+
+- 1.数字经济与机器学习，北京师范大学教改课题，2025.5，[​​Principles and Methods of Machine Learning in the Digital Economy​​](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EQANtnKCwWxPqgZNsGu2crsBMJh3mX2I_sZfN1EDP9Dwkw?e=7GaIVe)
+
+  > This is an educational reform project of Beijing Normal University, aimed at providing teaching materials for an introductory course on the digital economy designed for undergraduate students. The following is the initial draft of the machine learning section for this textbook.
+
+- 2.经管保研通：北京师范大学保研一本通，2024.11 [Reading](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/ERF_PkGMzJhAv7x786Akpr4B7JoZlkEL7THl_s74CpNFtA?e=xcAVPd)
+
+- 3.高考思想政治大招解题册，2024.10
+
+## 随笔和笔记 Notes
+
 - Information Technology Basic Knowledge (High School's Teachers Level) [notes](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/Ee5xgoaURXxBh1_TUoe0HksBvf1Q-MRSnIBzpQVgPfD9GQ?e=arT8xE)  [videos](https://www.bilibili.com/video/BV1UB9uYjEGY/)
 
 - （随笔）贪心算法理论基础的通俗理解 [​Article Link​](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EeO69_Osqr9OkNBsFA5E7CoBblqk9rPemHGJpCjV1Jellg?e=6Ivdrg)
@@ -62,11 +74,8 @@ Reverse-engineer trending GitHub repos, then reimagine them with cutting-edge tw
 
   > The project aims to ​visualize attention mechanisms in Chinese texts, providing intuitive heatmaps to demonstrate the semantic relevance strength between different words when processed by Transformer models such as BERT.
 
-- [Project3 : ​​Principles and Methods of Machine Learning in the Digital Economy​​](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EQANtnKCwWxPqgZNsGu2crsBMJh3mX2I_sZfN1EDP9Dwkw?e=7GaIVe)
 
-  > This is an educational reform project of Beijing Normal University, aimed at providing teaching materials for an introductory course on the digital economy designed for undergraduate students. The following is the initial draft of the machine learning section for this textbook.
-
-- Project4 : Samples and Explorations for Quantitative Finance
+- Project3 : Samples and Explorations for Quantitative Finance
 
 | *Topic 1: How Trump and Paris Agreement shock Climate Change Exposure in stock market, [Report PDF](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/ESVv-E_tvshDrpWlcLc6r_gBR4WfN-UsGkRUldqoB3nrBQ?e=5n87ep).* <br> 
 | *Topic 2: Measuring China Climate Policy Risk(with Text Mining Basic Knowledge), [Report PDF](https://mailbnueducn-my.sharepoint.com/:b:/g/personal/sjs_mail_bnu_edu_cn/EWCN-qKj4G5ElwYdZYEA_hcB4cVZ4fzGjvYc3M-1vG2Czw?e=K4DVyO).* <br>
